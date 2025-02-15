@@ -17,3 +17,9 @@ rename and clear
 ico files
 https://icon-icons.com/search/icons/?filtro=car&page=3
 
+--========================
+
+copy code from p4.uazdao
+
+npm install --save normalize.css
+
