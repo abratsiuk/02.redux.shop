@@ -12,6 +12,16 @@ html {
 }
 
 body {
+    --test: red;
+}
+body[data-theme='dark'] {
+    --test: green;
+}
+body[data-theme='light'] {
+    --test: blue;
+}
+
+body {
     background-color: #fff;
     font-family: 'Roboto', sans-serif;
     font-size: 1.8rem;

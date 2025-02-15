@@ -1,5 +1,6 @@
 @import 'src/styles/variables.scss';
 
 .q {
-    color: $test;
+    color: var(--test);
+    font-size: 10rem;
 }
