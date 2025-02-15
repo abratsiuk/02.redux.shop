@@ -12,7 +12,17 @@
         font-size: $Header__logo-font-size;
         text-decoration: none;
         color: $Header__logo-color;
-        padding: 0 2rem;
+        padding: 0 2rem 0 10rem;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            min-width: 80px;
+            height: 5rem;
+            background: #dadddd url('../../assets/images/shop96.png') no-repeat;
+            background-position: center;
+            background-size: 70%;
+        }
     }
 
     &__menu {
