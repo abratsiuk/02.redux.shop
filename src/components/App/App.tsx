@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './App.css';
+import './App.scss';
 
 export const App = () => {
     return (
         <div className="App">
-            <button>hi</button>
+            <button className="q">hi</button>
         </div>
     );
 };

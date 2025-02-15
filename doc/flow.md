@@ -21,5 +21,15 @@ https://icon-icons.com/search/icons/?filtro=car&page=3
 
 copy code from p4.uazdao
 
-npm install --save normalize.css
+npm install normalize.css
+
+<!-- https://create-react-app.dev/docs/adding-a-sass-stylesheet -->
+npm i sass
+
+npm i react-router-dom
+<!-- npm i -D postcss-scss 
+npm i stylelint
+npm i stylelint-selector-bem-pattern
+npm i  -D prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-prettier eslint-config-prettier
+npm i  -D eslint-config-prettier eslint-plugin-prettier -->
 
