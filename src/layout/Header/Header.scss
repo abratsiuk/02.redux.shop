@@ -1,30 +1,31 @@
 @import 'src/styles/variables.scss';
 
 .Header {
-    height: $Header-height;
-    background-color: $Header-color;
+    height: $header-height;
+    background-color: $header-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    &__logo {
-        font-family: 'Great Vibes', cursive;
-        font-size: $Header__logo-font-size;
-        text-decoration: none;
-        color: $Header__logo-color;
-        padding: 0 2rem 0 10rem;
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0px;
-            min-width: 80px;
-            height: 5rem;
-            background: #dadddd url('../../assets/images/shop96.png') no-repeat;
-            background-position: center;
-            background-size: 70%;
-        }
+    &__block {
+        display: flex;
+        align-items: center;
     }
 
+    &__logo {
+        font-family: 'Great Vibes', cursive;
+        font-size: $header__logo-font-size;
+        text-decoration: none;
+        color: $header__logo-color;
+        line-height: 5rem;
+        margin-top: 1.8rem;
+        margin-left: 1.5rem;
+    }
+    &__img {
+        width: 5rem;
+        height: 5rem;
+        margin-left: 2rem;
+    }
     &__menu {
         padding: 0 2rem;
         display: flex;

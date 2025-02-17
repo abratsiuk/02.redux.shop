@@ -1,11 +1,11 @@
 @import 'src/styles/variables.scss';
 
 .Main {
-    height: calc(100vh - $Header-height - $Footer-height);
-    background-color: $Main-color;
+    height: calc(100vh - $header-height - $footer-height);
+    background-color: $main-color;
 }
 
 .Main_scrollable {
-    min-height: calc(100vh - $Header-height - $Footer-height);
-    background-color: $Main-color;
+    min-height: calc(100vh - $header-height - $footer-height);
+    background-color: $main-color;
 }

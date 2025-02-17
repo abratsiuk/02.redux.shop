@@ -7,7 +7,7 @@ export const Footer = () => {
 
             <div>
                 <a
-                    href="https://github.com/abratsiuk/p2.redux.shop"
+                    href="https://github.com/abratsiuk/02.redux.shop"
                     target="_blank"
                     rel="noreferrer"
                 >

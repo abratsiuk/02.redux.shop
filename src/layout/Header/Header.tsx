@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { menu } from '../../configs';
 import { IMenuItem } from '../../configs/IMenuItem';
 import './Header.scss';
+import Logo from '../../assets/images/shop.svg';
 
 export const Header = () => {
     return (
@@ -9,12 +10,19 @@ export const Header = () => {
             id="header"
             className="Header"
         >
-            <Link
-                to="/"
-                className="Header__logo"
-            >
-                Redux Shop
-            </Link>
+            <div className="Header__block">
+                <img
+                    src={Logo}
+                    alt="logo"
+                    className="Header__img"
+                />
+                <Link
+                    to="/"
+                    className="Header__logo"
+                >
+                    Redux Shop
+                </Link>
+            </div>
             <ul className="Header__menu">
                 {menu?.map((m: IMenuItem) => {
                     return (

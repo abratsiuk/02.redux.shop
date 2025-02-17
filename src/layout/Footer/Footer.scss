@@ -1,9 +1,9 @@
 @import 'src/styles/variables.scss';
 
 .footer {
-    height: $Footer-height;
+    height: $footer-height;
 
-    background-color: $Header-color;
+    background-color: $header-color;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
