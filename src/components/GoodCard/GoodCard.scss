@@ -1,0 +1,17 @@
+@import 'src/styles/variables.scss';
+
+.GoodCard {
+    display: flex;
+    flex-direction: column;
+    &__image {
+        display: block;
+        width: 100%;
+        max-width: 450px;
+    }
+    &__content {
+        flex-grow: 1;
+    }
+    &__price {
+        font-size: 1.8rem;
+    }
+}

@@ -1,6 +1,6 @@
 @import 'src/styles/variables.scss';
 
-.GoodList {
+.GoodsList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     gap: 1rem;

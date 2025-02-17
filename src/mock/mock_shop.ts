@@ -4,7 +4,7 @@ import { IGoodItem } from '../interfaces/IGoodItem';
 export const goods: IGoodItem[] = data.shop
     .map(
         (item): IGoodItem => ({
-            id: item.offerId,
+            id: item.offerId.replace('v2:/', 'v2_'),
             name: item.displayName,
             description: item.displayDescription,
             full_background:

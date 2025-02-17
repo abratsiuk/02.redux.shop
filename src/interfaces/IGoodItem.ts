@@ -4,4 +4,5 @@ export interface IGoodItem {
     description: string;
     full_background: string;
     price: number;
+    onClick?: () => void;
 }

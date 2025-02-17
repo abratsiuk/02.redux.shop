@@ -1,11 +1,11 @@
 import React from 'react';
 import './Catalog.scss';
-import { GoodList } from '../../components/GoodList';
+import { GoodsList } from '../../components/GoodsList';
 
 export const Catalog: React.FC = () => {
     return (
         <div className="Catalog">
-            <GoodList />
+            <GoodsList />
         </div>
     );
 };

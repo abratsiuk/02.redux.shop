@@ -1,35 +1,31 @@
 import React from 'react';
-import './GoodItem.scss';
-import { IGoodItem } from '../../interfaces/IGoodItem';
+import './GoodCard.scss';
+import { IGoodCard } from '../../interfaces/IGoodCard';
 
-export const GoodItem: React.FC<IGoodItem> = ({
+export const GoodCard: React.FC<IGoodCard> = ({
     id,
     name,
     description,
     price,
     full_background,
-    onClick,
 }) => {
-    const addToBasket = (item: IGoodItem) => {
+    const addToBasket = (item: IGoodCard) => {
         console.log('addToBasket', item);
     };
 
     return (
-        <div
-            className="GoodItem"
-            onClick={onClick}
-        >
+        <div className="GoodCard">
             <img
-                className="GoodItem__image"
+                className="GoodCard__image"
                 src={full_background}
                 alt={name}
             />
 
-            <div className="GoodItem__content">
-                <span className="GoodItem__title">{name}</span>
+            <div className="GoodCard__content">
+                <span className="GoodCard__title">{name}</span>
                 <p>{description}</p>
             </div>
-            <div className="GoodItem__action">
+            <div className="GoodCard__action">
                 <button
                     className="btn"
                     onClick={() =>
@@ -44,7 +40,7 @@ export const GoodItem: React.FC<IGoodItem> = ({
                 >
                     Add to Cart
                 </button>
-                <span className="GoodItem__price">{price} &curren;</span>
+                <span className="GoodCard__price">{price} &curren;</span>
             </div>
         </div>
     );
