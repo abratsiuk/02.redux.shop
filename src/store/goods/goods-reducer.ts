@@ -1,19 +1,45 @@
-import { SET_GOODS, SET_LOADING, SET_ERROR } from './goods-actions';
+import { IGoodItem } from '../../interfaces/IGoodItem';
+import { GoodsActionTypes, GoodsActions } from './goods-actions';
 
-const initialState = {
-    status: 'idle' /* loading, received, rejected */,
+enum GoodsStatus {
+    IDLE = 'goods/idle',
+    LOADING = 'goods/loading',
+    RECEIVED = 'goods/received',
+    REJECTED = 'goods/rejected',
+}
+
+export interface IGoodsState {
+    status: GoodsStatus;
+    error: string | null;
+    list: IGoodItem[];
+}
+
+const initialState: IGoodsState = {
+    status: GoodsStatus.IDLE,
     error: null,
     list: [],
 };
 
-export const goodsReducer = (state = initialState, { type, payload }) => {
-    switch (type) {
-        case SET_GOODS:
-            return { ...state, status: 'received', error: null, list: payload };
-        case SET_LOADING:
-            return { ...state, status: 'loading', error: null };
-        case SET_ERROR:
-            return { ...state, status: 'rejected', error: payload };
+export const goodsReducer = (
+    state = initialState,
+    action: GoodsActions
+): IGoodsState => {
+    switch (action.type) {
+        case GoodsActionTypes.SET_GOODS:
+            return {
+                ...state,
+                status: GoodsStatus.RECEIVED,
+                error: null,
+                list: action.payload,
+            };
+        case GoodsActionTypes.SET_LOADING:
+            return { ...state, status: GoodsStatus.LOADING, error: null };
+        case GoodsActionTypes.SET_ERROR:
+            return {
+                ...state,
+                status: GoodsStatus.REJECTED,
+                error: action.payload,
+            };
         default:
             return state;
     }
