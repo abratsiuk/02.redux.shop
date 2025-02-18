@@ -36,7 +36,8 @@ npm i  -D eslint-config-prettier eslint-plugin-prettier -->
 --------------
 npm i redux
 npm i react-redux
-<!-- npm i redux-devtools-extension --force -->
 npm i axios
 npm i redux-thunk
+
+npm i redux-devtools-extension --force
 
