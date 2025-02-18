@@ -33,3 +33,10 @@ npm i stylelint-selector-bem-pattern
 npm i  -D prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-prettier eslint-config-prettier
 npm i  -D eslint-config-prettier eslint-plugin-prettier -->
 
+--------------
+npm i redux
+npm i react-redux
+<!-- npm i redux-devtools-extension --force -->
+npm i axios
+npm i redux-thunk
+

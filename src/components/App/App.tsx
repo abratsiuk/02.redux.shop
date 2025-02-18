@@ -5,15 +5,19 @@ import { Main } from '../../layout/Main';
 
 import './App.scss';
 import { AppRouterRoutes } from '../AppRouterRoutes';
+import { Provider } from 'react-redux';
+import { store } from '../../store';
 
 export const App = () => {
     return (
-        <Router>
-            <Header />
-            <Main>
-                <AppRouterRoutes />
-            </Main>
-            <Footer />
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <Header />
+                <Main>
+                    <AppRouterRoutes />
+                </Main>
+                <Footer />
+            </Router>
+        </Provider>
     );
 };

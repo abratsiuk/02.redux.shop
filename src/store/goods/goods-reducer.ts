@@ -6,7 +6,7 @@ const initialState = {
     list: [],
 };
 
-export const countriesReducer = (state = initialState, { type, payload }) => {
+export const goodsReducer = (state = initialState, { type, payload }) => {
     switch (type) {
         case SET_GOODS:
             return { ...state, status: 'received', error: null, list: payload };
