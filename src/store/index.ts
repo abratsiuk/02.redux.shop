@@ -1,17 +1,18 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { rootReducer } from './root-reducer';
+import thunk from 'redux-thunk';
 import axios from 'axios';
 import * as api from '../config';
 
-export const store = configureStore({
-    reducer: rootReducer,
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            thunk: {
-                extraArgument: { client: axios, api },
-            },
-        }),
-    devTools: true,
-});
-
-export type AppDispatch = typeof store.dispatch;
+export const store = createStore(
+    rootReducer,
+    composeWithDevTools(
+        applyMiddleware(
+            thunk.withExtraArgument({
+                client: axios,
+                api,
+            })
+        )
+    )
+);

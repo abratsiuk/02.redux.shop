@@ -14,7 +14,8 @@ import { GoodsList } from '../../components/GoodsList';
 
 export const Catalog: React.FC = () => {
     const goods = useTypedSelector(selectAllGoods);
-    const { status, error, qty } = useTypedSelector(selectGoodsInfo);
+    // const { status, error, qty } = useTypedSelector(selectGoodsInfo);
+    const { qty } = useTypedSelector(selectGoodsInfo);
     const dispatch = useDispatch();
 
     console.log('Catalog', goods);
@@ -22,6 +23,7 @@ export const Catalog: React.FC = () => {
     useEffect(() => {
         if (qty === 0) {
             dispatch(loadGoods());
+            console.log('loadGoods');
         }
     }, [qty, dispatch]);
 

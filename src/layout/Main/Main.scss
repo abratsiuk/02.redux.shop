@@ -1,4 +1,4 @@
-@import 'src/styles/variables.scss';
+@use 'src/styles/variables' as *;
 
 .Main {
     height: calc(100vh - $header-height - $footer-height);

@@ -3,7 +3,7 @@ import './CatalogItem.scss';
 import { useNavigate, useParams } from 'react-router-dom';
 import { GoodItem } from '../../components/GoodItem';
 import { good } from '../../mock/mock_good';
-import { IGoodCard } from '../../interfaces/IGoodCard';
+// import { IGoodCard } from '../../interfaces/IGoodCard';
 
 export const CatalogItem: React.FC = () => {
     const { name } = useParams();
