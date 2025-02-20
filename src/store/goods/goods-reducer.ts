@@ -1,7 +1,7 @@
 import { IGoodItem } from '../../interfaces/IGoodItem';
 import { GoodsActionTypes, GoodsActions } from './goods-actions';
 
-enum GoodsStatus {
+export enum GoodsStatus {
     IDLE = 'goods/idle',
     LOADING = 'goods/loading',
     RECEIVED = 'goods/received',

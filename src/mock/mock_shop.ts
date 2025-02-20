@@ -1,7 +1,7 @@
 import data from './mock_shop.json';
 import { IGoodItem } from '../interfaces/IGoodItem';
 
-export const goods: IGoodItem[] = data.shop
+export const goodsMock: IGoodItem[] = data.shop
     .map(
         (item): IGoodItem => ({
             id: item.offerId.replace('v2:/', 'v2_'),
@@ -15,3 +15,12 @@ export const goods: IGoodItem[] = data.shop
         })
     )
     .filter((item) => item.full_background && item.id);
+
+export const getGoodsMock = (
+    pageNumber: number,
+    pageSize: number
+): IGoodItem[] => {
+    const startIndex = (pageNumber - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    return goodsMock.slice(startIndex, endIndex);
+};
