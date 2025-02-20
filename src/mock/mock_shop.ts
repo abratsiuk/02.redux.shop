@@ -3,18 +3,25 @@ import { IGoodItem } from '../interfaces/IGoodItem';
 
 export const goodsMock: IGoodItem[] = data.shop
     .map(
-        (item): IGoodItem => ({
-            id: item.offerId.replace('v2:/', 'v2_'),
-            name: item.displayName,
-            description: item.displayDescription,
-            full_background:
-                item.displayAssets && item.displayAssets.length > 0
-                    ? item.displayAssets[0].full_background ?? ''
-                    : '',
+        (item, index): IGoodItem => ({
+            id: item.offerId?.replace('v2:/', 'v2_') || index.toString(),
+            offerId: item.offerId ?? '',
+            name: item.displayName ?? '',
+            description: item.displayDescription ?? '',
+            displayType: item.displayType ?? '',
+            mainType: item.mainType ?? '',
+            icon: item.displayAssets?.[0]?.url ?? '',
+            background: item.displayAssets?.[0]?.background ?? '',
+            colors: item.colors,
+            rarity: item.rarity,
+            series: item.series,
+            offerTag: item.offerTag,
+            banner: item.banner,
+            priority: item.priority,
             price: item.price ? item.price.regularPrice : 0,
         })
     )
-    .filter((item) => item.full_background && item.id);
+    .filter((item) => item.background && item.id);
 
 export const getGoodsMock = (
     pageNumber: number,

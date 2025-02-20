@@ -4,14 +4,24 @@ import { IGoodItem } from '../../interfaces/IGoodItem';
 
 export const GoodItem: React.FC<IGoodItem> = ({
     id,
+    offerId,
     name,
     description,
     price,
-    full_background,
+    icon,
+    background,
+    colors,
+    rarity,
+    series,
+    offerTag,
+    banner,
+    priority,
+    displayType,
+    mainType,
     onClick,
 }) => {
-    const addToBasket = (item: IGoodItem) => {
-        console.log('addToBasket', item);
+    const addToBasket = () => {
+        console.log('addToBasket');
     };
 
     return (
@@ -21,26 +31,24 @@ export const GoodItem: React.FC<IGoodItem> = ({
         >
             <img
                 className="GoodItem__image"
-                src={full_background}
+                src={background}
                 alt={name}
             />
 
             <div className="GoodItem__content">
                 <span className="GoodItem__title">{name}</span>
                 <p>{description}</p>
+                <p>mainType:{mainType}</p>
+                {/* <p title={offerId}>offerId</p>
+                <p>displayType:{displayType}</p>
+                <p>mainType:{mainType}</p>
+                <p>rarityId:{rarity?.id}</p>.<p>seriesId:{series?.id}</p>
+                <p>offerTagId:{offerTag?.id}</p> */}
             </div>
             <div className="GoodItem__action">
                 <button
                     className="btn"
-                    onClick={() =>
-                        addToBasket({
-                            id,
-                            name,
-                            description,
-                            full_background,
-                            price,
-                        })
-                    }
+                    onClick={() => addToBasket()}
                 >
                     Add to Cart
                 </button>

@@ -1,9 +1,7 @@
 import { IGoodItem } from '../../interfaces/IGoodItem';
 import axios from 'axios';
 import * as api from '../../config';
-// import { AxiosResponse } from 'axios';
 import { Dispatch } from 'redux';
-import { getGoodsMock } from '../../mock/mock_shop';
 
 export enum GoodsActionTypes {
     SET_GOODS = 'goods/SET_GOODS',
@@ -55,21 +53,33 @@ export const loadGoods = () => {
             if (response?.data?.shop?.length > 0) {
                 const goods: IGoodItem[] = response.data.shop
                     .map(
-                        (item: any): IGoodItem => ({
-                            id: item.offerId.replace('v2:/', 'v2_'),
-                            name: item.displayName,
-                            description: item.displayDescription,
-                            full_background:
-                                item.displayAssets &&
-                                item.displayAssets.length > 0
-                                    ? item.displayAssets[0].full_background ??
-                                      ''
-                                    : '',
+                        (item: any, index: number): IGoodItem => ({
+                            id:
+                                item.offerId?.replace('v2:/', 'v2_') ||
+                                index.toString(),
+                            offerId: item.offerId ?? '',
+                            name: item.displayName ?? '',
+                            description: item.displayDescription ?? '',
+                            displayType: item.displayType ?? '',
+                            mainType: item.mainType ?? '',
+                            icon: item.displayAssets?.[0]?.url ?? '',
+                            background:
+                                item.displayAssets?.[0]?.background ?? '',
+                            colors: item.colors,
+                            rarity: item.rarity,
+                            series: item.series,
+                            offerTag: item.offerTag,
+                            banner: item.banner,
+                            priority: item.priority,
                             price: item.price ? item.price.regularPrice : 0,
                         })
                     )
                     .filter(
-                        (item: IGoodItem) => item.full_background && item.id
+                        (item: IGoodItem) =>
+                            item.background &&
+                            item.id &&
+                            (!item.mainType ||
+                                !['sparks_song', 'w'].includes(item.mainType))
                     );
 
                 dispatch(setGoods(goods));
@@ -81,47 +91,3 @@ export const loadGoods = () => {
         }
     };
 };
-
-// export const loadGoods = () => (dispatch: Dispatch<GoodsActions>) => {
-//     dispatch(setLoading());
-
-//     interface IApiResponse {
-//         shop: Array<{
-//             offerId: string;
-//             displayName: string;
-//             displayDescription: string;
-//             displayAssets: Array<{
-//                 full_background: string;
-//             }>;
-//             price: {
-//                 regularPrice: number;
-//             };
-//         }>;
-//     }
-
-//     axios
-//         .get<IApiResponse>(api.ALL_GOODS)
-//         .then(function (response: AxiosResponse<IApiResponse>) {
-//             console.log(response);
-//         })
-//         .then((response: AxiosResponse<IApiResponse>) => {
-//             const goods: IGoodItem[] = response.data.shop
-//                 .map(
-//                     (item): IGoodItem => ({
-//                         id: item.offerId.replace('v2:/', 'v2_'),
-//                         name: item.displayName,
-//                         description: item.displayDescription,
-//                         full_background:
-//                             item.displayAssets && item.displayAssets.length > 0
-//                                 ? item.displayAssets[0].full_background ?? ''
-//                                 : '',
-//                         price: item.price ? item.price.regularPrice : 0,
-//                     })
-//                 )
-//                 .filter((item: IGoodItem) => item.full_background && item.id);
-//             dispatch(setGoods(goods));
-//         })
-//         .catch((err: Error) => {
-//             dispatch(setError(err.message));
-//         });
-// };

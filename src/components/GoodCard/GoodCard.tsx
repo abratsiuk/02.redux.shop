@@ -7,7 +7,7 @@ export const GoodCard: React.FC<IGoodCard> = ({
     name,
     description,
     price,
-    full_background,
+    background,
 }) => {
     const addToBasket = (item: IGoodCard) => {
         console.log('addToBasket', item);
@@ -17,7 +17,7 @@ export const GoodCard: React.FC<IGoodCard> = ({
         <div className="GoodCard">
             <img
                 className="GoodCard__image"
-                src={full_background}
+                src={background}
                 alt={name}
             />
 
@@ -33,7 +33,7 @@ export const GoodCard: React.FC<IGoodCard> = ({
                             id,
                             name,
                             description,
-                            full_background,
+                            background,
                             price,
                         })
                     }

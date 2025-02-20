@@ -9,3 +9,9 @@ export const selectGoodsInfo = (state: RootState) => ({
 
 export const selectAllGoods = (state: RootState): IGoodItem[] =>
     state.goods.list;
+
+export const selectGoodById = (
+    state: RootState,
+    id: string
+): IGoodItem | undefined =>
+    state.goods.list.find((good) => good.id === id) || undefined;

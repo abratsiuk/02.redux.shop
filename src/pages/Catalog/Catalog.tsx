@@ -31,7 +31,11 @@ export const Catalog: React.FC = () => {
         <div className="Catalog">
             {status === GoodsStatus.LOADING && <h1>Loading...</h1>}
             {status === GoodsStatus.REJECTED && <h1>Error: {error}</h1>}
-            <GoodsList goods={goods} />
+            <GoodsList
+                goods={goods}
+                pageSize={20}
+                pageNumber={1}
+            />
         </div>
     );
 };
