@@ -1,17 +1,17 @@
 import React from 'react';
-import './Color.scss';
+import './ShowColor.scss';
 
-interface IColorProps {
+interface IShowColorProps {
     name: string;
     color?: string | null;
 }
-export const Color: React.FC<IColorProps> = ({ name, color }) => {
+export const ShowColor: React.FC<IShowColorProps> = ({ name, color }) => {
     return (
-        <div className="Color">
+        <div className="ShowColor">
             {color ? (
                 <>
                     <div
-                        className="Color__show"
+                        className="ShowColor__show"
                         style={{ backgroundColor: color }}
                     ></div>
                     <div>

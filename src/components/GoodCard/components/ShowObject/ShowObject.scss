@@ -1,0 +1,10 @@
+@use 'src/styles/variables' as *;
+
+.ShowObject {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &__item {
+        padding: 1rem;
+    }
+}

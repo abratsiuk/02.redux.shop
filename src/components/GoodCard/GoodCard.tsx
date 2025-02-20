@@ -1,7 +1,8 @@
 import React from 'react';
 import './GoodCard.scss';
 import { IGoodCard } from '../../interfaces/IGoodCard';
-import { Color } from './components/Color/Color';
+import { ShowColor } from './components/ShowColor';
+import { ShowObject } from './components/ShowObject';
 
 export const GoodCard: React.FC<IGoodCard> = ({
     id,
@@ -41,28 +42,42 @@ export const GoodCard: React.FC<IGoodCard> = ({
             <div className="GoodCard__content">
                 <span className="GoodCard__title">{name}</span>
                 <p>{description}</p>
-                <Color
+                <ShowColor
                     name="color1"
                     color={colors?.color1}
                 />
-                <Color
+                <ShowColor
                     name="color2"
                     color={colors?.color2}
                 />
-                <Color
+                <ShowColor
                     name="color3"
                     color={colors?.color3}
                 />
-                <Color
+                <ShowColor
                     name="textBackgroundColor"
                     color={colors?.textBackgroundColor}
                 />
 
                 <p>mainType: {mainType}</p>
                 <p>displayType: {displayType}</p>
-                <p>rarityId: {rarity?.id}</p>
-                <p>seriesId: {series?.id}</p>
-                <p>offerTagId: {offerTag?.id}</p>
+                <ShowObject
+                    name="rarity"
+                    value={rarity}
+                />
+                <ShowObject
+                    name="series"
+                    value={series}
+                />
+                <ShowObject
+                    name="offerTag"
+                    value={offerTag}
+                />
+                <ShowObject
+                    name="banner"
+                    value={banner}
+                />
+                <p>priority: {priority}</p>
             </div>
             <div className="GoodCard__action">
                 <button onClick={addToBasket}>Add to Cart</button>
