@@ -9,8 +9,8 @@ export const GoodCard: React.FC<IGoodCard> = ({
     price,
     background,
 }) => {
-    const addToBasket = (item: IGoodCard) => {
-        console.log('addToBasket', item);
+    const addToBasket = () => {
+        alert('addToBasket: ' + name);
     };
 
     return (
@@ -28,15 +28,7 @@ export const GoodCard: React.FC<IGoodCard> = ({
             <div className="GoodCard__action">
                 <button
                     className="btn"
-                    onClick={() =>
-                        addToBasket({
-                            id,
-                            name,
-                            description,
-                            background,
-                            price,
-                        })
-                    }
+                    onClick={addToBasket}
                 >
                     Add to Cart
                 </button>

@@ -20,14 +20,23 @@ export const GoodItem: React.FC<IGoodItem> = ({
     mainType,
     onClick,
 }) => {
+    const onCardClicked = (e: React.MouseEvent<HTMLDivElement>) => {
+        const target = e.target as HTMLElement;
+
+        if (target.closest('.button')) {
+            return;
+        }
+
+        onClick?.();
+    };
     const addToBasket = () => {
-        console.log('addToBasket');
+        alert('addToBasket: ' + name);
     };
 
     return (
         <div
             className="GoodItem"
-            onClick={onClick}
+            onClick={onCardClicked}
         >
             <img
                 className="GoodItem__image"
@@ -46,12 +55,7 @@ export const GoodItem: React.FC<IGoodItem> = ({
                 <p>offerTagId:{offerTag?.id}</p> */}
             </div>
             <div className="GoodItem__action">
-                <button
-                    className="btn"
-                    onClick={() => addToBasket()}
-                >
-                    Add to Cart
-                </button>
+                <button onClick={() => addToBasket()}>Add to Cart</button>
                 <span className="GoodItem__price">{price} &curren;</span>
             </div>
         </div>
