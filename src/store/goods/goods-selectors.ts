@@ -4,14 +4,15 @@ import { RootState } from '../root-reducer';
 export const selectGoodsInfo = (state: RootState) => ({
     status: state.goods.status,
     error: state.goods.error,
-    qty: state.goods.list.length,
+    qty: Object.values(state.goods.items).length,
 });
 
 export const selectAllGoods = (state: RootState): IGoodItem[] =>
-    state.goods.list;
+    Object.values(state.goods.items);
 
-export const selectGoodById = (
-    state: RootState,
-    id: string
-): IGoodItem | undefined =>
-    state.goods.list.find((good) => good.id === id) || undefined;
+export const selectSelectedGoods = (
+    state: RootState
+): IGoodItem | undefined => {
+    const selectedId = state.goods.selectedId;
+    return selectedId ? state.goods.items[selectedId] : undefined;
+};

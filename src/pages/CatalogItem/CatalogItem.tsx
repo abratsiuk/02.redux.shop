@@ -3,16 +3,20 @@ import './CatalogItem.scss';
 import { useNavigate, useParams } from 'react-router-dom';
 import { GoodItem } from '../../components/GoodItem';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { selectGoodById } from '../../store/goods/goods-selectors';
+import { selectSelectedGoods } from '../../store/goods/goods-selectors';
+import { useDispatch } from 'react-redux';
+import { selectGood } from '../../store/goods/goods-actions';
 
 export const CatalogItem: React.FC = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const good = useTypedSelector((state) => selectGoodById(state, id ?? ''));
+
+    const good = useTypedSelector(selectSelectedGoods);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('CatalogItem', id);
-    }, [id]);
+        dispatch(selectGood(id ?? null));
+    }, [id, dispatch]);
 
     return (
         <div className="CatalogItem">

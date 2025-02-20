@@ -11,13 +11,15 @@ export enum GoodsStatus {
 export interface IGoodsState {
     status: GoodsStatus;
     error: string | null;
-    list: IGoodItem[];
+    items: { [id: string]: IGoodItem };
+    selectedId: string | null;
 }
 
 const initialState: IGoodsState = {
     status: GoodsStatus.IDLE,
     error: null,
-    list: [],
+    items: {},
+    selectedId: null,
 };
 
 export const goodsReducer = (
@@ -26,11 +28,18 @@ export const goodsReducer = (
 ): IGoodsState => {
     switch (action.type) {
         case GoodsActionTypes.SET_GOODS:
+            const newItems = action.payload.reduce(
+                (acc: { [id: string]: IGoodItem }, item: IGoodItem) => {
+                    acc[item.id] = item;
+                    return acc;
+                },
+                {}
+            );
             return {
                 ...state,
                 status: GoodsStatus.RECEIVED,
                 error: null,
-                list: action.payload,
+                items: newItems,
             };
         case GoodsActionTypes.SET_LOADING:
             return { ...state, status: GoodsStatus.LOADING, error: null };
@@ -39,6 +48,11 @@ export const goodsReducer = (
                 ...state,
                 status: GoodsStatus.REJECTED,
                 error: action.payload,
+            };
+        case GoodsActionTypes.SELECT_GOOD:
+            return {
+                ...state,
+                selectedId: action.payload,
             };
         default:
             return state;

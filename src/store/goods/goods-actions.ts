@@ -7,6 +7,7 @@ export enum GoodsActionTypes {
     SET_GOODS = 'goods/SET_GOODS',
     SET_LOADING = 'goods/SET_LOADING',
     SET_ERROR = 'goods/SET_ERROR',
+    SELECT_GOOD = 'goods/SELECT_GOOD',
 }
 interface ISetGoodsAction {
     type: GoodsActionTypes.SET_GOODS;
@@ -20,10 +21,16 @@ interface ISetErrorAction {
     payload: string;
 }
 
+interface ISelectGoodAction {
+    type: GoodsActionTypes.SELECT_GOOD;
+    payload: string | null;
+}
+
 export type GoodsActions =
     | ISetGoodsAction
     | ISetLoadingAction
-    | ISetErrorAction;
+    | ISetErrorAction
+    | ISelectGoodAction;
 
 export const setGoods = (goods: IGoodItem[]): ISetGoodsAction => ({
     type: GoodsActionTypes.SET_GOODS,
@@ -37,6 +44,11 @@ export const setLoading = (): ISetLoadingAction => ({
 export const setError = (err: string): ISetErrorAction => ({
     type: GoodsActionTypes.SET_ERROR,
     payload: err,
+});
+
+export const selectGood = (id: string | null): ISelectGoodAction => ({
+    type: GoodsActionTypes.SELECT_GOOD,
+    payload: id,
 });
 
 export const loadGoods = () => {
