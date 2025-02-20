@@ -6,26 +6,17 @@ import { useNavigate } from 'react-router-dom';
 
 interface IGoodListProps {
     goods: IGoodItem[];
-    pageSize: number;
-    pageNumber: number;
 }
 
-export const GoodsList: React.FC<IGoodListProps> = ({
-    goods = [],
-    pageSize,
-    pageNumber,
-}) => {
+export const GoodsList: React.FC<IGoodListProps> = ({ goods = [] }) => {
     const navigate = useNavigate();
-
-    const startIndex = (pageNumber - 1) * pageSize;
-    const endIndex = startIndex + pageSize;
 
     return (
         <div className="GoodsList">
-            {goods.slice(startIndex, endIndex).length === 0 ? (
+            {goods.length === 0 ? (
                 <p>No goods available.</p>
             ) : (
-                goods.slice(startIndex, endIndex).map((item: IGoodItem) => (
+                goods.map((item: IGoodItem) => (
                     <GoodItem
                         key={item.id}
                         onClick={() => navigate(`/catalog/${item.id}`)}
