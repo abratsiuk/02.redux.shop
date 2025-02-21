@@ -5,7 +5,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectSelectedGoods } from '../../store/goods/goods-selectors';
 import { useDispatch } from 'react-redux';
 import { selectGood } from '../../store/goods/goods-actions';
-import { GoodCard } from '../../components/GoodCard';
+import { GoodDetail } from '../../components/GoodDetail';
 
 export const CatalogItem: React.FC = () => {
     const { id } = useParams();
@@ -22,7 +22,7 @@ export const CatalogItem: React.FC = () => {
         <div className="CatalogItem">
             <button onClick={() => navigate(-1)}>Back</button>
             {good ? (
-                <GoodCard
+                <GoodDetail
                     key={good.id}
                     {...good}
                 />

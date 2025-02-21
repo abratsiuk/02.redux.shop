@@ -11,7 +11,7 @@ export enum GoodsStatus {
 export interface IGoodsState {
     status: GoodsStatus;
     error: string | null;
-    items: { [id: string]: IGoodItem };
+    items: Record<string, IGoodItem>;
     selectedId: string | null;
 }
 
@@ -29,11 +29,11 @@ export const goodsReducer = (
     switch (action.type) {
         case GoodsActionTypes.SET_GOODS:
             const newItems = action.payload.reduce(
-                (acc: { [id: string]: IGoodItem }, item: IGoodItem) => {
+                (acc: Record<string, IGoodItem>, item: IGoodItem) => {
                     acc[item.id] = item;
                     return acc;
                 },
-                {}
+                {} as Record<string, IGoodItem>
             );
             return {
                 ...state,

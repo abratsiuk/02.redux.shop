@@ -54,3 +54,5 @@ nvm use 16.20.2
 npm install typescript@3.9.10
 
 npm install --legacy-peer-deps
+
+npm i immer

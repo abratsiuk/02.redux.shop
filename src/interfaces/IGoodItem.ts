@@ -1,11 +1,6 @@
-export interface IGoodItem {
-    id: string;
+import { IGoodBase } from './IGoodBase';
+export interface IGoodItem extends IGoodBase {
     offerId?: string;
-    name?: string;
-    description?: string;
-    displayType?: string;
-    mainType?: string;
-    icon?: string;
     background?: string;
     colors?: {
         color1?: string | null;
@@ -31,6 +26,4 @@ export interface IGoodItem {
         intensity?: string;
     } | null;
     priority?: number;
-    price: number;
-    onClick?: () => void;
 }

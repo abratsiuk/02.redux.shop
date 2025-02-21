@@ -1,4 +1,4 @@
-import { IGoodCard } from '../interfaces/IGoodCard';
+import { IGoodDetail } from '../interfaces/IGoodDetail';
 import { goodsMock } from './mock_shop';
 
-export const good: IGoodCard = { ...goodsMock[0] };
+export const good: IGoodDetail = { ...goodsMock[0] };

@@ -1,46 +1,60 @@
 import React from 'react';
-import './GoodCard.scss';
-import { IGoodCard } from '../../interfaces/IGoodCard';
+import './GoodDetail.scss';
+import { IGoodDetail } from '../../interface/IGoodDetail';
 import { ShowColor } from './components/ShowColor';
 import { ShowObject } from './components/ShowObject';
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../../store/basket/basket-actions';
+import { IGoodInBasket } from '../../interfaces/IGoodInBasket';
 
-export const GoodCard: React.FC<IGoodCard> = ({
-    id,
-    offerId,
-    name,
-    description,
-    price,
-    icon,
-    background,
-    colors,
-    rarity,
-    series,
-    offerTag,
-    banner,
-    priority,
-    displayType,
-    mainType,
-}) => {
-    const addToBasket = () => {
-        alert('addToBasket: ' + name);
+export const GoodDetail: React.FC<IGoodDetail> = (props) => {
+    const {
+        id,
+        name,
+        description,
+        price,
+        icon,
+        background,
+        colors,
+        rarity,
+        series,
+        offerTag,
+        banner,
+        priority,
+        displayType,
+        mainType,
+    } = props;
+    const dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+        const goodInBasket: IGoodInBasket = {
+            id,
+            name,
+            description,
+            displayType,
+            mainType,
+            icon,
+            price,
+        };
+        dispatch(addToBasket(goodInBasket));
     };
 
     return (
-        <div className="GoodCard">
+        <div className="GoodDetail">
             <img
-                className="GoodCard__image"
+                className="GoodDetail__image"
                 src={icon}
                 alt={name}
                 style={{ width: '10rem' }}
             />
             <img
-                className="GoodCard__image"
+                className="GoodDetail__image"
                 src={background}
                 alt={name}
             />
 
-            <div className="GoodCard__content">
-                <span className="GoodCard__title">{name}</span>
+            <div className="GoodDetail__content">
+                <span className="GoodDetail__title">{name}</span>
                 <p>{description}</p>
                 <ShowColor
                     name="color1"
@@ -79,9 +93,9 @@ export const GoodCard: React.FC<IGoodCard> = ({
                 />
                 <p>priority: {priority}</p>
             </div>
-            <div className="GoodCard__action">
-                <button onClick={addToBasket}>Add to Cart</button>
-                <span className="GoodCard__price">{price} &curren;</span>
+            <div className="GoodDetail__action">
+                <button onClick={handleAddToCart}>Add to Cart</button>
+                <span className="GoodDetail__price">{price} &curren;</span>
             </div>
         </div>
     );
