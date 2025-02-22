@@ -4,6 +4,8 @@ import { Catalog } from '../../pages/Catalog';
 import { Orders } from '../../pages/Orders';
 import { CatalogItem } from '../../pages/CatalogItem';
 import { NotFound } from '../../pages/NotFound';
+import { Basket } from '../../pages/Basket';
+import { Profile } from '../../pages/Profile';
 
 export const AppRouterRoutes = () => {
     return (
@@ -23,6 +25,14 @@ export const AppRouterRoutes = () => {
             <Route
                 path="/orders"
                 element={<Orders />}
+            />
+            <Route
+                path="/basket"
+                element={<Basket />}
+            />
+            <Route
+                path="/profile"
+                element={<Profile />}
             />
             <Route
                 path="*"

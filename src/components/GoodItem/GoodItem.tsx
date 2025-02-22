@@ -28,16 +28,6 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
 }) => {
     const dispatch = useDispatch();
 
-    const onCardClicked = (e: React.MouseEvent<HTMLDivElement>) => {
-        const target = e.target as HTMLElement;
-
-        if (target.closest('.button')) {
-            return;
-        }
-
-        goCatalogItem?.();
-    };
-
     const handleAddToCart = () => {
         console.log('handleAddToCart');
         const goodInBasket: IGoodInBasket = {
@@ -53,17 +43,18 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
     };
 
     return (
-        <div
-            className="GoodItem"
-            onClick={onCardClicked}
-        >
+        <div className="GoodItem">
             <img
                 className="GoodItem__image"
                 src={background}
                 alt={name}
+                onClick={goCatalogItem}
             />
 
-            <div className="GoodItem__content">
+            <div
+                className="GoodItem__content"
+                onClick={goCatalogItem}
+            >
                 <span className="GoodItem__title">{name}</span>
                 <p>{description}</p>
                 <p>mainType:{mainType}</p>
