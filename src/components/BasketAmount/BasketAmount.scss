@@ -1,8 +1,14 @@
 @use 'src/styles/variables' as *;
 
 .BasketAmount {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    min-width: 2rem;
+    height: 2rem;
+    right: -0.3rem;
+    bottom: -0.3rem;
+    background-color: gold;
+    color: $header__logo-color-dark;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;

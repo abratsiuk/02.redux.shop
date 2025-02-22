@@ -10,7 +10,7 @@ export const AppRouterRoutes = () => {
         <Routes>
             <Route
                 path="/"
-                element={<Catalog />}
+                element={<Orders />}
             />
             <Route
                 path="/catalog"
