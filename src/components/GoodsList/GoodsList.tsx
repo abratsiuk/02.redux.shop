@@ -19,7 +19,7 @@ export const GoodsList: React.FC<IGoodListProps> = ({ goods = [] }) => {
                 goods.map((item: IGoodItem) => (
                     <GoodItem
                         key={item.id}
-                        onClick={() => navigate(`/catalog/${item.id}`)}
+                        goCatalogItem={() => navigate(`/catalog/${item.id}`)}
                         {...item}
                     />
                 ))

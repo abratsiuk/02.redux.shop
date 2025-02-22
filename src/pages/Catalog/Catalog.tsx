@@ -27,7 +27,6 @@ export const Catalog: React.FC = () => {
     useEffect(() => {
         if (qty === 0) {
             dispatch(loadGoods());
-            console.log('useEffect loadGoods');
         }
     }, [qty, dispatch]);
 

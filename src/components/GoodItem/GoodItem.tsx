@@ -6,7 +6,7 @@ import { addToBasket } from '../../store/basket/basket-actions';
 import { IGoodInBasket } from '../../interfaces/IGoodInBasket';
 
 export interface IGoodItemProps extends IGoodItem {
-    onClick?: () => void;
+    goCatalogItem?: () => void;
 }
 export const GoodItem: React.FC<IGoodItemProps> = ({
     id,
@@ -24,7 +24,7 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
     priority,
     displayType,
     mainType,
-    onClick,
+    goCatalogItem,
 }) => {
     const dispatch = useDispatch();
 
@@ -35,10 +35,11 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
             return;
         }
 
-        onClick?.();
+        goCatalogItem?.();
     };
 
     const handleAddToCart = () => {
+        console.log('handleAddToCart');
         const goodInBasket: IGoodInBasket = {
             id,
             name,
