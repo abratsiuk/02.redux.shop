@@ -56,3 +56,8 @@ npm install typescript@3.9.10
 npm install --legacy-peer-deps
 
 npm i immer
+
+------------------
+
+svg files
+https://icon-icons.com/icon/payment-marketplace-online-store-basket-market-mobile-app/73855

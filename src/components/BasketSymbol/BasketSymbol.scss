@@ -1,0 +1,16 @@
+@use 'src/styles/variables' as *;
+
+.BasketSymbol {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 5.1rem;
+    height: 5.1rem;
+    border: 1px solid $header__logo-color;
+    border-radius: 50%;
+    box-shadow: 1px 0 0.5rem $header__logo-color-dark;
+    &__img {
+        width: 5rem;
+        height: 5rem;
+    }
+}

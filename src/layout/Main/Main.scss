@@ -3,9 +3,11 @@
 .Main {
     height: calc(100vh - $header-height - $footer-height);
     background-color: $main-color;
+    position: relative;
 }
 
 .Main_scrollable {
     min-height: calc(100vh - $header-height - $footer-height);
     background-color: $main-color;
+    position: relative;
 }
