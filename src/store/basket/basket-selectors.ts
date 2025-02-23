@@ -27,3 +27,7 @@ export const selectBasketAmount = (state: RootState): number => {
         0
     );
 };
+
+export const selectIsBasketEmpty = (state: RootState): boolean => {
+    return isBasketEmpty(state.basket.items);
+};

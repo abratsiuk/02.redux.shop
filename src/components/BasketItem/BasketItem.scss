@@ -1,0 +1,10 @@
+@use 'src/styles/variables' as *;
+
+.BasketItem {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    &__image {
+        max-width: 10rem;
+    }
+}
