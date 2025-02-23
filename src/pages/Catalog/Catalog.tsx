@@ -12,6 +12,7 @@ import './Catalog.scss';
 import { GoodsList } from '../../components/GoodsList';
 import { GoodsStatus } from '../../store/goods/goods-reducer';
 import { Pagination } from '../../components/Pagination';
+import { useLoadGoodsIfEmpty } from '../../hooks/useLoadGoodsIfEmpty';
 
 const pageSize = 20;
 const pageNumber = 2;
@@ -19,16 +20,10 @@ export const Catalog: React.FC = () => {
     const goods = useTypedSelector(selectAllGoods);
     const { status, error, qty } = useTypedSelector(selectGoodsInfo);
 
-    const dispatch = useDispatch();
-
     const startIndex = (pageNumber - 1) * pageSize;
     const endIndex = startIndex + pageSize;
 
-    useEffect(() => {
-        if (qty === 0) {
-            dispatch(loadGoods());
-        }
-    }, [qty, dispatch]);
+    useLoadGoodsIfEmpty();
 
     return (
         <div className="Catalog">

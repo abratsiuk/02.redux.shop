@@ -10,9 +10,16 @@ export const selectGoodsInfo = (state: RootState) => ({
 export const selectAllGoods = (state: RootState): IGoodItem[] =>
     Object.values(state.goods.items);
 
-export const selectSelectedGoods = (
-    state: RootState
+export const selectGoodById = (
+    state: RootState,
+    id: string
 ): IGoodItem | undefined => {
-    const selectedId = state.goods.selectedId;
-    return selectedId ? state.goods.items[selectedId] : undefined;
+    return id ? state.goods.items[id] : undefined;
+};
+
+export const selectIsGoodsEmpty = (state: RootState): boolean => {
+    for (const _ in state.goods.items) {
+        return false;
+    }
+    return true;
 };

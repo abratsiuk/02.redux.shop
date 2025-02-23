@@ -12,14 +12,12 @@ export interface IGoodsState {
     status: GoodsStatus;
     error: string | null;
     items: Record<string, IGoodItem>;
-    selectedId: string | null;
 }
 
 const initialState: IGoodsState = {
     status: GoodsStatus.IDLE,
     error: null,
     items: {},
-    selectedId: null,
 };
 
 export const goodsReducer = (
@@ -48,11 +46,6 @@ export const goodsReducer = (
                 ...state,
                 status: GoodsStatus.REJECTED,
                 error: action.payload,
-            };
-        case GoodsActionTypes.SELECT_GOOD:
-            return {
-                ...state,
-                selectedId: action.payload,
             };
         default:
             return state;
