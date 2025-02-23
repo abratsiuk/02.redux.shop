@@ -3,9 +3,10 @@
 .BasketAmount {
     position: absolute;
     min-width: 2rem;
-    height: 2rem;
-    right: -0.3rem;
-    bottom: -0.3rem;
+    min-height: 2rem;
+    padding: 0.3rem;
+    right: -0.7rem;
+    bottom: -0.7rem;
     background-color: gold;
     color: $header__logo-color-dark;
     border-radius: 50%;

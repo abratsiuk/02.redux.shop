@@ -51,6 +51,8 @@ PS E:\R\02.redux.shop>
 nvm install 16.20.2
 nvm use 16.20.2
 
+nvm list
+
 npm install typescript@3.9.10
 
 npm install --legacy-peer-deps

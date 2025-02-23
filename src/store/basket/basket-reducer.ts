@@ -1,6 +1,7 @@
 import { BasketActionTypes, BasketActions } from './basket-actions';
 import { IBasketItem } from '../../interfaces/IBasketItem';
 import { produce } from 'immer';
+import { isBasketEmpty } from './basket-selectors';
 
 export interface IBasketState {
     items: Record<string, IBasketItem>;
@@ -18,10 +19,21 @@ export const basketReducer = (
         switch (action.type) {
             case BasketActionTypes.ADD_TO_BASKET:
                 const good = action.payload;
+                const nextIndex = isBasketEmpty(draftState.items)
+                    ? 0
+                    : Math.max(
+                          ...Object.values(draftState.items).map(
+                              (item) => item.index
+                          )
+                      ) + 1;
                 if (good.id in draftState.items) {
                     draftState.items[good.id].qty += 1;
                 } else {
-                    draftState.items[good.id] = { good, qty: 1 };
+                    draftState.items[good.id] = {
+                        index: nextIndex,
+                        good,
+                        qty: 1,
+                    };
                 }
                 break;
             case BasketActionTypes.UPDATE_IN_BASKET:

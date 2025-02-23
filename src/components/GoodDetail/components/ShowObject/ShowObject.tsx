@@ -16,7 +16,18 @@ export const ShowObject: React.FC<IShowObjectProps> = ({ name, value }) => {
                         key={key}
                         className="ShowObject__item"
                     >
-                        {key}: <strong>{val}</strong>
+                        {val.length > 40 ? (
+                            <>
+                                {key}: <strong>{val}</strong>
+                            </>
+                        ) : (
+                            <>
+                                <div>{key}:</div>{' '}
+                                <div>
+                                    <strong>{val}</strong>
+                                </div>
+                            </>
+                        )}
                     </div>
                 ))
             ) : (
