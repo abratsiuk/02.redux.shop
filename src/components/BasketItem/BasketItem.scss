@@ -1,10 +1,87 @@
 @use 'src/styles/variables' as *;
 
 .BasketItem {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 2rem $basket__image-size 1fr 8rem 4rem;
+    grid-template-rows: $basket__image-size 5rem;
+    align-items: center;
+    gap: 1rem;
+    // border: 1px solid black;
+    &__index {
+        text-align: right;
+        padding: 0.5rem;
+        grid-column: 1/2;
+        grid-row: span 2;
+    }
     &__image {
-        max-width: 10rem;
+        max-width: $basket__image-size;
+        max-height: $basket__image-size;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    &__content {
+        align-self: stretch;
+        grid-column: 3/4;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        height: 100%;
+    }
+    &__name {
+        font-size: 2.2rem;
+    }
+    &__type {
+        font-size: 1.8rem;
+    }
+    &__qty {
+        display: grid;
+        grid-template-columns: 7rem 2rem 3rem 4rem 3rem;
+        gap: 1rem;
+        margin: auto;
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+    &__price {
+        text-align: right;
+    }
+    &__multiply {
+        text-align: center;
+    }
+    &__value {
+        text-align: right;
+        padding-right: 1rem;
+        border: none;
+        border-bottom: 1px solid gray;
+    }
+    &__number {
+        text-align: right;
+        font-weight: bold;
+        font-size: 1.8rem;
+        grid-column: 4/5;
+        grid-row: span 2;
+    }
+    &__delete {
+        grid-column: 5/6;
+        grid-row: span 2;
+        height: 2.5rem;
+        width: 2.5rem;
+        position: relative;
+        cursor: pointer;
+        &::before {
+            position: absolute;
+            content: '\2716';
+            color: grey;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            font-size: 2rem;
+        }
     }
 }
+
+// .cell {
+//     padding: 0rem;
+//     border: 1px solid gray;
+// }

@@ -44,12 +44,6 @@ export const GoodDetail: React.FC<IGoodDetail> = (props) => {
         <div className="GoodDetail">
             <img
                 className="GoodDetail__image"
-                src={icon}
-                alt={name}
-                style={{ width: '10rem' }}
-            />
-            <img
-                className="GoodDetail__image"
                 src={background}
                 alt={name}
             />

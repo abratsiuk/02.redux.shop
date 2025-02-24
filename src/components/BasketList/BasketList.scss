@@ -1,8 +1,36 @@
 @use 'src/styles/variables' as *;
 
 .BasketList {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    gap: 2rem;
+    margin: auto;
+    // max-width: 100rem;
+    padding-top: 3rem;
+    &__totalRow {
+        display: grid;
+        grid-template-columns: 2rem $basket__image-size 1fr 8rem 4rem;
+        grid-template-rows: 5rem;
+        align-items: center;
+    }
+    &__totalText {
+        grid-column: 3/4;
+        text-align: right;
+        font-size: 1.8rem;
+    }
+    &__totalNumber {
+        grid-column: 4/5;
+        text-align: right;
+        font-weight: bold;
+        font-size: 1.8rem;
+    }
+    &__control {
+        display: flex;
+        justify-content: end;
+        padding-right: 5rem;
+    }
 }
+
+// .cell {
+//     padding: 0rem;
+//     border: 1px solid gray;
+// }

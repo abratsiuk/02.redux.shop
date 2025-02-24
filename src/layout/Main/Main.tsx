@@ -13,7 +13,10 @@ export const Main: React.FC<IMainProps> = ({ children }) => {
     const [className, setClassName] = useState<string>('main');
 
     useEffect(() => {
-        if (location.pathname.indexOf('/catalog') !== -1) {
+        if (
+            location.pathname.indexOf('/catalog') !== -1 ||
+            location.pathname.indexOf('/basket') !== -1
+        ) {
             setClassName('Main_scrollable');
         } else {
             setClassName('Main');
