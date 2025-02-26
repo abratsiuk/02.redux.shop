@@ -1,9 +1,9 @@
 @use 'src/styles/variables' as *;
 
 .OrdersList {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    gap: 2rem;
+    margin: auto;
+    // max-width: 100rem;
+    padding-top: 3rem;
 }

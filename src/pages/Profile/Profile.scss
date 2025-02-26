@@ -3,7 +3,21 @@
 .Profile {
     width: 100%;
     height: 100%;
-    display: flex;
+    margin: auto;
+    display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: flex-start;
+    gap: 5rem;
+    &__funds {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    &__orders {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
 }

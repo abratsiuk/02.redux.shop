@@ -12,13 +12,13 @@ export const OrdersItem: React.FC<IOrdersItemProps> = ({ item }) => {
         <div className="OrdersItem">
             <Link to={`/orders/${item.id}`}>
                 <div className="OrdersItem__id">Order ID: {item.id}</div>
-                <div className="OrdersItem__date">
-                    Created: {new Date(item.dateCreate).toLocaleString()}
-                </div>
-                <div className="OrdersItem__total">
-                    Total: {item.totalAmount} (Qty: {item.totalQty})
-                </div>
             </Link>
+            <div className="OrdersItem__date">
+                Created: {new Date(item.dateCreate).toLocaleString()}
+            </div>
+            <div className="OrdersItem__total">
+                Total: {item.totalAmount} (Qty: {item.totalQty})
+            </div>
             <div className="OrdersItem__state">State: {item.state}</div>
         </div>
     );

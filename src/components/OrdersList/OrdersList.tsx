@@ -4,13 +4,13 @@ import { IOrder } from '../../interfaces/IOrder';
 import { OrdersItem } from '../OrdersItem';
 
 interface IOrdersListProps {
-    items: IOrder[];
+    orders: IOrder[];
 }
 
-export const OrdersList: React.FC<IOrdersListProps> = ({ items }) => {
+export const OrdersList: React.FC<IOrdersListProps> = ({ orders }) => {
     return (
         <div className="OrdersList">
-            {items.map((item, index) => (
+            {orders.map((item, index) => (
                 <OrdersItem
                     key={item.id}
                     item={item}

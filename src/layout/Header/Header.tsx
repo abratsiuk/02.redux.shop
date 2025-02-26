@@ -11,6 +11,7 @@ import { IMenuItem } from '../../configs/IMenuItem';
 import './Header.scss';
 import { ReactComponent as Logo } from '../../assets/images/shop.svg';
 import { FundsSymbol } from '../../components/FundsSymbol';
+import { OrdersSymbol } from '../../components/OrdersSymbol';
 
 export const Header = () => {
     const dispatch = useDispatch();
@@ -39,7 +40,10 @@ export const Header = () => {
                 >
                     Redux Shop
                 </Link>
-                <FundsSymbol />
+                <div className="Header__symbols">
+                    <FundsSymbol />
+                    <OrdersSymbol />
+                </div>
             </div>
             <ul className="Header__menu">
                 {menu?.map((m: IMenuItem) => {
