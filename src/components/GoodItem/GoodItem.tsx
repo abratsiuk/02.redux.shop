@@ -29,7 +29,6 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
-        console.log('handleAddToCart');
         const goodInBasket: IGoodInBasket = {
             id,
             name,

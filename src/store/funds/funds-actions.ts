@@ -32,10 +32,9 @@ const setFundsAction = (amount: number): ISetFundsAction => ({
     type: FundsActionEnum.SET_FUNDS,
     payload: amount,
 });
-export const setFounds = () => (dispatch: Dispatch<FundsActions>) => {
+export const setFunds = () => (dispatch: Dispatch<FundsActions>) => {
     let randomFunds = new Date().getSeconds() * 100;
-    randomFunds =
-        randomFunds < 1000 ? 1000 : randomFunds > 3000 ? 3000 : randomFunds;
+    randomFunds = randomFunds < 1000 ? 1000 : randomFunds;
     dispatch(setFundsAction(randomFunds));
 };
 

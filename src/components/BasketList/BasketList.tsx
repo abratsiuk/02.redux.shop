@@ -7,6 +7,7 @@ import { selectBasketAmount } from '../../store/basket/basket-selectors';
 import { useDispatch } from 'react-redux';
 import { addOrder } from '../../store/orders/orders-actions';
 import { clearBasket } from '../../store/basket/basket-actions';
+import { decreaseFunds } from '../../store/funds/funds-actions';
 
 export interface IBasketListProps extends IBasketState {}
 
@@ -20,8 +21,8 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
 
     const handleCheckout = () => {
         dispatch(addOrder(items));
+        dispatch(decreaseFunds(amount));
         dispatch(clearBasket());
-        console.log(clearBasket);
     };
 
     return (
