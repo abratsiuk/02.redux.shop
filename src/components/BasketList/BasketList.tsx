@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { addOrder } from '../../store/orders/orders-actions';
 import { clearBasket } from '../../store/basket/basket-actions';
 import { decreaseFunds } from '../../store/funds/funds-actions';
+import { selectFunds } from '../../store/funds/funds-selectors';
 
 export interface IBasketListProps extends IBasketState {}
 
@@ -18,6 +19,9 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
     const positions = Object.values(items).sort((a, b) =>
         a.index > b.index ? 1 : -1
     );
+    const funds = useTypedSelector(selectFunds);
+
+    const isFundsEnough = funds >= amount;
 
     const handleCheckout = () => {
         dispatch(addOrder(items));
@@ -39,7 +43,11 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
                 <div className="cell BasketList__totalNumber">{amount}</div>
             </div>
             <div className="cell BasketList__control">
-                <button onClick={handleCheckout}>Checkout</button>
+                {isFundsEnough ? (
+                    <button onClick={handleCheckout}>Checkout</button>
+                ) : (
+                    <p className="BasketList__notEnought">Not enough funds</p>
+                )}
             </div>
         </div>
     );
