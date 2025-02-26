@@ -6,6 +6,7 @@ import { CatalogItem } from '../../pages/CatalogItem';
 import { NotFound } from '../../pages/NotFound';
 import { Basket } from '../../pages/Basket';
 import { Profile } from '../../pages/Profile';
+import { OrderDetail } from '../../pages/OrderDetail';
 
 export const AppRouterRoutes = () => {
     return (
@@ -25,6 +26,10 @@ export const AppRouterRoutes = () => {
             <Route
                 path="/orders"
                 element={<Orders />}
+            />
+            <Route
+                path="/orders/:id"
+                element={<OrderDetail />}
             />
             <Route
                 path="/basket"
