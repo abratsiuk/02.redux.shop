@@ -49,8 +49,8 @@ export const basketReducer = (
                 }
                 break;
             case BasketActionTypes.CLEAR_BASKET:
-                draftState = initialState;
-                break;
+                return initialState;
+
             default:
                 break;
         }

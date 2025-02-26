@@ -4,14 +4,26 @@ import { IBasketState } from '../../store/basket/basket-reducer';
 import { BasketItem } from '../BasketItem';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectBasketAmount } from '../../store/basket/basket-selectors';
+import { useDispatch } from 'react-redux';
+import { addOrderThunk } from '../../store/orders/orders-actions';
+import { clearBasket } from '../../store/basket/basket-actions';
 
 export interface IBasketListProps extends IBasketState {}
 
 export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
+    const dispatch = useDispatch();
+
     const amount = useTypedSelector(selectBasketAmount);
     const positions = Object.values(items).sort((a, b) =>
         a.index > b.index ? 1 : -1
     );
+
+    const handleCheckout = () => {
+        dispatch(addOrderThunk(items));
+        dispatch(clearBasket());
+        console.log(clearBasket);
+    };
+
     return (
         <div className="BasketList">
             {positions.map((item, index) => (
@@ -26,7 +38,7 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
                 <div className="cell BasketList__totalNumber">{amount}</div>
             </div>
             <div className="cell BasketList__control">
-                <button>Checkout</button>
+                <button onClick={handleCheckout}>Checkout</button>
             </div>
         </div>
     );

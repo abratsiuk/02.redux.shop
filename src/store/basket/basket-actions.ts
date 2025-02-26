@@ -1,10 +1,10 @@
 import { IGoodInBasket } from '../../interfaces/IGoodInBasket';
 
 export enum BasketActionTypes {
-    ADD_TO_BASKET = 'basket/ADD_TO_BASKET',
-    UPDATE_IN_BASKET = 'basket/UPDATE_IN_BASKET',
-    DELETE_FROM_BASKET = 'basket/DELETE_FROM_BASKET',
-    CLEAR_BASKET = 'basket/CLEAR_BASKET',
+    ADD_TO_BASKET = '@@basket/ADD_TO_BASKET',
+    UPDATE_IN_BASKET = '@@basket/UPDATE_IN_BASKET',
+    DELETE_FROM_BASKET = '@@basket/DELETE_FROM_BASKET',
+    CLEAR_BASKET = '@@basket/CLEAR_BASKET',
 }
 
 interface IUpdateBasketPayload {

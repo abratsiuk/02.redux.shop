@@ -4,9 +4,9 @@ import * as api from '../../config';
 import { Dispatch } from 'redux';
 
 export enum GoodsActionTypes {
-    SET_GOODS = 'goods/SET_GOODS',
-    SET_LOADING = 'goods/SET_LOADING',
-    SET_ERROR = 'goods/SET_ERROR',
+    SET_GOODS = '@@goods/SET_GOODS',
+    SET_LOADING = '@@goods/SET_LOADING',
+    SET_ERROR = '@@goods/SET_ERROR',
 }
 interface ISetGoodsAction {
     type: GoodsActionTypes.SET_GOODS;
