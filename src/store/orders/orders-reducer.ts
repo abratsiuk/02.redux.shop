@@ -1,22 +1,14 @@
 import { IBasketItem } from '../../interfaces/IBasketItem';
 import { OrdersActions, OrdersActionEnum } from './orders-actions';
 import { produce } from 'immer';
+import { IOrder } from '../../interfaces/IOrder';
 
 export enum OrderStateEnum {
     CREATED = 'CREATED',
     RECEIVED = 'RECEIVED',
     CANCELED = 'CANCELED',
 }
-interface IOrder {
-    id: number;
-    items: Record<string, IBasketItem>;
-    totalQty: number;
-    totalAmount: number;
-    state: OrderStateEnum;
-    dateCreate: number;
-    dateReceive: number | null;
-    dateCancel: number | null;
-}
+
 export interface IOrdersState {
     orders: IOrder[];
 }
