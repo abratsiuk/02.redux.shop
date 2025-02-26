@@ -1,8 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-// import { useSelector } from 'react-redux';
-import { loadGoods } from '../../store/goods/goods-actions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import {
     selectAllGoods,
@@ -12,7 +8,6 @@ import './Catalog.scss';
 import { GoodsList } from '../../components/GoodsList';
 import { GoodsStatus } from '../../store/goods/goods-reducer';
 import { Pagination } from '../../components/Pagination';
-import { useLoadGoodsIfEmpty } from '../../hooks/useLoadGoodsIfEmpty';
 
 const pageSize = 20;
 const pageNumber = 2;
@@ -22,8 +17,6 @@ export const Catalog: React.FC = () => {
 
     const startIndex = (pageNumber - 1) * pageSize;
     const endIndex = startIndex + pageSize;
-
-    useLoadGoodsIfEmpty();
 
     return (
         <div className="Catalog">

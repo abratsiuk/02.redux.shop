@@ -1,4 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { selectIsGoodsEmpty } from '../../store/goods/goods-selectors';
+import { loadGoods } from '../../store/goods/goods-actions';
+import { setFounds } from '../../store/funds/funds-actions';
+
 import { Link, NavLink } from 'react-router-dom';
 import { menu } from '../../configs';
 import { IMenuItem } from '../../configs/IMenuItem';
@@ -6,6 +12,19 @@ import './Header.scss';
 import { ReactComponent as Logo } from '../../assets/images/shop.svg';
 
 export const Header = () => {
+    const dispatch = useDispatch();
+    const isGoodsEmpty = useTypedSelector(selectIsGoodsEmpty);
+
+    useEffect(() => {
+        if (isGoodsEmpty) {
+            dispatch(loadGoods());
+        }
+    }, [isGoodsEmpty, dispatch]);
+
+    useEffect(() => {
+        dispatch(setFounds);
+    }, [dispatch]);
+
     return (
         <header
             id="header"

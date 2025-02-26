@@ -4,14 +4,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectGoodById } from '../../store/goods/goods-selectors';
 import { GoodDetail } from '../../components/GoodDetail';
-import { useLoadGoodsIfEmpty } from '../../hooks/useLoadGoodsIfEmpty';
 
 export const CatalogItem: React.FC = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const good = useTypedSelector((state) => selectGoodById(state, id ?? ''));
-
-    useLoadGoodsIfEmpty();
 
     return (
         <div className="CatalogItem">

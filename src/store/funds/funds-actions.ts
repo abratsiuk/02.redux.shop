@@ -1,3 +1,5 @@
+import { Dispatch } from 'redux';
+
 export enum FundsActionEnum {
     SET_FUNDS = '@@funds/SET_FUNDS',
     CLEAR_FUNDS = '@@funds/CLEAR_FUNDS',
@@ -5,23 +7,34 @@ export enum FundsActionEnum {
     INCREASE_FUNDS = '@@funds/INCREASE_FUNDS',
 }
 
-interface ISetFunds {
+interface ISetFundsAction {
     type: FundsActionEnum.SET_FUNDS;
     payload: number;
 }
-interface IClearFunds {
+interface IClearFundsAction {
     type: FundsActionEnum.CLEAR_FUNDS;
 }
-interface IDecreaseFunds {
+interface IDecreaseFundsAction {
     type: FundsActionEnum.DECREASE_FUNDS;
     payload: number;
 }
-interface IIncreaseFunds {
+interface IIncreaseFundsAction {
     type: FundsActionEnum.INCREASE_FUNDS;
     payload: number;
 }
 export type FundsActions =
-    | ISetFunds
-    | IClearFunds
-    | IDecreaseFunds
-    | IIncreaseFunds;
+    | ISetFundsAction
+    | IClearFundsAction
+    | IDecreaseFundsAction
+    | IIncreaseFundsAction;
+
+const setFundsAction = (amount: number): ISetFundsAction => ({
+    type: FundsActionEnum.SET_FUNDS,
+    payload: amount,
+});
+export const setFounds = () => (dispatch: Dispatch<FundsActions>) => {
+    let randomFunds = new Date().getSeconds() * 100;
+    randomFunds =
+        randomFunds < 1000 ? 1000 : randomFunds > 3000 ? 3000 : randomFunds;
+    dispatch(setFundsAction(randomFunds));
+};
