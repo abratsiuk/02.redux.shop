@@ -1,7 +1,7 @@
 import { BasketActionTypes, BasketActions } from './basket-actions';
 import { IBasketItem } from '../../interfaces/IBasketItem';
 import { produce } from 'immer';
-import { isBasketEmpty } from './basket-selectors';
+import { isRecordEmpty } from '../../utils/helpers';
 
 export interface IBasketState {
     items: Record<string, IBasketItem>;
@@ -19,7 +19,7 @@ export const basketReducer = (
         switch (action.type) {
             case BasketActionTypes.ADD_TO_BASKET:
                 const good = action.payload;
-                const nextIndex = isBasketEmpty(draftState.items)
+                const nextIndex = isRecordEmpty(draftState.items)
                     ? 0
                     : Math.max(
                           ...Object.values(draftState.items).map(

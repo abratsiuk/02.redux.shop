@@ -77,7 +77,6 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
                 onClick={handeDeleteItem}
                 className="cell BasketItem__delete"
             ></div>
-            {/* <button className="cell BasketItem__delete"></button> */}
         </div>
     );
 };

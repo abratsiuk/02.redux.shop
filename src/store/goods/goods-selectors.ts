@@ -1,5 +1,6 @@
 import { IGoodItem } from '../../interfaces/IGoodItem';
 import { RootState } from '../root-reducer';
+import { isRecordEmpty } from '../../utils/helpers';
 
 export const selectGoodsInfo = (state: RootState) => ({
     status: state.goods.status,
@@ -17,9 +18,5 @@ export const selectGoodById = (
     return id ? state.goods.items[id] : undefined;
 };
 
-export const selectIsGoodsEmpty = (state: RootState): boolean => {
-    for (const _ in state.goods.items) {
-        return false;
-    }
-    return true;
-};
+export const selectIsGoodsEmpty = (state: RootState): boolean =>
+    isRecordEmpty(state.goods.items);
