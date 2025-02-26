@@ -4,7 +4,7 @@ interface IFundsState {
     amount: number;
 }
 const initialState: IFundsState = {
-    amount: 1000 + +`${new Date().getSeconds()}${new Date().getMinutes()}`,
+    amount: 0,
 };
 
 export const fundsReducer = (
@@ -15,7 +15,7 @@ export const fundsReducer = (
         case FundsActionEnum.SET_FUNDS:
             return { amount: action.payload };
         case FundsActionEnum.CLEAR_FUNDS:
-            return { amount: 0 };
+            return initialState;
         case FundsActionEnum.DECREASE_FUNDS:
             return {
                 amount:

@@ -38,3 +38,15 @@ export const setFounds = () => (dispatch: Dispatch<FundsActions>) => {
         randomFunds < 1000 ? 1000 : randomFunds > 3000 ? 3000 : randomFunds;
     dispatch(setFundsAction(randomFunds));
 };
+
+export const clearFunds = (): IClearFundsAction => ({
+    type: FundsActionEnum.CLEAR_FUNDS,
+});
+export const decreaseFunds = (amount: number): IDecreaseFundsAction => ({
+    type: FundsActionEnum.DECREASE_FUNDS,
+    payload: amount,
+});
+export const increaseFunds = (amount: number): IIncreaseFundsAction => ({
+    type: FundsActionEnum.INCREASE_FUNDS,
+    payload: amount,
+});

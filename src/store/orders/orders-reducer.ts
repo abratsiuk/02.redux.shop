@@ -40,6 +40,24 @@ export const ordersReducer = (
                     dateCancel: null,
                 });
                 break;
+            case OrdersActionEnum.CANCEL_ORDER:
+                const orderCancelled = draftState.orders.find(
+                    (item) => item.id === action.payload.id
+                );
+                if (orderCancelled) {
+                    orderCancelled.dateCancel = action.payload.dateCancel;
+                }
+                break;
+            case OrdersActionEnum.RECEIVE_ORDER:
+                const orderReceived = draftState.orders.find(
+                    (item) => item.id === action.payload.id
+                );
+                if (orderReceived) {
+                    orderReceived.dateCancel = action.payload.dateReceive;
+                }
+                break;
+            case OrdersActionEnum.CLEAR_ORDERS:
+                return initialState;
             default:
                 break;
         }

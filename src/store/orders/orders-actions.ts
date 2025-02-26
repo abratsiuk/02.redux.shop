@@ -5,25 +5,48 @@ export enum OrdersActionEnum {
     ADD_ORDER = '@@orders/ADD_ORDER',
     CANCEL_ORDER = '@@orders/CANCEL_ORDER',
     RECEIVE_ORDER = '@@orders/RECEIVE_ORDER',
-    SET_ORDERS = '@@orders/SET_ORDERS',
     CLEAR_ORDERS = '@@orders/CLEAR_ORDERS',
 }
 
-export interface IAddOrderPayload {
+interface IAddOrderPayload {
     id: number;
     items: Record<string, IBasketItem>;
     totalQty: number;
     totalAmount: number;
     dateCreate: number;
 }
+interface ICancelOrderPayload {
+    id: number;
+    dateCancel: number;
+}
+interface IReceiveOrderPayload {
+    id: number;
+    dateReceive: number;
+}
+
 interface IAddOrderAction {
     type: OrdersActionEnum.ADD_ORDER;
     payload: IAddOrderPayload;
 }
+interface ICancelOrderAction {
+    type: OrdersActionEnum.CANCEL_ORDER;
+    payload: ICancelOrderPayload;
+}
+interface IReceiveOrderAction {
+    type: OrdersActionEnum.RECEIVE_ORDER;
+    payload: IReceiveOrderPayload;
+}
+interface IClearOrdersAction {
+    type: OrdersActionEnum.CLEAR_ORDERS;
+}
 
-export type OrdersActions = IAddOrderAction;
+export type OrdersActions =
+    | IAddOrderAction
+    | ICancelOrderAction
+    | IReceiveOrderAction
+    | IClearOrdersAction;
 
-const addOrder = ({
+const addOrderAction = ({
     id,
     items,
     totalQty,
@@ -33,11 +56,10 @@ const addOrder = ({
     type: OrdersActionEnum.ADD_ORDER,
     payload: { id, items, totalQty, totalAmount, dateCreate },
 });
-
-export const addOrderThunk = (items: Record<string, IBasketItem>) => {
+export const addOrder = (items: Record<string, IBasketItem>) => {
     return async (dispatch: Dispatch<OrdersActions>) => {
         dispatch(
-            addOrder({
+            addOrderAction({
                 items,
                 id: Date.now(),
                 dateCreate: Date.now(),
@@ -54,3 +76,41 @@ export const addOrderThunk = (items: Record<string, IBasketItem>) => {
         );
     };
 };
+
+const cancelOrderAction = ({
+    id,
+    dateCancel,
+}: ICancelOrderPayload): ICancelOrderAction => ({
+    type: OrdersActionEnum.CANCEL_ORDER,
+    payload: { id, dateCancel },
+});
+export const cancelOrder =
+    (id: number) => (dispatch: Dispatch<OrdersActions>) => {
+        dispatch(
+            cancelOrderAction({
+                id,
+                dateCancel: Date.now(),
+            })
+        );
+    };
+
+const receiveOrderAction = ({
+    id,
+    dateReceive,
+}: IReceiveOrderPayload): IReceiveOrderAction => ({
+    type: OrdersActionEnum.RECEIVE_ORDER,
+    payload: { id, dateReceive },
+});
+export const receiveOrder =
+    (id: number) => (dispatch: Dispatch<OrdersActions>) => {
+        dispatch(
+            receiveOrderAction({
+                id,
+                dateReceive: Date.now(),
+            })
+        );
+    };
+
+export const clearOrders = (): IClearOrdersAction => ({
+    type: OrdersActionEnum.CLEAR_ORDERS,
+});

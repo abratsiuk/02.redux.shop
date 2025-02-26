@@ -5,7 +5,7 @@ import { BasketItem } from '../BasketItem';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectBasketAmount } from '../../store/basket/basket-selectors';
 import { useDispatch } from 'react-redux';
-import { addOrderThunk } from '../../store/orders/orders-actions';
+import { addOrder } from '../../store/orders/orders-actions';
 import { clearBasket } from '../../store/basket/basket-actions';
 
 export interface IBasketListProps extends IBasketState {}
@@ -19,7 +19,7 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
     );
 
     const handleCheckout = () => {
-        dispatch(addOrderThunk(items));
+        dispatch(addOrder(items));
         dispatch(clearBasket());
         console.log(clearBasket);
     };
