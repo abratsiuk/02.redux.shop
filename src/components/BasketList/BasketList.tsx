@@ -24,6 +24,8 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
     const isFundsEnough = funds >= amount;
 
     const handleCheckout = () => {
+        if (!isFundsEnough) return;
+
         dispatch(addOrder(items));
         dispatch(decreaseFunds(amount));
         dispatch(clearBasket());
