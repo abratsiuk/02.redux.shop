@@ -4,7 +4,7 @@ interface IFundsState {
     amount: number;
 }
 const initialState: IFundsState = {
-    amount: 0,
+    amount: 10000,
 };
 
 export const fundsReducer = (
@@ -12,8 +12,6 @@ export const fundsReducer = (
     action: FundsActions
 ): IFundsState => {
     switch (action.type) {
-        case FundsActionEnum.SET_FUNDS:
-            return { amount: action.payload };
         case FundsActionEnum.CLEAR_FUNDS:
             return initialState;
         case FundsActionEnum.DECREASE_FUNDS:

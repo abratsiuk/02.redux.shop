@@ -23,10 +23,6 @@ export const Header = () => {
         }
     }, [isGoodsEmpty, dispatch]);
 
-    // useEffect(() => {
-    //     dispatch(setFunds());
-    // }, [dispatch]);
-
     return (
         <header
             id="header"
