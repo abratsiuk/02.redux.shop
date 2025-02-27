@@ -1,0 +1,14 @@
+@use 'src/styles/variables' as *;
+
+.OrderState {
+    font-size: 1.8rem;
+    &-done {
+        color: #2fa546;
+    }
+    &-waiting {
+        color: #f39c12;
+    }
+    &-canceled {
+        color: #cb4335;
+    }
+}

@@ -2,13 +2,13 @@ import { IBasketItem } from '../../interfaces/IBasketItem';
 import { Dispatch } from 'redux';
 
 export enum OrdersActionEnum {
-    ADD_ORDER = '@@orders/ADD_ORDER',
+    CREATE_ORDER = '@@orders/CREATE_ORDER',
     CANCEL_ORDER = '@@orders/CANCEL_ORDER',
-    RECEIVE_ORDER = '@@orders/RECEIVE_ORDER',
+    ACCEPT_ORDER = '@@orders/ACCEPT_ORDER',
     CLEAR_ORDERS = '@@orders/CLEAR_ORDERS',
 }
 
-interface IAddOrderPayload {
+interface ICreateOrderPayload {
     id: number;
     items: Record<string, IBasketItem>;
     totalQty: number;
@@ -19,47 +19,48 @@ interface ICancelOrderPayload {
     id: number;
     dateCancel: number;
 }
-interface IReceiveOrderPayload {
+interface IAcceptOrderPayload {
     id: number;
     dateReceive: number;
 }
 
-interface IAddOrderAction {
-    type: OrdersActionEnum.ADD_ORDER;
-    payload: IAddOrderPayload;
+interface ICreateOrderAction {
+    type: OrdersActionEnum.CREATE_ORDER;
+    payload: ICreateOrderPayload;
 }
 interface ICancelOrderAction {
     type: OrdersActionEnum.CANCEL_ORDER;
     payload: ICancelOrderPayload;
 }
-interface IReceiveOrderAction {
-    type: OrdersActionEnum.RECEIVE_ORDER;
-    payload: IReceiveOrderPayload;
+interface IAcceptOrderAction {
+    type: OrdersActionEnum.ACCEPT_ORDER;
+    payload: IAcceptOrderPayload;
 }
+
 interface IClearOrdersAction {
     type: OrdersActionEnum.CLEAR_ORDERS;
 }
 
 export type OrdersActions =
-    | IAddOrderAction
+    | ICreateOrderAction
+    | IAcceptOrderAction
     | ICancelOrderAction
-    | IReceiveOrderAction
     | IClearOrdersAction;
 
-const addOrderAction = ({
+const createOrderAction = ({
     id,
     items,
     totalQty,
     totalAmount,
     dateCreate,
-}: IAddOrderPayload): IAddOrderAction => ({
-    type: OrdersActionEnum.ADD_ORDER,
+}: ICreateOrderPayload): ICreateOrderAction => ({
+    type: OrdersActionEnum.CREATE_ORDER,
     payload: { id, items, totalQty, totalAmount, dateCreate },
 });
-export const addOrder = (items: Record<string, IBasketItem>) => {
+export const createOrder = (items: Record<string, IBasketItem>) => {
     return async (dispatch: Dispatch<OrdersActions>) => {
         dispatch(
-            addOrderAction({
+            createOrderAction({
                 items,
                 id: Date.now(),
                 dateCreate: Date.now(),
@@ -94,17 +95,17 @@ export const cancelOrder =
         );
     };
 
-const receiveOrderAction = ({
+const acceptOrderAction = ({
     id,
     dateReceive,
-}: IReceiveOrderPayload): IReceiveOrderAction => ({
-    type: OrdersActionEnum.RECEIVE_ORDER,
+}: IAcceptOrderPayload): IAcceptOrderAction => ({
+    type: OrdersActionEnum.ACCEPT_ORDER,
     payload: { id, dateReceive },
 });
 export const receiveOrder =
     (id: number) => (dispatch: Dispatch<OrdersActions>) => {
         dispatch(
-            receiveOrderAction({
+            acceptOrderAction({
                 id,
                 dateReceive: Date.now(),
             })

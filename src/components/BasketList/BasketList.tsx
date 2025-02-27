@@ -5,7 +5,7 @@ import { BasketItem } from '../BasketItem';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectBasketAmount } from '../../store/basket/basket-selectors';
 import { useDispatch } from 'react-redux';
-import { addOrder } from '../../store/orders/orders-actions';
+import { createOrder } from '../../store/orders/orders-actions';
 import { clearBasket } from '../../store/basket/basket-actions';
 import { decreaseFunds } from '../../store/funds/funds-actions';
 import { selectFunds } from '../../store/funds/funds-selectors';
@@ -26,7 +26,7 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
     const handleCheckout = () => {
         if (!isFundsEnough) return;
 
-        dispatch(addOrder(items));
+        dispatch(createOrder(items));
         dispatch(decreaseFunds(amount));
         dispatch(clearBasket());
     };

@@ -3,10 +3,15 @@ import { produce } from 'immer';
 import { IOrder } from '../../interfaces/IOrder';
 
 export enum OrderStateEnum {
-    CREATED = 'CREATED',
-    RECEIVED = 'RECEIVED',
+    DONE = 'DONE',
+    WAITING = 'WAITING',
     CANCELED = 'CANCELED',
 }
+export const OrderStateLabels: Record<OrderStateEnum, string> = {
+    [OrderStateEnum.DONE]: 'Done',
+    [OrderStateEnum.WAITING]: 'Waiting for acceptance or cancellation',
+    [OrderStateEnum.CANCELED]: 'Cancelled',
+};
 
 export interface IOrdersState {
     orders: IOrder[];
@@ -19,14 +24,14 @@ export const ordersReducer = (
 ): IOrdersState => {
     return produce(state, (draftState) => {
         switch (action.type) {
-            case OrdersActionEnum.ADD_ORDER:
+            case OrdersActionEnum.CREATE_ORDER:
                 draftState.orders.push({
                     id: action.payload.id,
                     items: action.payload.items,
                     totalQty: action.payload.totalQty,
                     totalAmount: action.payload.totalAmount,
                     dateCreate: action.payload.dateCreate,
-                    state: OrderStateEnum.CREATED,
+                    state: OrderStateEnum.WAITING,
                     dateReceive: null,
                     dateCancel: null,
                 });
@@ -39,7 +44,7 @@ export const ordersReducer = (
                     orderCancelled.dateCancel = action.payload.dateCancel;
                 }
                 break;
-            case OrdersActionEnum.RECEIVE_ORDER:
+            case OrdersActionEnum.ACCEPT_ORDER:
                 const orderReceived = draftState.orders.find(
                     (item) => item.id === action.payload.id
                 );
