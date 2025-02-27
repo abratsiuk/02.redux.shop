@@ -3,6 +3,7 @@ import './OrdersItemShort.scss';
 import { IOrder } from '../../interfaces/IOrder';
 import { dateToShortString, getOrderIcons } from '../../utils/helpers';
 import { OrderStateLabels } from '../../store/orders/orders-reducer';
+import { OrderState } from '../OrderState';
 
 export interface IOrdersItemShortProps {
     item: IOrder;
@@ -15,7 +16,7 @@ export const OrdersItemShort: React.FC<IOrdersItemShortProps> = ({ item }) => {
         <div className="OrdersItemShort">
             <div className="OrderItemShort__name">{name}</div>
             <div className="OrderItemShort__state">
-                {OrderStateLabels[item.state]}
+                <OrderState {...item.state} />
             </div>
 
             <div className="OrdersItemShort__icons">
