@@ -1,0 +1,74 @@
+{
+    "basket": {
+        "items": {}
+    },
+    "orders": {
+        "orders": [
+            {
+                "id": 1740670509846,
+                "items": {
+                    "v2_eeefee0ea37d1ce475825c5367e73d57568c21ee0f4e93dc6e17e17603f92e5f": {
+                        "index": 0,
+                        "good": {
+                            "id": "v2_eeefee0ea37d1ce475825c5367e73d57568c21ee0f4e93dc6e17e17603f92e5f",
+                            "name": "Аристократическая миска",
+                            "description": "Для самых изысканных кормов.",
+                            "displayType": "Украшение на спину",
+                            "mainType": "backpack",
+                            "icon": "https://media.fortniteapi.io/images/displayAssets/v2/MAX/DAv2_Backpack_GrumbleWoof/MI_0.png",
+                            "price": 200
+                        },
+                        "qty": 2
+                    }
+                },
+                "totalQty": 2,
+                "totalAmount": 400,
+                "dateCreate": 1740670509846,
+                "state": "CREATED",
+                "dateReceive": null,
+                "dateCancel": null
+            },
+            {
+                "id": 1740670524572,
+                "items": {
+                    "v2_d4c8cf20b27a36440d4e136915a163f86d55c22b7d310093b6746a411fbc1da1": {
+                        "index": 0,
+                        "good": {
+                            "id": "v2_d4c8cf20b27a36440d4e136915a163f86d55c22b7d310093b6746a411fbc1da1",
+                            "name": "Обузданный шторм",
+                            "description": "Буря в колбе воды.",
+                            "displayType": "Украшение на спину",
+                            "mainType": "backpack",
+                            "icon": "https://media.fortniteapi.io/images/displayAssets/v2/MAX/DAv2_Backpack_WaveTrail/MI_0.png",
+                            "price": 200
+                        },
+                        "qty": 4
+                    },
+                    "v2_5810cc6d7a5f1a0e5485b5f8509acbc93d83d615f71eedc6c3db1c121de9039a": {
+                        "index": 1,
+                        "good": {
+                            "id": "v2_5810cc6d7a5f1a0e5485b5f8509acbc93d83d615f71eedc6c3db1c121de9039a",
+                            "name": "Шипастый футляр",
+                            "description": "Гарантирует сохранность ваших сокровищ.",
+                            "displayType": "Украшение на спину",
+                            "mainType": "backpack",
+                            "icon": "https://media.fortniteapi.io/images/displayAssets/v2/MAX/DAv2_Backpack_PartyGold/MI_0.png",
+                            "price": 200
+                        },
+                        "qty": 4
+                    }
+                },
+                "totalQty": 8,
+                "totalAmount": 1600,
+                "dateCreate": 1740670524572,
+                "state": "CREATED",
+                "dateReceive": null,
+                "dateCancel": null
+            }
+        ]
+    }","funds":"{
+        "amount": 6000
+    }","_persist":"{
+        "version": -1,
+        "rehydrated": true
+    }"}

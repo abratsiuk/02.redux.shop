@@ -13,7 +13,7 @@ const pageSize = 20;
 const pageNumber = 2;
 export const Catalog: React.FC = () => {
     const goods = useTypedSelector(selectAllGoods);
-    const { status, error, qty } = useTypedSelector(selectGoodsInfo);
+    const { status, error } = useTypedSelector(selectGoodsInfo);
 
     const startIndex = (pageNumber - 1) * pageSize;
     const endIndex = startIndex + pageSize;

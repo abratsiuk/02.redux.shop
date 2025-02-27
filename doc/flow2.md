@@ -69,3 +69,44 @@ https://icon-icons.com/icon/payment-marketplace-online-store-basket-market-mobil
 https://www.youtube.com/watch?v=b4btk12Evgw&t=136s&ab_channel=%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%9D%D0%B5%D0%BF%D0%BE%D0%BC%D0%BD%D1%8F%D1%89%D0%B8%D0%B9
 
 
+
+===========================
+redux-persist error: TypeError: storage.getItem(...).then is not a function
+getStoredState
+
+Iskin:
+### Причина ошибки:
+Ошибка:
+```
+TypeError: storage.getItem(...).then is not a function
+```
+возникает из-за того, что `storage` в `redux-persist` ожидается в виде асинхронного хранилища (например, `AsyncStorage` в React Native или `localForage` в браузере), а в коде используется `localStorage`, который **не поддерживает промисы** и не имеет метода `.then()`.
+
+### Решение:
+В файле `index.ts` заменить:
+```ts
+const persistConfig = {
+    key: 'root',
+    storage: localStorage, // ❌ Ошибка, localStorage не асинхронный
+    whitelis: ['basket', 'orders', 'funds'],
+};
+```
+на:
+```ts
+import storage from 'redux-persist/lib/storage'; // ✅ Подключаем правильное хранилище
+
+const persistConfig = {
+    key: 'root',
+    storage, // ✅ Используем корректное синхронное хранилище
+    whitelist: ['basket', 'orders', 'funds'], // ✅ Исправляем опечатку в whitelist
+};
+```
+
+### Что дальше?
+После внесения изменений:
+1. Перезапустите сервер (`yarn start`).
+2. Очистите локальное хранилище в браузере (DevTools → Application → Local Storage → Очистить).
+3. Убедитесь, что приложение больше не падает.
+
+Попробуйте и скажите, если останутся проблемы!
+========================

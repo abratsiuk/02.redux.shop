@@ -1,4 +1,3 @@
-import { IBasketItem } from '../../interfaces/IBasketItem';
 import { OrdersActions, OrdersActionEnum } from './orders-actions';
 import { produce } from 'immer';
 import { IOrder } from '../../interfaces/IOrder';

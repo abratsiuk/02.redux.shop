@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectIsGoodsEmpty } from '../../store/goods/goods-selectors';
 import { loadGoods } from '../../store/goods/goods-actions';
-import { setFunds } from '../../store/funds/funds-actions';
+// import { setFunds } from '../../store/funds/funds-actions';
 
 import { Link, NavLink } from 'react-router-dom';
 import { menu } from '../../configs';
@@ -23,9 +23,9 @@ export const Header = () => {
         }
     }, [isGoodsEmpty, dispatch]);
 
-    useEffect(() => {
-        dispatch(setFunds());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(setFunds());
+    // }, [dispatch]);
 
     return (
         <header
