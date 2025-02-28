@@ -1,0 +1,25 @@
+@use 'src/styles/variables' as *;
+
+.OrderShevron {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $color_transition;
+    &-closed,
+    &-opened {
+        * {
+            // stroke: gold;
+            fill: gray !important;
+        }
+        rect {
+            stroke: transparent;
+        }
+        :hover {
+            * {
+                fill: blue !important;
+            }
+        }
+    }
+}

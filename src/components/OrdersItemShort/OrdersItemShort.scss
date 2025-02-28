@@ -2,16 +2,42 @@
 
 .OrdersItemShort {
     display: grid;
+    grid-template-columns: minmax(40%, 1fr) 1fr 4rem;
+    grid-template-rows: 3rem 1fr;
+    justify-items: start;
+    align-items: start;
+    border: 2px solid $header-color;
+    border-radius: 1rem;
+    padding: 1.5rem;
     &__name {
+        grid-column: 1/2;
+        grid-row: 1/2;
     }
     &__state {
+        grid-column: 1/2;
+        grid-row: 2/3;
     }
     &__icons {
+        justify-self: center;
+        align-self: center;
+        grid-column: 2/3;
+        grid-row: 1 / span 2;
         display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: flex-start;
     }
     &__icon {
         display: block;
-        width: 2rem;
-        height: 2rem;
+        width: 5rem;
+        height: 5rem;
+    }
+    &__shevron {
+        justify-self: center;
+        align-self: center;
+        grid-column: 3/4;
+        grid-row: 1 / span 2;
     }
 }

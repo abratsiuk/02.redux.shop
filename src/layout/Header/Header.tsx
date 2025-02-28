@@ -34,7 +34,7 @@ export const Header = () => {
                     to="/"
                     className="Header__logo"
                 >
-                    Redux Shop
+                    Redux Game Shop
                 </Link>
                 <div className="Header__symbols">
                     <FundsSymbol />

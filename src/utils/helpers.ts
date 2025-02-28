@@ -1,4 +1,5 @@
 import { IOrder } from '../interfaces/IOrder';
+import { IOrderIcon } from '../interfaces/IOrderIcon';
 export const isRecordEmpty = <T>(items: Record<string, T>): boolean => {
     for (const _ in items) {
         return false;
@@ -14,12 +15,12 @@ export const dateToShortString = (dateNumber: number): string => {
     });
 };
 
-export const getOrderIcons = (order: IOrder): string[] => {
+export const getOrderIcons = (order: IOrder): IOrderIcon[] => {
     const positions = Object.values(order.items).sort((a, b) =>
         a.index > b.index ? 1 : -1
     );
     const icons = positions
         .filter((p) => !!p.good.icon)
-        .map((p) => p.good.icon as string);
+        .map((p) => ({ icon: p.good.icon as string, title: p.good.name }));
     return icons;
 };

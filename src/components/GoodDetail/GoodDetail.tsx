@@ -41,14 +41,21 @@ export const GoodDetail: React.FC<IGoodDetail> = (props) => {
 
     return (
         <div className="GoodDetail">
-            <img
-                className="GoodDetail__image"
-                src={background}
-                alt={name}
-            />
-
             <div className="GoodDetail__content">
-                <span className="GoodDetail__title">{name}</span>
+                <img
+                    className="GoodDetail__image"
+                    src={background}
+                    alt={name}
+                />
+                <div
+                    className="GoodDetail__title"
+                    style={{ color: colors?.color2 }}
+                >
+                    {name}
+                </div>
+                <div className="GoodDetail__price">{price}</div>
+            </div>
+            <div className="GoodDetail__content">
                 <p>{description}</p>
                 <ShowColor
                     name="color1"
@@ -89,7 +96,6 @@ export const GoodDetail: React.FC<IGoodDetail> = (props) => {
             </div>
             <div className="GoodDetail__action">
                 <button onClick={handleAddToCart}>Add to Cart</button>
-                <span className="GoodDetail__price">{price} &curren;</span>
             </div>
         </div>
     );

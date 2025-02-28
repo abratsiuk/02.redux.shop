@@ -54,7 +54,12 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
                 className="GoodItem__content"
                 onClick={goCatalogItem}
             >
-                <span className="GoodItem__title">{name}</span>
+                <span
+                    className="GoodItem__title"
+                    style={{ color: colors?.color2 }}
+                >
+                    {name}
+                </span>
                 <p>{description}</p>
                 <p>mainType:{mainType}</p>
                 {/* <p title={offerId}>offerId</p>
