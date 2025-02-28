@@ -11,7 +11,7 @@ export interface IOrdersItemProps {
 export const OrdersItem: React.FC<IOrdersItemProps> = ({ item }) => {
     const [closed, setClosed] = useState(true);
 
-    const toggleShevron = () => {
+    const toggleChevron = () => {
         setClosed((state) => !state);
     };
 
@@ -20,12 +20,12 @@ export const OrdersItem: React.FC<IOrdersItemProps> = ({ item }) => {
             {closed ? (
                 <OrdersItemShort
                     item={item}
-                    toggle={toggleShevron}
+                    toggle={toggleChevron}
                 />
             ) : (
                 <OrdersItemLong
                     item={item}
-                    toggle={toggleShevron}
+                    toggle={toggleChevron}
                 />
             )}
         </div>

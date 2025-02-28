@@ -8,22 +8,14 @@ import { OrderChevron } from '../OrderChevron';
 
 export interface IOrdersItemShortProps {
     item: IOrder;
-    toggle?: () => void;
 }
 
-export const OrdersItemShort: React.FC<IOrdersItemShortProps> = ({
-    item,
-    toggle,
-}) => {
+export const OrdersItemShort: React.FC<IOrdersItemShortProps> = ({ item }) => {
+    const name = `No. ${item.id} from ${dateToShortString(item.dateCreate)}`;
     const icons = getOrderIcons(item);
     return (
         <div className="OrdersItemShort">
-            <div className="OrderItemShort__name">
-                <span>
-                    No. <strong>{item.id}</strong> from{' '}
-                    {dateToShortString(item.dateCreate)}
-                </span>
-            </div>
+            <div className="OrderItemShort__name">{name}</div>
 
             <OrderState
                 className="OrderItemShort__state"
@@ -43,11 +35,7 @@ export const OrdersItemShort: React.FC<IOrdersItemShortProps> = ({
                     : null}
             </div>
 
-            <OrderChevron
-                className="OrdersItemShort__chevron"
-                toggle={toggle}
-                closed={true}
-            />
+            <OrderShevron className="OrdersItemShort__shevron" />
         </div>
     );
 };

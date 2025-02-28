@@ -42,14 +42,16 @@ export const ordersReducer = (
                 );
                 if (orderCancelled) {
                     orderCancelled.dateCancel = action.payload.dateCancel;
+                    orderCancelled.state = OrderStateEnum.CANCELED;
                 }
                 break;
             case OrdersActionEnum.ACCEPT_ORDER:
-                const orderReceived = draftState.orders.find(
+                const orderAccepted = draftState.orders.find(
                     (item) => item.id === action.payload.id
                 );
-                if (orderReceived) {
-                    orderReceived.dateCancel = action.payload.dateReceive;
+                if (orderAccepted) {
+                    orderAccepted.dateCancel = action.payload.dateReceive;
+                    orderAccepted.state = OrderStateEnum.DONE;
                 }
                 break;
             case OrdersActionEnum.CLEAR_ORDERS:

@@ -1,10 +1,13 @@
 import React from 'react';
 import './OrdersItemLong.scss';
+import { useDispatch } from 'react-redux';
+import { acceptOrder, cancelOrder } from '../../store/orders/orders-actions';
 import { IOrder } from '../../interfaces/IOrder';
 import { dateToShortString, getOrderIcons } from '../../utils/helpers';
 import { OrderState } from '../OrderState';
-import { OrderShevron } from '../OrderShevron';
+import { OrderChevron } from '../OrderChevron';
 import { OrdersItemLongItem } from '../OrdersItemLongItem';
+import { OrderStateEnum } from '../../store/orders/orders-reducer';
 
 export interface IOrdersItemLongProps {
     item: IOrder;
@@ -15,12 +18,21 @@ export const OrdersItemLong: React.FC<IOrdersItemLongProps> = ({
     item,
     toggle,
 }) => {
+    const dispatch = useDispatch();
+
+    const handleAcceptOrder = () => {
+        dispatch(acceptOrder(item.id));
+    };
+    const handleCancelOrder = () => {
+        dispatch(cancelOrder(item.id));
+    };
+
     const positions = Object.values(item.items).sort((a, b) =>
         a.index > b.index ? 1 : -1
     );
     return (
         <div className="OrdersItemLong">
-            <div className="OrderItemShort__name">
+            <div className="OrdersItemLong__name">
                 <span>
                     No. <strong>{item.id}</strong> from{' '}
                     {dateToShortString(item.dateCreate)}
@@ -31,7 +43,12 @@ export const OrdersItemLong: React.FC<IOrdersItemLongProps> = ({
                 className="OrderItemShort__state"
                 state={item.state}
             />
-
+            {item.state === OrderStateEnum.WAITING ? (
+                <div className="OrdersItemLong__command">
+                    <button onClick={handleAcceptOrder}>Accept</button>
+                    <button onClick={handleCancelOrder}>Cancel</button>
+                </div>
+            ) : null}
             <div className="OrdersItemLong__goods">
                 {positions.map((item, index) => (
                     <OrdersItemLongItem
@@ -47,10 +64,10 @@ export const OrdersItemLong: React.FC<IOrdersItemLongProps> = ({
                 <div>{item.totalAmount}</div>
             </div>
 
-            <OrderShevron
-                className="OrdersItemLong__shevron"
+            <OrderChevron
+                className="OrdersItemLong__chevron"
                 toggle={toggle}
-                closed={true}
+                closed={false}
             />
         </div>
     );

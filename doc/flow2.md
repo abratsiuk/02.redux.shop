@@ -111,5 +111,5 @@ const persistConfig = {
 Попробуйте и скажите, если останутся проблемы!
 ========================
 
-галочка аккордеона - shevron
+галочка аккордеона - Chevron
 https://icon-icons.com/search/icons/?filtro=Chevron

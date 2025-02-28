@@ -34,10 +34,10 @@
         width: 5rem;
         height: 5rem;
     }
-    &__shevron {
+    &__chevron {
         justify-self: center;
         align-self: center;
         grid-column: 3/4;
-        grid-row: 1 / span 2;
+        grid-row: 1 / 2;
     }
 }

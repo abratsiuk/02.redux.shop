@@ -102,7 +102,7 @@ const acceptOrderAction = ({
     type: OrdersActionEnum.ACCEPT_ORDER,
     payload: { id, dateReceive },
 });
-export const receiveOrder =
+export const acceptOrder =
     (id: number) => (dispatch: Dispatch<OrdersActions>) => {
         dispatch(
             acceptOrderAction({
