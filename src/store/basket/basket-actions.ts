@@ -1,4 +1,4 @@
-import { IGoodInBasket } from '../../interfaces/IGoodInBasket';
+import { IBasketItem } from '../../interfaces/IBasketItem';
 
 export enum BasketActionTypes {
     ADD_TO_BASKET = '@@basket/ADD_TO_BASKET',
@@ -14,7 +14,7 @@ interface IUpdateBasketPayload {
 
 interface IAddToBasketAction {
     type: BasketActionTypes.ADD_TO_BASKET;
-    payload: IGoodInBasket;
+    payload: IBasketItem;
 }
 interface IUpdateInBasketAction {
     type: BasketActionTypes.UPDATE_IN_BASKET;
@@ -35,7 +35,7 @@ export type BasketActions =
     | IDeleteFromBasketAction
     | IClearBasketAction;
 
-export const addToBasket = (good: IGoodInBasket): IAddToBasketAction => ({
+export const addToBasket = (good: IBasketItem): IAddToBasketAction => ({
     type: BasketActionTypes.ADD_TO_BASKET,
     payload: good,
 });

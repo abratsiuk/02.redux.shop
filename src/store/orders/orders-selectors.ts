@@ -1,5 +1,5 @@
 import { RootState } from '../root-reducer';
-import { IOrder } from './orders-reducer';
+import { IOrder } from '../../interfaces/IOrder';
 
 export const selectOrders = (state: RootState): IOrder[] => state.orders.orders;
 

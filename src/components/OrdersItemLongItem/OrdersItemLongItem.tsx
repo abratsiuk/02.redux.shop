@@ -9,25 +9,30 @@ export interface IOrdersItemLongItem extends IBasketItem {
 
 export const OrdersItemLongItem: React.FC<IOrdersItemLongItem> = ({
     positionNumber,
-    index,
-    good,
+    id,
+    name,
+    description,
+    displayType,
+    mainType,
+    icon,
+    price,
     qty,
 }) => {
     return (
         <div className="OrdersItemLongItem">
             <img
                 className="OrdersItemLongItem__image"
-                src={good.icon}
-                alt={good.name}
+                src={icon}
+                alt={name}
             />
             <div className="OrdersItemLongItem__name">
-                <Link to={`/catalog/${good.id}`}>{good.name}</Link>
+                <Link to={`/catalog/${id}`}>{name}</Link>
             </div>
-            <div className="OrdersItemLongItem__type">{good.displayType}</div>
+            <div className="OrdersItemLongItem__type">{displayType}</div>
             <div className="OrdersItemLongItem__price">
-                {good.price} x {qty}
+                {price} x {qty}
             </div>
-            <div className="OrdersItemLongItem__number">{good.price * qty}</div>
+            <div className="OrdersItemLongItem__number">{price * qty}</div>
         </div>
     );
 };

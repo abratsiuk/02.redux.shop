@@ -16,16 +16,11 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
     const dispatch = useDispatch();
 
     const amount = useTypedSelector(selectBasketAmount);
-    const positions = Object.values(items).sort((a, b) =>
-        a.index > b.index ? 1 : -1
-    );
     const funds = useTypedSelector(selectFunds);
-
     const isFundsEnough = funds >= amount;
 
     const handleCheckout = () => {
         if (!isFundsEnough) return;
-
         dispatch(createOrder(items));
         dispatch(decreaseFunds(amount));
         dispatch(clearBasket());
@@ -33,9 +28,9 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
 
     return (
         <div className="BasketList">
-            {positions.map((item, index) => (
+            {items.map((item, index) => (
                 <BasketItem
-                    key={item.good.id}
+                    key={item.id}
                     {...item}
                     positionNumber={index + 1}
                 />

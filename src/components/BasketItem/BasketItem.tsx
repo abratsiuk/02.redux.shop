@@ -11,11 +11,15 @@ import { Link } from 'react-router-dom';
 export interface IBasketItemProps extends IBasketItem {
     positionNumber: number;
 }
-
 export const BasketItem: React.FC<IBasketItemProps> = ({
     positionNumber,
-    index,
-    good,
+    id,
+    name,
+    description,
+    displayType,
+    mainType,
+    icon,
+    price,
     qty,
 }) => {
     const dispatch = useDispatch();
@@ -24,7 +28,7 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
         if (qty > 0) {
-            dispatch(updateInBasket({ id: good.id, qty: qty - 1 }));
+            dispatch(updateInBasket({ id, qty: qty - 1 }));
         }
     };
     const handleChangeQty = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,17 +37,17 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
         if (isNaN(numberValue) || numberValue < 0) {
             return;
         }
-        dispatch(updateInBasket({ id: good.id, qty: numberValue }));
+        dispatch(updateInBasket({ id, qty: numberValue }));
     };
     const handleIncreaseQty = (
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
-        dispatch(updateInBasket({ id: good.id, qty: qty + 1 }));
+        dispatch(updateInBasket({ id, qty: qty + 1 }));
     };
     const handeDeleteItem = (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>
     ) => {
-        dispatch(deleteFromBasket(good.id));
+        dispatch(deleteFromBasket(id));
     };
 
     return (
@@ -51,17 +55,17 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
             <div className="cell BasketItem__index">{positionNumber}</div>
             <img
                 className="BasketItem__image"
-                src={good.icon}
-                alt={good.name}
+                src={icon}
+                alt={name}
             />
             <div className="cell BasketItem__content">
                 <div className="cell BasketItem__name">
-                    <Link to={`/catalog/${good.id}`}>{good.name}</Link>
+                    <Link to={`/catalog/${id}`}>{name}</Link>
                 </div>
-                <div className="cell BasketItem__type">{good.displayType}</div>
+                <div className="cell BasketItem__type">{displayType}</div>
             </div>
             <div className="cell BasketItem__qty">
-                <span className="cell BasketItem__price">{good.price}</span>
+                <span className="cell BasketItem__price">{price}</span>
                 <span className="cell BasketItem__multiply">*</span>
                 <button onClick={handleDecreaseQty}>-</button>
                 <input
@@ -72,7 +76,7 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
                 />
                 <button onClick={handleIncreaseQty}>+</button>
             </div>
-            <div className="cell BasketItem__number">{good.price * qty}</div>
+            <div className="cell BasketItem__number">{price * qty}</div>
             <div
                 onClick={handeDeleteItem}
                 className="cell BasketItem__delete"

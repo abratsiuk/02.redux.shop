@@ -1,5 +1,13 @@
 import { IGoodBase } from './IGoodBase';
-export interface IGoodItem extends IGoodBase {
+export interface IGoodItem {
+    id: string;
+    name?: string;
+    description?: string;
+    displayType?: string;
+    mainType?: string;
+    icon?: string;
+    price: number;
+
     offerId?: string;
     background?: string;
     colors?: {

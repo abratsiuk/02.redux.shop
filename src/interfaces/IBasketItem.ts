@@ -1,7 +1,10 @@
-import { IGoodInBasket } from './IGoodInBasket';
-
 export interface IBasketItem {
-    index: number;
-    good: IGoodInBasket;
+    id: string;
+    name?: string;
+    description?: string;
+    displayType?: string;
+    mainType?: string;
+    icon?: string;
+    price: number;
     qty: number;
 }

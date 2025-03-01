@@ -10,7 +10,7 @@ export enum OrdersActionEnum {
 
 interface ICreateOrderPayload {
     id: number;
-    items: Record<string, IBasketItem>;
+    items: IBasketItem[];
     totalQty: number;
     totalAmount: number;
     dateCreate: number;
@@ -57,20 +57,20 @@ const createOrderAction = ({
     type: OrdersActionEnum.CREATE_ORDER,
     payload: { id, items, totalQty, totalAmount, dateCreate },
 });
-export const createOrder = (items: Record<string, IBasketItem>) => {
+export const createOrder = (items: IBasketItem[]) => {
     return async (dispatch: Dispatch<OrdersActions>) => {
         dispatch(
             createOrderAction({
                 items,
                 id: Date.now(),
                 dateCreate: Date.now(),
-                totalQty: Object.values(items).reduce(
+                totalQty: items.reduce(
                     (acc: number, item: IBasketItem) => acc + item.qty,
                     0
                 ),
-                totalAmount: Object.values(items).reduce(
+                totalAmount: items.reduce(
                     (acc: number, item: IBasketItem) =>
-                        acc + item.qty * item.good.price,
+                        acc + item.qty * item.price,
                     0
                 ),
             })

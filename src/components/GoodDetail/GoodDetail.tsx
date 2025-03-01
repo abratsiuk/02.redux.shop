@@ -1,13 +1,13 @@
 import React from 'react';
 import './GoodDetail.scss';
-import { IGoodDetail } from '../../interface/IGoodDetail';
+import { IGoodItem } from '../../interface/IGoodItem';
 import { ShowColor } from './components/ShowColor';
 import { ShowObject } from './components/ShowObject';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../../store/basket/basket-actions';
-import { IGoodInBasket } from '../../interfaces/IGoodInBasket';
+import { IBasketItem } from '../../interfaces/IBasketItem';
 
-export const GoodDetail: React.FC<IGoodDetail> = (props) => {
+export const GoodDetail: React.FC<IGoodItem> = (props) => {
     const {
         id,
         name,
@@ -27,7 +27,7 @@ export const GoodDetail: React.FC<IGoodDetail> = (props) => {
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
-        const goodInBasket: IGoodInBasket = {
+        const goodInBasket: IBasketItem = {
             id,
             name,
             description,

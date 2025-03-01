@@ -3,7 +3,7 @@ import './GoodItem.scss';
 import { IGoodItem } from '../../interfaces/IGoodItem';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../../store/basket/basket-actions';
-import { IGoodInBasket } from '../../interfaces/IGoodInBasket';
+import { IBasketItem } from '../../interfaces/IBasketItem';
 
 export interface IGoodItemProps extends IGoodItem {
     goCatalogItem?: () => void;
@@ -29,7 +29,7 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
-        const goodInBasket: IGoodInBasket = {
+        const goodInBasket: IBasketItem = {
             id,
             name,
             description,

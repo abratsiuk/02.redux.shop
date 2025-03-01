@@ -15,7 +15,7 @@ export const Basket: React.FC<IBasketProps> = () => {
     return (
         <div className="Basket">
             {isBasketEmpty ? (
-                <p>Your cart is empty.</p>
+                <div className="Basket__empty">Your cart is empty.</div>
             ) : (
                 <BasketList {...basket} />
             )}

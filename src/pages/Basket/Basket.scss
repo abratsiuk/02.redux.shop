@@ -3,4 +3,7 @@
 .Basket {
     display: flex;
     justify-content: center;
+    &__empty {
+        align-items: center;
+    }
 }

@@ -14,10 +14,9 @@ export const Orders: React.FC<IOrdersProps> = () => {
     return (
         <div className="Orders">
             {orders?.length ? (
-                // <div>There are {orders.length} orders.</div>
                 <OrdersList orders={orders} />
             ) : (
-                <p>Your orders are empty.</p>
+                <div className="Orders__empty">Your orders are empty.</div>
             )}
         </div>
     );

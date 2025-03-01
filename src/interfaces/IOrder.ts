@@ -3,7 +3,7 @@ import { OrderStateEnum } from '../store/orders/orders-reducer';
 
 export interface IOrder {
     id: number;
-    items: Record<string, IBasketItem>;
+    items: IBasketItem[];
     totalQty: number;
     totalAmount: number;
     state: OrderStateEnum;

@@ -29,9 +29,6 @@ export const OrdersItemLong: React.FC<IOrdersItemLongProps> = ({
         dispatch(increaseFunds(item.totalAmount));
     };
 
-    const positions = Object.values(item.items).sort((a, b) =>
-        a.index > b.index ? 1 : -1
-    );
     return (
         <div className="OrdersItemLong">
             <div className="OrdersItemLong__name">
@@ -52,9 +49,9 @@ export const OrdersItemLong: React.FC<IOrdersItemLongProps> = ({
                 </div>
             ) : null}
             <div className="OrdersItemLong__goods">
-                {positions.map((item, index) => (
+                {item.items.map((item, index) => (
                     <OrdersItemLongItem
-                        key={item.good.id}
+                        key={item.id}
                         {...item}
                         positionNumber={index + 1}
                     />
