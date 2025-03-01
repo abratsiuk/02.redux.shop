@@ -2,6 +2,7 @@ import React from 'react';
 import './OrdersItemLong.scss';
 import { useDispatch } from 'react-redux';
 import { acceptOrder, cancelOrder } from '../../store/orders/orders-actions';
+import { increaseFunds } from '../../store/funds/funds-actions';
 import { IOrder } from '../../interfaces/IOrder';
 import { dateToShortString, getOrderIcons } from '../../utils/helpers';
 import { OrderState } from '../OrderState';
@@ -25,6 +26,7 @@ export const OrdersItemLong: React.FC<IOrdersItemLongProps> = ({
     };
     const handleCancelOrder = () => {
         dispatch(cancelOrder(item.id));
+        dispatch(increaseFunds(item.totalAmount));
     };
 
     const positions = Object.values(item.items).sort((a, b) =>
