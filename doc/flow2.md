@@ -113,3 +113,40 @@ const persistConfig = {
 
 галочка аккордеона - Chevron
 https://icon-icons.com/search/icons/?filtro=Chevron
+
+=======================
+
+persist reducer имеет механизм зачистки localstorage при  критических изменениях структуры:
+
+что-то наподобии этого:
+
+```
+const migrations = {
+    2: (state: any) => {
+        console.log('Clearing `persistedState` because the structure has changed!');
+        return { ...state, basket: [], orders: [], funds: [] };
+    },
+    3: (state: any) => {
+        console.log('Applying migration v3: Updating persisted structure.');
+        return {
+            ...state,
+            basket: state.basket?.map(item => ({ ...item, newField: true })) || [], // Добавляем новое поле
+            orders: state.orders || [],
+            funds: state.funds || [],
+        };
+    },
+};
+
+const persistConfig = {
+    key: 'root',
+    storage,
+    version: 3, 
+    whitelist: ['basket', 'orders', 'funds'],
+    blacklist: ['goods'],
+    migrate: createMigrate(migrations, { debug: true }),
+};
+
+```
+
+у меня просто меняется ключ
+====================================

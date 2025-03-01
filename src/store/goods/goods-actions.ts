@@ -43,7 +43,7 @@ export const loadGoods = () => {
     return async (dispatch: Dispatch<GoodsActions>) => {
         try {
             dispatch(setLoading());
-
+            //TODO: client and api need to be used!
             const response = await axios.get(api.ALL_GOODS, {
                 headers: {
                     Authorization: api.API_KEY,
