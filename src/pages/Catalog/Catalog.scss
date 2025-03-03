@@ -5,9 +5,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 5rem 1fr 5rem;
     grid-template-areas:
-        '. . search search'
+        'goods goods goods search'
         'goods goods goods filters'
-        '. pagination pagination info';
+        'pagination pagination pagination filters';
     gap: 2rem;
     &__CatalogSearch {
         grid-area: search;
@@ -20,8 +20,5 @@
     }
     &__Pagination {
         grid-area: pagination;
-    }
-    &__CatalogFilterInfo {
-        grid-area: info;
     }
 }

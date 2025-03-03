@@ -12,7 +12,7 @@ import { CatalogFilter } from '../../components/CatalogFilter';
 import { CatalogFilterInfo } from '../../components/CatalogFilterInfo';
 import { Pagination } from '../../components/Pagination';
 
-const pageSize = 25;
+const pageSize = 12;
 const pageNumber = 1;
 export const Catalog: React.FC = () => {
     const goods = useTypedSelector(selectAllGoods);
@@ -36,7 +36,6 @@ export const Catalog: React.FC = () => {
                 pageCount={Math.ceil(goods.length / pageSize)}
                 pageNumber={pageNumber}
             />
-            <CatalogFilterInfo className="Catalog__CatalogFilterInfo" />
         </div>
     );
 };
