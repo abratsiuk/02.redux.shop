@@ -1,15 +1,14 @@
 import React from 'react';
 import './DevelopInfoItem.scss';
 import { IPropsClassName } from '../../../interfaces/IPropsClassName';
-import { IDevelopInfoItem } from '../IDevelopInfoItem';
+import { IFieldInfoItem } from '../../../interfaces/IFieldInfoItem';
 
-interface IDevelopInfoItemProps extends IPropsClassName, IDevelopInfoItem {}
+interface IFieldInfoItemProps extends IPropsClassName, IFieldInfoItem {}
 
-export const DevelopInfoItem: React.FC<IDevelopInfoItemProps> = ({
+export const DevelopInfoItem: React.FC<IFieldInfoItemProps> = ({
     className,
     name,
     count,
-    description,
 }) => {
     const classname = `${className} DevelopInfoItem`;
 
@@ -17,7 +16,6 @@ export const DevelopInfoItem: React.FC<IDevelopInfoItemProps> = ({
         <div className={classname}>
             <div className="DevelopInfoItem__name">{name}</div>
             <div className="DevelopInfoItem__count">{count}</div>
-            <div className="DevelopInfoItem__description">{description}</div>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import './DevelopInfo.scss';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { selectDevelopInfo } from '../../store/goods/goods-selectors';
+import { selectFieldInfo } from '../../store/goods/goods-selectors';
 import { DevelopInfoItem } from './DevelopInfoItem';
 
 interface IDevelopInfoProps {
@@ -9,7 +9,7 @@ interface IDevelopInfoProps {
 }
 
 export const DevelopInfo: React.FC<IDevelopInfoProps> = ({ field }) => {
-    const info = useTypedSelector((state) => selectDevelopInfo(state, field));
+    const info = useTypedSelector((state) => selectFieldInfo(state, field));
     return info.items.length ? (
         <div className="DevelopInfo">
             <h2>
