@@ -1,0 +1,1 @@
+export { CatalogFilterInfo } from './CatalogFilterInfo';

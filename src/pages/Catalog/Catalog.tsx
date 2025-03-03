@@ -9,6 +9,7 @@ import { GoodsList } from '../../components/GoodsList';
 import { GoodsStatus } from '../../store/goods/goods-reducer';
 import { CatalogSearch } from '../../components/CatalogSearch';
 import { CatalogFilter } from '../../components/CatalogFilter';
+import { CatalogFilterInfo } from '../../components/CatalogFilterInfo';
 import { Pagination } from '../../components/Pagination';
 
 const pageSize = 25;
@@ -35,6 +36,7 @@ export const Catalog: React.FC = () => {
                 pageCount={Math.ceil(goods.length / pageSize)}
                 pageNumber={pageNumber}
             />
+            <CatalogFilterInfo className="Catalog__CatalogFilterInfo" />
         </div>
     );
 };

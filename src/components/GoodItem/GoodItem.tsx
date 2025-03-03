@@ -58,7 +58,9 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
                     className="GoodItem__title"
                     style={{ color: colors?.color2 || undefined }}
                 >
-                    {name}
+                    {(name ?? '').length > 20
+                        ? name?.substr(0, 17) + '...'
+                        : name}
                 </span>
                 <p>{description}</p>
                 <p>mainType:{mainType}</p>
@@ -66,7 +68,7 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
                 <p>rarity:{rarity?.name}</p>
                 <p>series:{series?.name}</p>
                 <p>banner:{banner?.name}</p>
-                <p>offerTag:{offerTag?.text}</p>
+                <p>offerTag:{offerTag?.text?.substr(0, 20)}</p>
             </div>
             <div className="GoodItem__action">
                 <button onClick={handleAddToCart}>Add to Cart</button>
