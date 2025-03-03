@@ -17,7 +17,7 @@ export const App = () => {
                 loading={null}
                 persistor={persistor}
             >
-                <Router>
+                <Router future={{ v7_startTransition: true }}>
                     <Header />
                     <Main>
                         <AppRouterRoutes />

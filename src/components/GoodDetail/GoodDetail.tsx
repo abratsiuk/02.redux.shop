@@ -35,6 +35,7 @@ export const GoodDetail: React.FC<IGoodItem> = (props) => {
             mainType,
             icon,
             price,
+            qty: 1,
         };
         dispatch(addToBasket(goodInBasket));
     };

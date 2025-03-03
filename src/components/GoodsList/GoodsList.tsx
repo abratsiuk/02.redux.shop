@@ -3,16 +3,21 @@ import './GoodsList.scss';
 import { IGoodItem } from '../../interfaces/IGoodItem';
 import { GoodItem } from '../GoodItem';
 import { useNavigate } from 'react-router-dom';
+import { IPropsClassName } from '../../interfaces/IPropsClassName';
 
-interface IGoodListProps {
+interface IGoodListProps extends IPropsClassName {
     goods: IGoodItem[];
 }
 
-export const GoodsList: React.FC<IGoodListProps> = ({ goods = [] }) => {
+export const GoodsList: React.FC<IGoodListProps> = ({
+    goods = [],
+    className,
+}) => {
     const navigate = useNavigate();
+    const classname = `${className} GoodsList`;
 
     return (
-        <div className="GoodsList">
+        <div className={classname}>
             {goods.length === 0 ? (
                 <p>No goods available.</p>
             ) : (

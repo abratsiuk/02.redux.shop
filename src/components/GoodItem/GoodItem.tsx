@@ -66,11 +66,7 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
                 <p>rarity:{rarity?.name}</p>
                 <p>series:{series?.name}</p>
                 <p>banner:{banner?.name}</p>
-                {/* <p title={offerId}>offerId</p>
-                <p>displayType:{displayType}</p>
-                <p>mainType:{mainType}</p>
-                <p>rarityId:{rarity?.id}</p>.<p>seriesId:{series?.id}</p>
-                <p>offerTagId:{offerTag?.id}</p> */}
+                <p>offerTag:{offerTag?.text}</p>
             </div>
             <div className="GoodItem__action">
                 <button onClick={handleAddToCart}>Add to Cart</button>

@@ -6,6 +6,7 @@ import { CatalogItem } from '../../pages/CatalogItem';
 import { NotFound } from '../../pages/NotFound';
 import { Basket } from '../../pages/Basket';
 import { Profile } from '../../pages/Profile';
+import { Develop } from '../../pages/Develop';
 import { OrderDetail } from '../../pages/OrderDetail';
 
 export const AppRouterRoutes = () => {
@@ -38,6 +39,10 @@ export const AppRouterRoutes = () => {
             <Route
                 path="/profile"
                 element={<Profile />}
+            />
+            <Route
+                path="/develop"
+                element={<Develop />}
             />
             <Route
                 path="*"

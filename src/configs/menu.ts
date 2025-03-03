@@ -5,4 +5,5 @@ export const menu: IMenuItem[] = [
     { to: '/orders', text: 'orders' },
     { to: '/basket', text: 'cart' },
     { to: '/profile', text: 'profile' },
+    { to: '/develop', text: 'development' },
 ];

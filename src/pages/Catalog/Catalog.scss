@@ -1,5 +1,15 @@
 @use 'src/styles/variables' as *;
 
 .Catalog {
-    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    grid-template-areas:
+        '. search search filter'
+        'goods goods goods filter'
+        '. pagination pagination info';
+    gap: 2rem;
+    &__CatalogSearch {
+        grid-area: search;
+    }
 }

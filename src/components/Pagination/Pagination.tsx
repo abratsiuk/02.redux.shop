@@ -1,7 +1,8 @@
 import React from 'react';
 import './Pagination.scss';
+import { IPropsClassName } from '../../interfaces/IPropsClassName';
 
-interface IPaginationProps {
+interface IPaginationProps extends IPropsClassName {
     pageCount: number;
     pageNumber: number;
 }
@@ -14,9 +15,12 @@ const handleNextClick = () => {
 export const Pagination: React.FC<IPaginationProps> = ({
     pageCount,
     pageNumber,
+    className,
 }) => {
+    const classname = `${className} Pagination`;
+
     return (
-        <div className="Pagination">
+        <div className={classname}>
             <button
                 onClick={handlePrevClick}
                 disabled={pageNumber === 1}
