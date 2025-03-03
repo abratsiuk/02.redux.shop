@@ -1,3 +1,5 @@
+GET https://fortniteapi.io/v2/items/get?id=CID_242_Athena_Commando_F_Bullseye&lang=en
+
 original shop:
 https://store.epicgames.com/ru/all-dlc/fortnite?sortBy=relevancy&sortDir=DESC&count=40
 

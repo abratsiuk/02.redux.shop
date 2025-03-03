@@ -1,5 +1,3 @@
-import { Dispatch } from 'redux';
-
 export enum FundsActionEnum {
     CLEAR_FUNDS = '@@funds/CLEAR_FUNDS',
     DECREASE_FUNDS = '@@funds/DECREASE_FUNDS',

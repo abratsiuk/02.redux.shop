@@ -37,6 +37,7 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
             mainType,
             icon,
             price,
+            qty: 1,
         };
         dispatch(addToBasket(goodInBasket));
     };
@@ -49,19 +50,22 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
                 alt={name}
                 onClick={goCatalogItem}
             />
-
             <div
                 className="GoodItem__content"
                 onClick={goCatalogItem}
             >
                 <span
                     className="GoodItem__title"
-                    style={{ color: colors?.color2 }}
+                    style={{ color: colors?.color2 || undefined }}
                 >
                     {name}
                 </span>
                 <p>{description}</p>
                 <p>mainType:{mainType}</p>
+                <p>displayType:{displayType}</p>
+                <p>rarity:{rarity?.name}</p>
+                <p>series:{series?.name}</p>
+                <p>banner:{banner?.name}</p>
                 {/* <p title={offerId}>offerId</p>
                 <p>displayType:{displayType}</p>
                 <p>mainType:{mainType}</p>

@@ -4,7 +4,7 @@ import { rootReducer } from './root-reducer';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import * as api from '../config';
-import { persistStore, persistReducer, createMigrate } from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {

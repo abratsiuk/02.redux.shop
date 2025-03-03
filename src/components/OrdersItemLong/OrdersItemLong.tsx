@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { acceptOrder, cancelOrder } from '../../store/orders/orders-actions';
 import { increaseFunds } from '../../store/funds/funds-actions';
 import { IOrder } from '../../interfaces/IOrder';
-import { dateToShortString, getOrderIcons } from '../../utils/helpers';
+import { dateToShortString } from '../../utils/helpers';
 import { OrderState } from '../OrderState';
 import { OrderChevron } from '../OrderChevron';
 import { OrdersItemLongItem } from '../OrdersItemLongItem';

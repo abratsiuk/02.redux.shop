@@ -79,7 +79,22 @@ export const loadGoods = () => {
                             item.background &&
                             item.id &&
                             (!item.mainType ||
-                                !['sparks_song', 'w'].includes(item.mainType))
+                                !['sparks_song', 'w'].includes(
+                                    item.mainType
+                                )) &&
+                            item.name &&
+                            /* filter out ugly and unpleasant things */
+                            !item.name.toLowerCase().includes('demon') &&
+                            !item.name.toLowerCase().includes('darkest') &&
+                            !item.name.toLowerCase().includes('diabol') &&
+                            !item.name.toLowerCase().includes('beast') &&
+                            !item.name.toLowerCase().includes('torment') &&
+                            !item.name.toLowerCase().includes('burning') &&
+                            !item.name.toLowerCase().includes('malice') &&
+                            !item.name.toLowerCase().includes('dominion') &&
+                            !item.name.toLowerCase().includes('furia') &&
+                            !item.name.toLowerCase().includes('ghoul') &&
+                            !item.name.toLowerCase().includes('torment')
                     );
 
                 dispatch(setGoods(goods));

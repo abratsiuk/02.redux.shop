@@ -1,0 +1,12 @@
+@use 'src/styles/variables' as *;
+
+.DevelopInfoItem {
+    width: 100%;
+    max-width: 60rem;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: auto 5rem 1fr;
+    gap: 2rem;
+    margin-left: 5rem;
+}

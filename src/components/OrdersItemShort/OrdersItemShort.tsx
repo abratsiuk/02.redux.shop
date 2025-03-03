@@ -2,7 +2,6 @@ import React from 'react';
 import './OrdersItemShort.scss';
 import { IOrder } from '../../interfaces/IOrder';
 import { dateToShortString, getOrderIcons } from '../../utils/helpers';
-import { OrderStateLabels } from '../../store/orders/orders-reducer';
 import { OrderState } from '../OrderState';
 import { OrderChevron } from '../OrderChevron';
 
