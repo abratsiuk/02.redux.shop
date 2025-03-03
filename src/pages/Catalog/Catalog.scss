@@ -2,13 +2,14 @@
 
 .Catalog {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 5rem 1fr 5rem;
+    grid-template-columns: 1fr 1fr 1fr minmax(30rem, 0.5fr);
+    grid-template-rows: auto 1fr 5rem;
     grid-template-areas:
-        'goods goods goods search'
-        'goods goods goods filters'
-        'pagination pagination pagination filters';
+        'goods goods goods search '
+        'goods goods goods filters '
+        'pagination pagination pagination filters ';
     gap: 2rem;
+    padding: 1rem;
     &__CatalogSearch {
         grid-area: search;
     }

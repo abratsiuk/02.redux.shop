@@ -1,6 +1,7 @@
 import React from 'react';
 import './CatalogFilter.scss';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
+import { ReactComponent as ClearImg } from '../../assets/images/clear.svg';
 
 interface ICatalogFilterProps extends IPropsClassName {}
 
@@ -11,7 +12,7 @@ export const CatalogFilter: React.FC<ICatalogFilterProps> = ({ className }) => {
         <div className={classname}>
             <div className="filter-header">
                 <div>Filter</div>
-                <button className="filter-clear">clear</button>
+                <ClearImg className="filter-clear" />
             </div>
             <div className="filter-section">
                 <div className="filter-title">Main type:</div>
