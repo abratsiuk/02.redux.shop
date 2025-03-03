@@ -2,6 +2,7 @@ import { IOrder } from '../interfaces/IOrder';
 import { IOrderIcon } from '../interfaces/IOrderIcon';
 import { IGoodItem } from '../interfaces/IGoodItem';
 import { IFieldInfo } from '../interfaces/IFieldInfo';
+import { IFilter } from '../interfaces/IFilter';
 
 export const isRecordEmpty = <T>(items: Record<string, T>): boolean => {
     for (const _ in items) {
@@ -70,4 +71,76 @@ export const getFieldsInfo = (
     );
     result.items.sort((a, b) => ((a.name || '') >= (b.name || '') ? 1 : -1));
     return result;
+};
+
+export const getFilterTypeArray = (obj: IFilter, field: string): string[] => {
+    switch (field) {
+        case 'mainType':
+            return [...obj.mainType];
+        case 'displayType':
+            return [...obj.displayType];
+        case 'rarity':
+            return [...obj.rarity];
+        case 'series':
+            return [...obj.series];
+        case 'banner':
+            return [...obj.banner];
+        case 'priority':
+            return [...obj.priority];
+        default:
+            return [];
+    }
+};
+
+export const checkIsRelevant = (good: IGoodItem, filter: IFilter): boolean => {
+    console.log('checkIsRelevant');
+    if (filter.search && good.name) {
+        const worlds = filter.search.trim().split(' ');
+        for (const w of worlds) {
+            if (w.trim()) {
+                if (!good.name.includes(w)) {
+                    return false;
+                }
+            }
+        }
+    }
+    const mainTypes = getFilterTypeArray(filter, 'mainType');
+    if (mainTypes.length > 0) {
+        if (!mainTypes.includes(good.mainType ?? '')) {
+            return false;
+        }
+    }
+
+    const displayTypes = getFilterTypeArray(filter, 'displayType');
+    if (displayTypes.length > 0) {
+        if (!displayTypes.includes(good.displayType ?? '')) {
+            return false;
+        }
+    }
+    const rarities = getFilterTypeArray(filter, 'rarity');
+    if (rarities.length > 0) {
+        if (!rarities.includes(good.rarity?.name ?? '')) {
+            return false;
+        }
+    }
+    const serieses = getFilterTypeArray(filter, 'series');
+    if (serieses.length > 0) {
+        if (!serieses.includes(good.series?.name ?? '')) {
+            return false;
+        }
+    }
+    const banners = getFilterTypeArray(filter, 'banner');
+    if (banners.length > 0) {
+        if (!banners.includes(good.banner?.name ?? '')) {
+            return false;
+        }
+    }
+    const priorities = getFilterTypeArray(filter, 'priority');
+    if (priorities.length > 0) {
+        if (!priorities.includes(good.priority?.toString() ?? '')) {
+            return false;
+        }
+    }
+
+    return true;
 };

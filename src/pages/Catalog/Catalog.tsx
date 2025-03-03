@@ -1,21 +1,25 @@
 import React from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import {
-    selectAllGoods,
     selectGoodsInfo,
+    selectFilteredGoods,
 } from '../../store/goods/goods-selectors';
 import './Catalog.scss';
 import { GoodsList } from '../../components/GoodsList';
 import { GoodsStatus } from '../../store/goods/goods-reducer';
 import { CatalogSearch } from '../../components/CatalogSearch';
 import { CatalogFilter } from '../../components/CatalogFilter';
-import { CatalogFilterInfo } from '../../components/CatalogFilterInfo';
 import { Pagination } from '../../components/Pagination';
+import { selectFilter } from '../../store/filter/filter-selectors';
 
 const pageSize = 12;
 const pageNumber = 1;
 export const Catalog: React.FC = () => {
-    const goods = useTypedSelector(selectAllGoods);
+    const filter = useTypedSelector(selectFilter);
+    const goods = useTypedSelector((state) =>
+        selectFilteredGoods(state, filter)
+    );
+    console.log('goods.length', goods.length);
     const { status, error } = useTypedSelector(selectGoodsInfo);
 
     const startIndex = (pageNumber - 1) * pageSize;

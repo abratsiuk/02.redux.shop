@@ -1,13 +1,6 @@
 @use 'src/styles/variables' as *;
 
-.CatalogFilterItem {
-    &__title {
-        font-weight: bold;
-    }
-    &__label {
-        display: block;
-        padding-left: 5rem;
-    }
+.CatalogFilterGroupItem {
     &__checkbox {
         margin-right: 1rem;
     }

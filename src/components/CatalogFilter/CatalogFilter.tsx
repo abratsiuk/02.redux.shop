@@ -2,7 +2,7 @@ import React from 'react';
 import './CatalogFilter.scss';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 import { ReactComponent as ClearImg } from '../../assets/images/clear.svg';
-import { CatalogFilterItem } from '../CatalogFilterItem';
+import { CatalogFilterGroup } from '../CatalogFilterGroup';
 
 interface ICatalogFilterProps extends IPropsClassName {}
 
@@ -15,32 +15,32 @@ export const CatalogFilter: React.FC<ICatalogFilterProps> = ({ className }) => {
                 <div>Filter</div>
                 <ClearImg className="filter-clear" />
             </div>
-            <CatalogFilterItem
+            <CatalogFilterGroup
                 className="CatalogFilter__section"
                 name="Main type:"
                 field="mainType"
             />
-            <CatalogFilterItem
+            <CatalogFilterGroup
                 className="CatalogFilter__section"
                 name="Display type:"
                 field="displayType"
             />
-            <CatalogFilterItem
+            <CatalogFilterGroup
                 className="CatalogFilter__section"
                 name="Rarity:"
                 field="rarity"
             />
-            <CatalogFilterItem
+            <CatalogFilterGroup
                 className="CatalogFilter__section"
                 name="Series:"
                 field="series"
             />
-            <CatalogFilterItem
+            <CatalogFilterGroup
                 className="CatalogFilter__section"
                 name="Banner:"
                 field="banner"
             />
-            <CatalogFilterItem
+            <CatalogFilterGroup
                 className="CatalogFilter__section"
                 name="Priority:"
                 field="priority"

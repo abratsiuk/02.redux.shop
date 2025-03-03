@@ -1,0 +1,1 @@
+export { CatalogFilterGroup } from './CatalogFilterGroup';
