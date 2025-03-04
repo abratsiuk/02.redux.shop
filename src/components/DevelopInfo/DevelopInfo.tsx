@@ -3,13 +3,23 @@ import './DevelopInfo.scss';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectFieldInfo } from '../../store/goods/goods-selectors';
 import { DevelopInfoItem } from './DevelopInfoItem';
+import { selectFilter } from '../../store/filter/filter-selectors';
 
 interface IDevelopInfoProps {
-    field: string;
+    field:
+        | 'mainType'
+        | 'displayType'
+        | 'rarity'
+        | 'series'
+        | 'banner'
+        | 'priority';
 }
 
 export const DevelopInfo: React.FC<IDevelopInfoProps> = ({ field }) => {
-    const info = useTypedSelector((state) => selectFieldInfo(state, field));
+    const filter = useTypedSelector(selectFilter);
+    const info = useTypedSelector((state) =>
+        selectFieldInfo(state, field, filter)
+    );
     return info.items.length ? (
         <div className="DevelopInfo">
             <h2>

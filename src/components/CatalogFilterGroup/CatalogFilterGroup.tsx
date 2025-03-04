@@ -4,10 +4,17 @@ import { IPropsClassName } from '../../interfaces/IPropsClassName';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectFieldInfo } from '../../store/goods/goods-selectors';
 import { CatalogFilterGroupItem } from '../CatalogFilterGroupItem';
+import { selectFilter } from '../../store/filter/filter-selectors';
 
 interface ICatalogFilterGroupProps extends IPropsClassName {
     name: string;
-    field: string;
+    field:
+        | 'mainType'
+        | 'displayType'
+        | 'rarity'
+        | 'series'
+        | 'banner'
+        | 'priority';
 }
 
 export const CatalogFilterGroup: React.FC<ICatalogFilterGroupProps> = ({
@@ -16,7 +23,10 @@ export const CatalogFilterGroup: React.FC<ICatalogFilterGroupProps> = ({
     field,
 }) => {
     const classname = `${className} CatalogFilterGroup`;
-    const fields = useTypedSelector((state) => selectFieldInfo(state, field));
+    const filter = useTypedSelector(selectFilter);
+    const fields = useTypedSelector((state) =>
+        selectFieldInfo(state, field, filter)
+    );
 
     if (fields.items.length)
         return (

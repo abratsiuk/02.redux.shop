@@ -6,7 +6,13 @@ import { changeChecked } from '../../store/filter/filter-actions';
 import { useDispatch } from 'react-redux';
 
 interface ICatalogFilterGroupItemProps extends IPropsClassName, IFieldInfoItem {
-    field: string;
+    field:
+        | 'mainType'
+        | 'displayType'
+        | 'rarity'
+        | 'series'
+        | 'banner'
+        | 'priority';
 }
 
 export const CatalogFilterGroupItem: React.FC<ICatalogFilterGroupItemProps> = ({
@@ -14,25 +20,26 @@ export const CatalogFilterGroupItem: React.FC<ICatalogFilterGroupItemProps> = ({
     field,
     name,
     count,
+    checked,
 }) => {
     const classname = `${className} CatalogFilterGroupItem`;
-    const [checked, setChecked] = useState(false);
+    const [check, setCheck] = useState(checked);
     const dispatch = useDispatch();
 
     const handleChecked = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setChecked(event.target.checked);
+        setCheck(event.target.checked);
     };
 
     useEffect(() => {
-        dispatch(changeChecked({ field, name, checked }));
-    }, [field, name, checked, dispatch]);
+        dispatch(changeChecked({ field, name, checked: check }));
+    }, [field, name, check, dispatch]);
 
     return (
         <div className={classname}>
             <input
                 className="CatalogFilterGroupItem__checkbox"
                 type="checkbox"
-                checked={checked}
+                checked={check}
                 onChange={handleChecked}
             />
             <span>{name}</span>
