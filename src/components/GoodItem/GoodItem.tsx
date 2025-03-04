@@ -62,17 +62,20 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
                         ? name?.substr(0, 17) + '...'
                         : name}
                 </span>
-                <p>{description}</p>
-                <p>mainType:{mainType}</p>
-                <p>displayType:{displayType}</p>
-                <p>rarity:{rarity?.name}</p>
-                <p>series:{series?.name}</p>
-                <p>banner:{banner?.name}</p>
-                <p>offerTag:{offerTag?.text?.substr(0, 20)}</p>
+                <div>
+                    <strong>{displayType}</strong>
+                    {displayType?.toLowerCase() === mainType?.toLowerCase()
+                        ? ''
+                        : ' (' + mainType + ')'}
+                </div>
+                <div>{description}</div>
+                {rarity?.name ? <div>Rarity:{rarity?.name}</div> : null}
+                {series?.name ? <div>Series:{series?.name}</div> : null}
+                {banner?.name ? <div>Banner:{banner?.name}</div> : null}
             </div>
+            <div className="GoodItem__price">{price}</div>
             <div className="GoodItem__action">
                 <button onClick={handleAddToCart}>Add to Cart</button>
-                <span className="GoodItem__price">{price} &curren;</span>
             </div>
         </div>
     );

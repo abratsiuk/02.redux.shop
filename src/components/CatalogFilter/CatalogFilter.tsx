@@ -35,15 +35,15 @@ export const CatalogFilter: React.FC<ICatalogFilterProps> = ({ className }) => {
             </div>
             <CatalogFilterGroup
                 className="CatalogFilter__section"
-                name="Main type:"
-                field="mainType"
-                fields={filterTypeInfo.mainType}
-            />
-            <CatalogFilterGroup
-                className="CatalogFilter__section"
                 name="Display type:"
                 field="displayType"
                 fields={filterTypeInfo.displayType}
+            />
+            <CatalogFilterGroup
+                className="CatalogFilter__section"
+                name="Main type:"
+                field="mainType"
+                fields={filterTypeInfo.mainType}
             />
             <CatalogFilterGroup
                 className="CatalogFilter__section"

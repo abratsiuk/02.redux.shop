@@ -1,4 +1,4 @@
-import { IGoodBase } from './IGoodBase';
+import { IGrantedItem } from './IGrantedItem';
 export interface IGoodItem {
     id: string;
     name?: string;
@@ -34,4 +34,5 @@ export interface IGoodItem {
         intensity?: string;
     } | null;
     priority?: number;
+    granted?: IGrantedItem[];
 }

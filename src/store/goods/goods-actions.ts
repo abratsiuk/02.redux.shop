@@ -2,6 +2,7 @@ import { IGoodItem } from '../../interfaces/IGoodItem';
 import axios from 'axios';
 import * as api from '../../config';
 import { Dispatch } from 'redux';
+import { IGrantedItem } from '../../interfaces/IGrantedItem';
 
 export enum GoodsActionTypes {
     SET_GOODS = '@@goods/SET_GOODS',
@@ -72,6 +73,13 @@ export const loadGoods = () => {
                             banner: item.banner,
                             priority: item.priority,
                             price: item.price ? item.price.regularPrice : 0,
+                            granted: item.granted.map((grantedItem: any) => ({
+                                id: grantedItem.id,
+                                type: grantedItem.type?.name ?? '',
+                                name: grantedItem.name ?? '',
+                                icon: grantedItem.images?.icon ?? '',
+                                description: grantedItem.description ?? '',
+                            })),
                         })
                     )
                     .filter(
