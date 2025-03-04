@@ -1,1 +1,0 @@
-export { DevelopInfoItem } from './DevelopInfoItem';

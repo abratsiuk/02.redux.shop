@@ -1,12 +1,9 @@
 @use 'src/styles/variables' as *;
 
 .DevelopInfo {
-    border: 1px solid navy;
-    border-radius: 5px;
-    padding: 1rem;
-
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

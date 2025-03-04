@@ -1,8 +1,0 @@
-@use 'src/styles/variables' as *;
-
-.DevelopInfoItem {
-    max-width: 60rem;
-    display: grid;
-    grid-template-columns: auto 5rem;
-    gap: 2rem;
-}

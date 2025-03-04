@@ -30,7 +30,7 @@ export const CatalogFilter: React.FC<ICatalogFilterProps> = ({ className }) => {
                 <div>Filter</div>
                 <ClearImg
                     className="filter-clear"
-                    onClick={() => dispatch(clearFilter)}
+                    onClick={() => dispatch(clearFilter())}
                 />
             </div>
             <CatalogFilterGroup
