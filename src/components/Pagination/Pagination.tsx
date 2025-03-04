@@ -7,6 +7,7 @@ interface IPaginationProps extends IPropsClassName {
     pageNumber: number;
     onPrev: () => void;
     onNext: () => void;
+    onPageSize: (size: number) => void;
 }
 
 export const Pagination: React.FC<IPaginationProps> = ({
@@ -15,6 +16,7 @@ export const Pagination: React.FC<IPaginationProps> = ({
     className,
     onPrev,
     onNext,
+    onPageSize,
 }) => {
     const classname = `${className} Pagination`;
 
@@ -35,6 +37,9 @@ export const Pagination: React.FC<IPaginationProps> = ({
             >
                 Next
             </button>
+            <button onClick={() => onPageSize(6)}>6</button>
+            <button onClick={() => onPageSize(12)}>12</button>
+            <button onClick={() => onPageSize(24)}>24</button>
         </div>
     );
 };

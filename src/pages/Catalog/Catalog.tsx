@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import {
     selectGoodsInfo,
@@ -31,9 +31,9 @@ export const Catalog: React.FC = () => {
     const handleNext = () => {
         setPage((page) => (page < pageCount ? page + 1 : page));
     };
-    // useEffect(() => {
-    //     setPage(1);
-    // }, [filteredGoods]);
+    const handlePageSize = (size: number) => {
+        setPageSize(size);
+    };
 
     return (
         <div className="Catalog">
@@ -51,6 +51,7 @@ export const Catalog: React.FC = () => {
                 pageNumber={page}
                 onPrev={handlePrev}
                 onNext={handleNext}
+                onPageSize={handlePageSize}
             />
         </div>
     );
