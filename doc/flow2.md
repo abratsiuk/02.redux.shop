@@ -154,3 +154,57 @@ const persistConfig = {
 publish on Vercel
 https://www.youtube.com/watch?v=3bN1TC_qI0E&ab_channel=%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%9D%D0%B5%D0%BF%D0%BE%D0%BC%D0%BD%D1%8F%D1%89%D0%B8%D0%B9
 ====================================
+
+публикация на Vercel
+https://www.youtube.com/results?search_query=%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB+%D0%9D%D0%B5%D0%BF%D0%BE%D0%BC%D0%BD%D1%8F%D1%89%D0%B8%D0%B9+vercel
+============================
+[16:13:20.402] Running build in Washington, D.C., USA (East) – iad1
+[16:13:20.575] Cloning github.com/abratsiuk/02.redux.shop (Branch: main, Commit: 0ffba87)
+[16:13:20.764] Previous build caches not available
+[16:13:21.206] Cloning completed: 630.000ms
+[16:13:21.544] Running "vercel build"
+[16:13:22.307] Vercel CLI 41.2.2
+[16:13:22.905] Installing dependencies...
+[16:13:35.953] npm warn deprecated redux-devtools-extension@2.13.9: Package moved to @redux-devtools/extension.
+[16:13:49.504] 
+[16:13:49.505] added 1970 packages in 26s
+[16:13:49.505] 
+[16:13:49.505] 132 packages are looking for funding
+[16:13:49.505]   run `npm fund` for details
+[16:13:49.506] npm notice
+[16:13:49.506] npm notice New major version of npm available! 10.9.2 -> 11.1.0
+[16:13:49.506] npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.1.0
+[16:13:49.506] npm notice To update run: npm install -g npm@11.1.0
+[16:13:49.507] npm notice
+[16:13:49.584] Running "npm run build"
+[16:13:49.706] 
+[16:13:49.706] > 02.redux.shop@0.2.0 build
+[16:13:49.706] > react-scripts build
+[16:13:49.706] 
+[16:13:50.321] node:internal/modules/cjs/loader:646
+[16:13:50.322]       throw e;
+[16:13:50.322]       ^
+[16:13:50.322] 
+[16:13:50.322] Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './lib/tokenize' is not defined by "exports" in /vercel/path0/node_modules/postcss-safe-parser/node_modules/postcss/package.json
+[16:13:50.322]     at exportsNotFound (node:internal/modules/esm/resolve:314:10)
+[16:13:50.322]     at packageExportsResolve (node:internal/modules/esm/resolve:661:9)
+[16:13:50.322]     at resolveExports (node:internal/modules/cjs/loader:639:36)
+[16:13:50.322]     at Function._findPath (node:internal/modules/cjs/loader:728:31)
+[16:13:50.322]     at Function._resolveFilename (node:internal/modules/cjs/loader:1211:27)
+[16:13:50.322]     at Function._load (node:internal/modules/cjs/loader:1055:27)
+[16:13:50.322]     at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+[16:13:50.322]     at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+[16:13:50.327]     at Module.require (node:internal/modules/cjs/loader:1311:12)
+[16:13:50.327]     at require (node:internal/modules/helpers:136:16) {
+[16:13:50.327]   code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+[16:13:50.327] }
+[16:13:50.327] 
+[16:13:50.327] Node.js v22.14.0
+[16:13:50.347] Error: Command "npm run build" exited with 1
+[16:13:51.387] 
+
+nvm install 22.14.0
+nvm install 16.20.2
+nvm use 16.20.2
+
+nvm list
