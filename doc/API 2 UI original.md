@@ -1,5 +1,5 @@
 
-https://store.epicgames.com/ru/all-dlc/fortnite?q=%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%20&sortBy=relevancy&sortDir=DESC&count=40&start=0
+https://store.epicgames.com/en/all-dlc/fortnite?q=%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%20&sortBy=relevancy&sortDir=DESC&count=40&start=0
 
 LIST:
 ![](_md_img/API%202%20UI%20original_images/API%202%20UI%20original%202025-02-21-15-58-18.png)

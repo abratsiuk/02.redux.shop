@@ -22,7 +22,6 @@ export const filterReducer = (
 ): IFilterState => {
     switch (action.type) {
         case FilterActionEnum.CLEAR_FILTER:
-            console.log('CLEAR_FILTER');
             return {
                 ...state,
                 type: {
@@ -59,7 +58,11 @@ export const filterReducer = (
                           ),
                 },
             };
-
+        case FilterActionEnum.SET_SEARCH:
+            return {
+                ...state,
+                search: action.payload,
+            };
         default:
             return state;
     }

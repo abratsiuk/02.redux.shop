@@ -4,6 +4,7 @@ export enum FilterActionEnum {
     CLEAR_FILTER = '@@filter/CLEAR_FILTER',
     SET_FILTER = '@@filter/SET_FILTER',
     CHANGE_CHECKED = '@@filter/CHANGE_CHECKED',
+    SET_SEARCH = '@@filter/SET_SEARCH',
 }
 
 interface IClearFilterAction {
@@ -29,11 +30,15 @@ interface IChangeCheckedAction {
     type: FilterActionEnum.CHANGE_CHECKED;
     payload: IChangeCheckedPayload;
 }
-
+interface ISetSearchAction {
+    type: FilterActionEnum.SET_SEARCH;
+    payload: string;
+}
 export type FilterActions =
     | IClearFilterAction
     | ISetFilterAction
-    | IChangeCheckedAction;
+    | IChangeCheckedAction
+    | ISetSearchAction;
 
 export const clearFilter = (): IClearFilterAction => ({
     type: FilterActionEnum.CLEAR_FILTER,
@@ -49,4 +54,9 @@ export const changeChecked = ({
 }: IChangeCheckedPayload): IChangeCheckedAction => ({
     type: FilterActionEnum.CHANGE_CHECKED,
     payload: { field, name, checked },
+});
+
+export const setSearch = (search: string): ISetSearchAction => ({
+    type: FilterActionEnum.SET_SEARCH,
+    payload: search,
 });

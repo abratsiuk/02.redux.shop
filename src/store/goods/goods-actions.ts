@@ -94,6 +94,7 @@ export const loadGoods = () => {
                             !item.name.toLowerCase().includes('dominion') &&
                             !item.name.toLowerCase().includes('furia') &&
                             !item.name.toLowerCase().includes('ghoul') &&
+                            !item.name.toLowerCase().includes('devil') &&
                             !item.name.toLowerCase().includes('torment')
                     );
 
