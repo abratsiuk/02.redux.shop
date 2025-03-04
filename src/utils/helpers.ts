@@ -27,7 +27,7 @@ export const getOrderIcons = (order: IOrder): IOrderIcon[] => {
 };
 
 export const getFieldsInfo = (
-    goods: Record<string, IGoodItem>,
+    filteredGoods: IGoodItem[],
     field:
         | 'mainType'
         | 'displayType'
@@ -37,9 +37,9 @@ export const getFieldsInfo = (
         | 'priority',
     filter: IFilter
 ): IFieldInfo => {
-    if (isRecordEmpty(goods)) return { items: [] };
+    if (filteredGoods.length === 0) return { items: [] };
 
-    const result = Object.values(goods).reduce(
+    const result = filteredGoods.reduce(
         (acc: IFieldInfo, item) => {
             let fieldValue: string | undefined | null = '';
             if (field === 'mainType' || field === 'displayType') {

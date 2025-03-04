@@ -30,8 +30,9 @@ export const selectGoodById = (
 export const selectIsGoodsEmpty = (state: RootState): boolean =>
     isRecordEmpty(state.goods.items);
 
-export const selectFieldInfo = (
+export const selectFilterTypeFieldInfo = (
     state: RootState,
+    filteredGoods: IGoodItem[],
     field:
         | 'mainType'
         | 'displayType'
@@ -41,5 +42,23 @@ export const selectFieldInfo = (
         | 'priority',
     filter: IFilter
 ): IFieldInfo => {
-    return getFieldsInfo(state.goods.items, field, filter);
+    return getFieldsInfo(filteredGoods, field, filter);
+};
+
+export const selectFilterTypeInfo = (
+    state: RootState,
+    filteredGoods: IGoodItem[],
+    filter: IFilter
+): Record<
+    'mainType' | 'displayType' | 'rarity' | 'series' | 'banner' | 'priority',
+    IFieldInfo
+> => {
+    return {
+        mainType: getFieldsInfo(filteredGoods, 'mainType', filter),
+        displayType: getFieldsInfo(filteredGoods, 'displayType', filter),
+        rarity: getFieldsInfo(filteredGoods, 'rarity', filter),
+        series: getFieldsInfo(filteredGoods, 'series', filter),
+        banner: getFieldsInfo(filteredGoods, 'banner', filter),
+        priority: getFieldsInfo(filteredGoods, 'priority', filter),
+    };
 };

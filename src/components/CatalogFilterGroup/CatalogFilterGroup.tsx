@@ -1,11 +1,8 @@
 import React from 'react';
 import './CatalogFilterGroup.scss';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { selectFieldInfo } from '../../store/goods/goods-selectors';
 import { CatalogFilterGroupItem } from '../CatalogFilterGroupItem';
-import { selectFilter } from '../../store/filter/filter-selectors';
-
+import { IFieldInfo } from '../../interfaces/IFieldInfo';
 interface ICatalogFilterGroupProps extends IPropsClassName {
     name: string;
     field:
@@ -15,18 +12,16 @@ interface ICatalogFilterGroupProps extends IPropsClassName {
         | 'series'
         | 'banner'
         | 'priority';
+    fields: IFieldInfo;
 }
 
 export const CatalogFilterGroup: React.FC<ICatalogFilterGroupProps> = ({
     className,
     name,
     field,
+    fields,
 }) => {
     const classname = `${className} CatalogFilterGroup`;
-    const filter = useTypedSelector(selectFilter);
-    const fields = useTypedSelector((state) =>
-        selectFieldInfo(state, field, filter)
-    );
 
     if (fields.items.length)
         return (
