@@ -9,11 +9,13 @@ import {
     selectFilteredGoods,
     selectFilterTypeInfo,
 } from '../../store/goods/goods-selectors';
+import { useDispatch } from 'react-redux';
+import { clearFilter } from '../../store/filter/filter-actions';
 
 interface ICatalogFilterProps extends IPropsClassName {}
 
 export const CatalogFilter: React.FC<ICatalogFilterProps> = ({ className }) => {
-    const classname = `${className} CatalogFilter`;
+    const dispatch = useDispatch();
     const filter = useTypedSelector(selectFilter);
     const filteredGoods = useTypedSelector((state) =>
         selectFilteredGoods(state, filter)
@@ -21,11 +23,15 @@ export const CatalogFilter: React.FC<ICatalogFilterProps> = ({ className }) => {
     const filterTypeInfo = useTypedSelector((state) =>
         selectFilterTypeInfo(state, filteredGoods, filter)
     );
+    const classname = `${className} CatalogFilter`;
     return (
         <div className={classname}>
             <div className="CatalogFilter__header">
                 <div>Filter</div>
-                <ClearImg className="filter-clear" />
+                <ClearImg
+                    className="filter-clear"
+                    onClick={() => dispatch(clearFilter)}
+                />
             </div>
             <CatalogFilterGroup
                 className="CatalogFilter__section"

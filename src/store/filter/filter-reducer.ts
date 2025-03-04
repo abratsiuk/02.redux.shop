@@ -22,28 +22,43 @@ export const filterReducer = (
 ): IFilterState => {
     switch (action.type) {
         case FilterActionEnum.CLEAR_FILTER:
-            return initialState;
+            console.log('CLEAR_FILTER');
+            return {
+                ...state,
+                type: {
+                    mainType: [],
+                    displayType: [],
+                    rarity: [],
+                    series: [],
+                    banner: [],
+                    priority: [],
+                },
+            };
         case FilterActionEnum.SET_FILTER:
             return action.payload;
         case FilterActionEnum.CHANGE_CHECKED:
-            console.log('CHANGE_CHECKED');
-
-            let newValues: string[] = [];
-            if (action.payload.checked) {
-                newValues = [
-                    ...state.type[action.payload.field],
-                    action.payload.name,
-                ];
-            } else {
-                newValues = state.type[action.payload.field].filter(
-                    (i) => i !== action.payload.name
-                );
+            //no changes -> no activity
+            if (
+                !action.payload.checked &&
+                state.type[action.payload.field].length === 0
+            ) {
+                return state;
             }
-            const newType = {
-                ...state.type,
-                [action.payload.field]: newValues,
+
+            return {
+                ...state,
+                type: {
+                    ...state.type,
+                    [action.payload.field]: action.payload.checked
+                        ? [
+                              ...state.type[action.payload.field],
+                              action.payload.name,
+                          ]
+                        : state.type[action.payload.field].filter(
+                              (i) => i !== action.payload.name
+                          ),
+                },
             };
-            return { ...state, type: newType };
 
         default:
             return state;
