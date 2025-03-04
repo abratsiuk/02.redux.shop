@@ -25,7 +25,7 @@ export const ordersReducer = (
     return produce(state, (draftState) => {
         switch (action.type) {
             case OrdersActionEnum.CREATE_ORDER:
-                draftState.orders.push({
+                draftState.orders.unshift({
                     id: action.payload.id,
                     items: action.payload.items,
                     totalQty: action.payload.totalQty,

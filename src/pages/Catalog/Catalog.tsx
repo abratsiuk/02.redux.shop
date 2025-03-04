@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import {
     selectGoodsInfo,
@@ -12,18 +12,28 @@ import { CatalogFilter } from '../../components/CatalogFilter';
 import { Pagination } from '../../components/Pagination';
 import { selectFilter } from '../../store/filter/filter-selectors';
 
-const pageSize = 12;
-const pageNumber = 1;
 export const Catalog: React.FC = () => {
     const filter = useTypedSelector(selectFilter);
-    const goods = useTypedSelector((state) =>
+    const filteredGoods = useTypedSelector((state) =>
         selectFilteredGoods(state, filter)
     );
-    console.log('goods.length', goods.length);
     const { status, error } = useTypedSelector(selectGoodsInfo);
+    const [page, setPage] = useState(1);
+    const [pageSize, setPageSize] = useState(12);
 
-    const startIndex = (pageNumber - 1) * pageSize;
+    const pageCount = Math.ceil(filteredGoods.length / pageSize);
+    const startIndex = (page - 1) * pageSize;
     const endIndex = startIndex + pageSize;
+
+    const handlePrev = () => {
+        setPage((page) => (page > 1 ? page - 1 : 1));
+    };
+    const handleNext = () => {
+        setPage((page) => (page < pageCount ? page + 1 : page));
+    };
+    // useEffect(() => {
+    //     setPage(1);
+    // }, [filteredGoods]);
 
     return (
         <div className="Catalog">
@@ -33,12 +43,14 @@ export const Catalog: React.FC = () => {
             <CatalogFilter className="Catalog__CatalogFilter" />
             <GoodsList
                 className="Catalog__GoodsList"
-                goods={goods.slice(startIndex, endIndex)}
+                goods={filteredGoods.slice(startIndex, endIndex)}
             />
             <Pagination
                 className="Catalog__Pagination"
-                pageCount={Math.ceil(goods.length / pageSize)}
-                pageNumber={pageNumber}
+                pageCount={pageCount}
+                pageNumber={page}
+                onPrev={handlePrev}
+                onNext={handleNext}
             />
         </div>
     );

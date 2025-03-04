@@ -28,6 +28,7 @@ export const CatalogSearch: React.FC<ICatalogSearchProps> = ({ className }) => {
                 type="text"
                 value={value}
                 onChange={handleChange}
+                placeholder="Keywords"
             />
             <ClearImg
                 className="CatalogSearch__clear"

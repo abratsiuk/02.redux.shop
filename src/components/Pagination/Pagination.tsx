@@ -5,24 +5,23 @@ import { IPropsClassName } from '../../interfaces/IPropsClassName';
 interface IPaginationProps extends IPropsClassName {
     pageCount: number;
     pageNumber: number;
+    onPrev: () => void;
+    onNext: () => void;
 }
-const handlePrevClick = () => {
-    alert('Prev');
-};
-const handleNextClick = () => {
-    alert('Next');
-};
+
 export const Pagination: React.FC<IPaginationProps> = ({
     pageCount,
     pageNumber,
     className,
+    onPrev,
+    onNext,
 }) => {
     const classname = `${className} Pagination`;
 
     return (
         <div className={classname}>
             <button
-                onClick={handlePrevClick}
+                onClick={onPrev}
                 disabled={pageNumber === 1}
             >
                 Previous
@@ -31,7 +30,7 @@ export const Pagination: React.FC<IPaginationProps> = ({
                 Page {pageNumber} of {pageCount}
             </p>
             <button
-                onClick={handleNextClick}
+                onClick={onNext}
                 disabled={pageNumber === pageCount}
             >
                 Next
