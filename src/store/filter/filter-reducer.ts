@@ -1,18 +1,19 @@
 import { FilterActions, FilterActionEnum } from './filter-actions';
 import { IFilter } from '../../interfaces/IFilter';
-import { getFilterTypeArray } from '../../utils/helpers';
 
 interface IFilterState extends IFilter {}
 
 const initialState: IFilter = {
     search: '',
     page: 1,
-    mainType: [],
-    displayType: [],
-    rarity: [],
-    series: [],
-    banner: [],
-    priority: [],
+    type: {
+        mainType: [],
+        displayType: [],
+        rarity: [],
+        series: [],
+        banner: [],
+        priority: [],
+    },
 };
 
 export const filterReducer = (
@@ -26,16 +27,24 @@ export const filterReducer = (
             return action.payload;
         case FilterActionEnum.CHANGE_CHECKED:
             console.log('CHANGE_CHECKED');
-            let filterType = getFilterTypeArray(state, action.payload.field);
+
+            let newValues: string[] = [];
             if (action.payload.checked) {
-                filterType = [...filterType, action.payload.name];
+                newValues = [
+                    ...state.type[action.payload.field],
+                    action.payload.name,
+                ];
             } else {
-                filterType = filterType.filter(
+                newValues = state.type[action.payload.field].filter(
                     (i) => i !== action.payload.name
                 );
             }
+            const newType = {
+                ...state.type,
+                [action.payload.field]: newValues,
+            };
+            return { ...state, type: newType };
 
-            return { ...state, [action.payload.field]: [...filterType] };
         default:
             return state;
     }

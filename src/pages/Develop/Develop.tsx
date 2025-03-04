@@ -11,7 +11,6 @@ export const Develop: React.FC = () => {
             <DevelopInfo field={'series'} />
             <DevelopInfo field={'banner'} />
             <DevelopInfo field={'priority'} />
-            <DevelopInfo field={'offerTag'} />
         </div>
     );
 };

@@ -15,7 +15,13 @@ interface ISetFilterAction {
 }
 
 interface IChangeCheckedPayload {
-    field: string;
+    field:
+        | 'mainType'
+        | 'displayType'
+        | 'rarity'
+        | 'series'
+        | 'banner'
+        | 'priority';
     name: string;
     checked: boolean;
 }

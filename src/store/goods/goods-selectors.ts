@@ -32,7 +32,14 @@ export const selectIsGoodsEmpty = (state: RootState): boolean =>
 
 export const selectFieldInfo = (
     state: RootState,
-    field: string
+    field:
+        | 'mainType'
+        | 'displayType'
+        | 'rarity'
+        | 'series'
+        | 'banner'
+        | 'priority',
+    filter: IFilter
 ): IFieldInfo => {
-    return getFieldsInfo(state.goods.items, field);
+    return getFieldsInfo(state.goods.items, field, filter);
 };
