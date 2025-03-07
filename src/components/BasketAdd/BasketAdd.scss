@@ -1,0 +1,9 @@
+@use 'src/styles/variables' as *;
+
+.BasketAdd {
+    &__img {
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+    }
+}

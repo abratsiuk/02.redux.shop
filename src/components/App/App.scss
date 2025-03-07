@@ -4,3 +4,17 @@
     color: var(--test);
     font-size: 10rem;
 }
+
+.rs-button {
+    padding: 5px 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: font-weight 0.3s ease;
+    &:hover {
+        font-weight: 700;
+    }
+}
