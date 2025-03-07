@@ -2,8 +2,9 @@
 
 .GoodsList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(4, minmax(350px, 1fr));
     justify-items: stretch;
+    align-content: flex-start;
     /* gap: 1rem; */
     padding: 1rem;
     /* background-color: lightgreen; */

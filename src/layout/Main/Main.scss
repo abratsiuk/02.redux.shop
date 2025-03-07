@@ -11,3 +11,10 @@
     background-color: $main-color;
     position: relative;
 }
+
+.Main__BasketSymbol {
+    position: fixed;
+    top: 3rem;
+    right: 1rem;
+    z-index: 100;
+}

@@ -2,7 +2,10 @@ import React from 'react';
 import './GoodItem.scss';
 import { IGoodItem } from '../../interfaces/IGoodItem';
 import { useDispatch } from 'react-redux';
-import { addToBasket } from '../../store/basket/basket-actions';
+import {
+    addToBasket,
+    deleteFromBasket,
+} from '../../store/basket/basket-actions';
 import { IBasketItem } from '../../interfaces/IBasketItem';
 import { BasketAdd } from '../BasketAdd';
 
@@ -41,6 +44,9 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
             qty: 1,
         };
         dispatch(addToBasket(goodInBasket));
+    };
+    const handleDelFromCart = () => {
+        dispatch(deleteFromBasket(id));
     };
 
     return (
@@ -94,7 +100,12 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
                     onClick={handleAddToCart}
                     className="GoodItem__addToCart"
                 ></button> */}
-                <BasketAdd className="GoodItem__addToCart" />
+                <BasketAdd
+                    className="GoodItem__addToCart"
+                    id={id}
+                    onAddToCart={handleAddToCart}
+                    onDelFromCart={handleDelFromCart}
+                />
             </div>
         </div>
     );

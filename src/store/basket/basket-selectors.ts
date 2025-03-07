@@ -4,6 +4,9 @@ import { IBasketItem } from '../../interfaces/IBasketItem';
 
 export const selectBasket = (state: RootState): IBasketState => state.basket;
 
+export const selectGoodInBasket = (state: RootState, id: string): boolean =>
+    state.basket.items.some((item: IBasketItem) => item.id === id);
+
 export const selectBasketQty = (state: RootState): number => {
     if (state.basket.items.length === 0) return 0;
 

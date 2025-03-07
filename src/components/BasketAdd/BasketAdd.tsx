@@ -1,28 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './BasketAdd.scss';
-import { ReactComponent as BaskedMini } from '../../assets/images/basket_mini_red.svg';
-import { ReactComponent as BaskedMiniIn } from '../../assets/images/basket_mini_in.svg';
+import BaskedMini from '../../assets/images/basket_mini_red.svg';
+import BaskedMiniIn from '../../assets/images/basket_mini_in.svg';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
+import { selectGoodInBasket } from '../../store/basket/basket-selectors';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
-interface IBasketAddProps extends IPropsClassName {}
+interface IBasketAddProps extends IPropsClassName {
+    id: string;
+    onAddToCart: () => void;
+    onDelFromCart: () => void;
+}
 
-export const BasketAdd: React.FC<IBasketAddProps> = ({ className }) => {
-    const classname = `${className} BasketAdd`;
-    const [inBasket, setInBasket] = useState(false);
+export const BasketAdd: React.FC<IBasketAddProps> = React.memo(
+    ({ className, id, onAddToCart, onDelFromCart }) => {
+        const classname = `${className} BasketAdd`;
 
-    const toggle = () => {
-        setInBasket((state) => !state);
-    };
-    return (
-        <div
-            className={classname}
-            onClick={toggle}
-        >
-            {inBasket ? (
-                <BaskedMiniIn className="BasketAdd__img" />
-            ) : (
-                <BaskedMini className="BasketAdd__img" />
-            )}
-        </div>
-    );
-};
+        const inBasket = useTypedSelector((state) =>
+            selectGoodInBasket(state, id)
+        );
+
+        const toggle = () => {
+            if (!inBasket && onAddToCart) onAddToCart();
+            if (inBasket && onDelFromCart) onDelFromCart();
+        };
+
+        return (
+            <div
+                className={classname}
+                onClick={toggle}
+            >
+                {inBasket ? (
+                    <img
+                        className="BasketAdd__img"
+                        src={BaskedMiniIn}
+                        alt=""
+                    />
+                ) : (
+                    <img
+                        className="BasketAdd__img"
+                        src={BaskedMini}
+                        alt=""
+                    />
+                )}
+            </div>
+        );
+    }
+);

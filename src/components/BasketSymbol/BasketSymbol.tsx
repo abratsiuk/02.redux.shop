@@ -4,10 +4,15 @@ import { ReactComponent as BaskedSymbolImg } from '../../assets/images/basket.sv
 import { BasketQty } from '../BasketQty';
 import { BasketAmount } from '../BasketAmount';
 import { Link } from 'react-router-dom';
+import { IPropsClassName } from '../../interfaces/IPropsClassName';
 
-export const BasketSymbol: React.FC = () => {
+interface IBasketSymbolProps extends IPropsClassName {}
+
+export const BasketSymbol: React.FC<IBasketSymbolProps> = ({ className }) => {
+    const classname = `${className} BasketSymbol`;
+
     return (
-        <div className="BasketSymbol">
+        <div className={classname}>
             <BasketQty />
             <Link to="/basket">
                 <BaskedSymbolImg className="BasketSymbol__img" />

@@ -44,7 +44,7 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
     ) => {
         dispatch(updateInBasket({ id, qty: qty + 1 }));
     };
-    const handeDeleteItem = (
+    const handleDeleteItem = (
         e: React.MouseEvent<HTMLDivElement, MouseEvent>
     ) => {
         dispatch(deleteFromBasket(id));
@@ -78,7 +78,7 @@ export const BasketItem: React.FC<IBasketItemProps> = ({
             </div>
             <div className="cell BasketItem__number">{price * qty}</div>
             <div
-                onClick={handeDeleteItem}
+                onClick={handleDeleteItem}
                 className="cell BasketItem__delete"
             ></div>
         </div>

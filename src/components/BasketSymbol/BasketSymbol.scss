@@ -1,9 +1,6 @@
 @use 'src/styles/variables' as *;
 
 .BasketSymbol {
-    position: fixed;
-    top: 3rem;
-    right: 1rem;
     &__img {
         width: 5rem;
         height: 5rem;

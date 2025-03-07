@@ -30,7 +30,7 @@ export const Main: React.FC<IMainProps> = ({ children }) => {
 
     return (
         <main className={className}>
-            <BasketSymbol />
+            <BasketSymbol className="Main__BasketSymbol" />
             {children}
         </main>
     );

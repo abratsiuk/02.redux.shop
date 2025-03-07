@@ -2,6 +2,7 @@ import React from 'react';
 import './Profile.scss';
 import { FundsSymbol } from '../../components/FundsSymbol';
 import { OrdersSymbol } from '../../components/OrdersSymbol';
+import { BasketSymbol } from '../../components/BasketSymbol';
 import { useDispatch } from 'react-redux';
 import {
     decreaseFunds,
@@ -9,6 +10,7 @@ import {
     clearFunds,
 } from '../../store/funds/funds-actions';
 import { clearOrders } from '../../store/orders/orders-actions';
+import { clearBasket } from '../../store/basket/basket-actions';
 
 export const Profile: React.FC = () => {
     const fundsStep = 1000;
@@ -24,6 +26,9 @@ export const Profile: React.FC = () => {
     };
     const handleClearOrders = () => {
         dispatch(clearOrders());
+    };
+    const handleClearBasket = () => {
+        dispatch(clearBasket());
     };
 
     return (
@@ -41,6 +46,10 @@ export const Profile: React.FC = () => {
             <div className="Profile__orders">
                 <OrdersSymbol />
                 <button onClick={handleClearOrders}>clear</button>
+            </div>
+            <div className="Profile__basket">
+                <BasketSymbol className="Profile__BasketSymbol" />
+                <button onClick={handleClearBasket}>clear</button>
             </div>
         </div>
     );
