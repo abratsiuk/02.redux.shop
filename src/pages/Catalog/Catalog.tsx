@@ -35,26 +35,6 @@ export const Catalog: React.FC = () => {
         setPageSize(size);
     };
 
-    const goodsTemp = filteredGoods.slice(0, 9);
-    console.log(
-        JSON.stringify(
-            goodsTemp.map((item) => ({
-                background: item.background,
-                name: item.name,
-                displayType: item.displayType,
-                mainType: item.mainType,
-                description: item.description,
-                rarity: item.rarity,
-                series: item.series,
-                banner: item.banner,
-                priority: item.priority,
-                price: item.price,
-            })),
-            null,
-            2
-        )
-    );
-
     return (
         <div className="Catalog">
             {status === GoodsStatus.LOADING && <h1>Loading...</h1>}

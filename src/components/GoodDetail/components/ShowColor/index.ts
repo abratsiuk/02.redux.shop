@@ -1,1 +1,0 @@
-export { ShowColor } from './ShowColor';

@@ -9,7 +9,7 @@ import {
 import { IBasketItem } from '../../interfaces/IBasketItem';
 import { BasketAdd } from '../BasketAdd';
 import { ShowColor } from './components/ShowColor';
-import { ShowObject } from './components/ShowObject';
+import { GoodGranted } from '../GoodGranted';
 
 export interface IGoodDetailProps extends IGoodItem {
     goCatalogItem?: () => void;
@@ -30,6 +30,7 @@ export const GoodDetail: React.FC<IGoodDetailProps> = ({
     priority,
     displayType,
     mainType,
+    granted,
     goCatalogItem,
 }) => {
     const dispatch = useDispatch();
@@ -100,22 +101,16 @@ export const GoodDetail: React.FC<IGoodDetailProps> = ({
                 </div>
             </div>
             <div className="GoodDetail__granted">
-                <ShowColor
-                    name="color1"
-                    color={colors?.color1}
-                />
-                <ShowColor
-                    name="color2"
-                    color={colors?.color2}
-                />
-                <ShowColor
-                    name="color3"
-                    color={colors?.color3}
-                />
-                <ShowColor
-                    name="textBackgroundColor"
-                    color={colors?.textBackgroundColor}
-                />
+                <div>Granted:</div>
+                {granted && granted.length > 0
+                    ? granted.map((g) => (
+                          <GoodGranted
+                              key={g.id}
+                              {...g}
+                              className="GoodDetail__GoodGranted"
+                          />
+                      ))
+                    : null}
             </div>
             <div className="GoodDetail__action">
                 <div className="GoodDetail__price">{price}</div>

@@ -33,6 +33,7 @@ export const OrdersItemShort: React.FC<IOrdersItemShortProps> = ({
                 {icons.length
                     ? icons.map((i) => (
                           <img
+                              key={i.icon}
                               className="OrdersItemShort__icon"
                               src={i.icon}
                               alt=""

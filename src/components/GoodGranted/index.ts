@@ -1,0 +1,1 @@
+export { GoodGranted } from './GoodGranted';
