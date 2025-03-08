@@ -4,4 +4,5 @@ export interface IGrantedItem {
     name?: string;
     icon?: string;
     description?: string;
+    partOfSet?: string;
 }

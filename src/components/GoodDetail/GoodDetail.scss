@@ -2,32 +2,103 @@
 
 .GoodDetail {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(350px, 500px) 1fr;
+    grid-template-rows: auto;
+    align-content: flex-start;
     grid-gap: 5rem;
-    max-width: 100rem;
-    margin: auto;
-
-    &__content {
+    padding: 1rem;
+    &__item {
+        width: 100%;
+        // border: 1px solid grey;
+        // background-color: rgba(230, 230, 230);
+        // border-radius: 2px;
+        padding: 10px;
+        text-align: center;
+        font-size: 1.4rem;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        gap: 1rem;
+        position: relative;
     }
-
-    &__image {
-        display: block;
+    &__top {
         width: 100%;
-        max-width: 450px;
+        position: relative;
     }
-    &__title {
-        font-size: 2.4rem;
-        font-weight: 700;
+    &__banner {
+        display: inline;
+        padding: 0 0.5rem;
+        color: silver;
+        border: 1px solid rgba(240, 128, 128, 0.5);
+        box-shadow: 4px 4px 5px rgba(240, 128, 128, 0.5);
+        border-radius: 10px;
+        background-color: rgba(20, 20, 20, 0.5);
+        position: absolute;
+        top: 15px;
+        left: 15px;
     }
-    &__price {
-        font-size: 1.8rem;
+    &__priority {
+        display: inline;
+        padding: 0 0.5rem;
+        color: white;
+        border: 1px solid rgba(32, 80, 10, 0.5);
+        box-shadow: 4px 4px 5px rgba(32, 80, 10, 0.5);
+        border-radius: 10px;
+        background-color: rgba(8, 222, 8, 0.5);
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    &__image {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+    &__rarity {
+        display: inline;
+        padding: 0 2rem;
+        border: 1px solid rgba(128, 240, 234, 0.5);
+        box-shadow: 4px 4px 5px rgba(128, 240, 234, 0.5);
+        border-radius: 10px;
+        background-color: rgba(255, 235, 205, 0.5);
+        position: absolute;
+        bottom: 25px;
+        right: 15px;
+    }
+    &__content {
+        flex-grow: 1;
+    }
+    &__name {
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    &__displayType {
+        font-weight: bold;
+    }
+    &__description {
+    }
+    &__granted {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        align-content: flex-start;
     }
     &__action {
+        grid-row: 2/3;
+        grid-column: 1 / span 2;
         display: flex;
-        justify-content: flex-end;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__price {
+        color: red;
+        font-size: 1.8rem;
+        font-weight: 700;
+        text-shadow: gold 0px 0px 2px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+    &__addToCart {
+        margin-right: 2rem;
     }
 }
