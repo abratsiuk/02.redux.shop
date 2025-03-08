@@ -13,6 +13,7 @@ export const GoodGranted: React.FC<IGoodGrantedProps> = ({
     icon,
     description,
     partOfSet,
+    qty,
 }) => {
     const classname = `${className} GoodGranted`;
 
@@ -25,9 +26,9 @@ export const GoodGranted: React.FC<IGoodGrantedProps> = ({
             />
             <div className="GoodGranted__content">
                 <div className="GoodGranted__name">
-                    {(name ?? '').length > 50
+                    {((name ?? '').length > 50
                         ? name?.substr(0, 47) + '...'
-                        : name}
+                        : name) + ((qty ?? 0) > 1 ? ` ( x${qty} )` : '')}
                 </div>
                 <div>
                     <div className="GoodGranted__type">{type}</div>

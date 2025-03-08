@@ -73,15 +73,34 @@ export const loadGoods = () => {
                             banner: item.banner,
                             priority: item.priority,
                             price: item.price ? item.price.regularPrice : 0,
-                            granted: item.granted.map((grantedItem: any) => ({
-                                id: grantedItem.id,
-                                type: grantedItem.type?.name ?? '',
-                                name: grantedItem.name ?? '',
-                                icon: grantedItem.images?.icon ?? '',
-                                description: grantedItem.description ?? '',
-                                partOfSet: grantedItem.set?.partOf ?? '',
-                                qty: 1,
-                            })),
+                            granted: item.granted
+                                .map((grantedItem: any) => ({
+                                    id: grantedItem.id,
+                                    type: grantedItem.type?.name ?? '',
+                                    name: grantedItem.name ?? '',
+                                    icon: grantedItem.images?.icon ?? '',
+                                    description: grantedItem.description ?? '',
+                                    partOfSet: grantedItem.set?.partOf ?? '',
+                                    qty: 1,
+                                }))
+                                .reduce(
+                                    (
+                                        acc: IGrantedItem[],
+                                        item: IGrantedItem
+                                    ) => {
+                                        const existsItem = acc.find(
+                                            (i) => i.name === item.name
+                                        );
+                                        if (existsItem) {
+                                            existsItem.qty =
+                                                (existsItem.qty ?? 0) + 1;
+                                        } else {
+                                            acc.push(item);
+                                        }
+                                        return acc;
+                                    },
+                                    [] as IGrantedItem[]
+                                ),
                         })
                     )
                     .filter(

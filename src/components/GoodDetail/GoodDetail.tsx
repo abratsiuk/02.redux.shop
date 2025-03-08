@@ -98,8 +98,8 @@ export const GoodDetail: React.FC<IGoodDetailProps> = ({
                         className="GoodDetail__name"
                         style={{ color: colors?.color2 || undefined }}
                     >
-                        {(name ?? '').length > 20
-                            ? name?.substr(0, 17) + '...'
+                        {(name ?? '').length > 50
+                            ? name?.substr(0, 47) + '...'
                             : name}
                     </span>
                     <div className="GoodDetail__type">

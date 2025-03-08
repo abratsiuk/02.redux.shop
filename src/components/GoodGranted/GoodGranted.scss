@@ -5,9 +5,18 @@
     grid-template-columns: 15rem 1fr;
     font-size: 1.4rem;
     gap: 1rem;
+    position: relative;
     &__image {
         width: 15rem;
         height: 15rem;
+        position: relative;
+        &:hover {
+            position: relative;
+            transform: scale(2);
+            z-index: 10;
+            transition: transform 0.3s ease, box-shadow 0.3s ease,
+                border-radius 0.3s ease;
+        }
     }
     &__content {
         display: flex;
