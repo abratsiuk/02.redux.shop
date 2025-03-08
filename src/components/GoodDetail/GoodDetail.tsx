@@ -8,7 +8,6 @@ import {
 } from '../../store/basket/basket-actions';
 import { IBasketItem } from '../../interfaces/IBasketItem';
 import { BasketAdd } from '../BasketAdd';
-import { ShowColor } from './components/ShowColor';
 import { GoodGranted } from '../GoodGranted';
 
 export interface IGoodDetailProps extends IGoodItem {
@@ -54,6 +53,19 @@ export const GoodDetail: React.FC<IGoodDetailProps> = ({
 
     return (
         <div className="GoodDetail">
+            <div className="GoodDetail__granted">
+                {granted && granted.length > 3 ? (
+                    <>
+                        {granted.slice(0, 3).map((g) => (
+                            <GoodGranted
+                                key={g.id}
+                                {...g}
+                                className="GoodDetail__GoodGranted"
+                            />
+                        ))}
+                    </>
+                ) : null}
+            </div>
             <div className="GoodDetail__item">
                 <div className="GoodDetail__top">
                     {banner?.name ? (
@@ -101,16 +113,28 @@ export const GoodDetail: React.FC<IGoodDetailProps> = ({
                 </div>
             </div>
             <div className="GoodDetail__granted">
-                <div>Granted:</div>
-                {granted && granted.length > 0
-                    ? granted.map((g) => (
-                          <GoodGranted
-                              key={g.id}
-                              {...g}
-                              className="GoodDetail__GoodGranted"
-                          />
-                      ))
-                    : null}
+                {granted && granted.length <= 3 ? (
+                    <>
+                        {granted.map((g) => (
+                            <GoodGranted
+                                key={g.id}
+                                {...g}
+                                className="GoodDetail__GoodGranted"
+                            />
+                        ))}
+                    </>
+                ) : null}
+                {granted && granted.length > 3 ? (
+                    <>
+                        {granted.slice(3).map((g) => (
+                            <GoodGranted
+                                key={g.id}
+                                {...g}
+                                className="GoodDetail__GoodGranted"
+                            />
+                        ))}
+                    </>
+                ) : null}
             </div>
             <div className="GoodDetail__action">
                 <div className="GoodDetail__price">{price}</div>

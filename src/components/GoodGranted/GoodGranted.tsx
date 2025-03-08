@@ -25,13 +25,15 @@ export const GoodGranted: React.FC<IGoodGrantedProps> = ({
             />
             <div className="GoodGranted__content">
                 <div className="GoodGranted__name">
-                    {(name ?? '').length > 20
-                        ? name?.substr(0, 17) + '...'
+                    {(name ?? '').length > 50
+                        ? name?.substr(0, 47) + '...'
                         : name}
                 </div>
-                <div className="GoodGranted__type">type: {type}</div>
+                <div>
+                    <div className="GoodGranted__type">{type}</div>
+                    <div className="GoodGranted__partOfSet">{partOfSet}</div>
+                </div>
                 <div className="GoodGranted__description">{description}</div>
-                <div className="GoodGranted__partOfSet">{partOfSet}</div>
             </div>
         </div>
     );

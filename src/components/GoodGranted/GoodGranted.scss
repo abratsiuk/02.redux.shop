@@ -20,12 +20,16 @@
         font-weight: 700;
     }
     &__type {
+        display: inline;
         padding-left: 1rem;
     }
-    &__description {
-    }
     &__partOfSet {
+        display: inline;
         font-style: italic;
-        align-self: flex-end;
+        padding-left: 2rem;
+    }
+    &__description {
+        word-wrap: break-word;
+        flex-grow: 1;
     }
 }
