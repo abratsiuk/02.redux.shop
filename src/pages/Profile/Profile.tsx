@@ -36,20 +36,45 @@ export const Profile: React.FC = () => {
             <div>Profile</div>
             <div>for debug:</div>
             <div className="Profile__funds">
-                <button onClick={handleDecreaseFunds}>- {fundsStep}</button>
+                <button
+                    className="rs-button"
+                    onClick={handleDecreaseFunds}
+                >
+                    - {fundsStep}
+                </button>
                 <FundsSymbol />
 
-                <button onClick={handleIncreaseFunds}>+ {fundsStep}</button>
-                <button onClick={handleClearFunds}>clear</button>
+                <button
+                    className="rs-button"
+                    onClick={handleIncreaseFunds}
+                >
+                    + {fundsStep}
+                </button>
+                <button
+                    className="rs-button"
+                    onClick={handleClearFunds}
+                >
+                    clear
+                </button>
             </div>
 
             <div className="Profile__orders">
                 <OrdersSymbol />
-                <button onClick={handleClearOrders}>clear</button>
+                <button
+                    className="rs-button"
+                    onClick={handleClearOrders}
+                >
+                    clear
+                </button>
             </div>
             <div className="Profile__basket">
                 <BasketSymbol className="Profile__BasketSymbol" />
-                <button onClick={handleClearBasket}>clear</button>
+                <button
+                    className="rs-button"
+                    onClick={handleClearBasket}
+                >
+                    clear
+                </button>
             </div>
         </div>
     );

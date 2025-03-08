@@ -41,7 +41,12 @@ export const BasketList: React.FC<IBasketListProps> = ({ items }) => {
             </div>
             <div className="cell BasketList__control">
                 {isFundsEnough ? (
-                    <button onClick={handleCheckout}>Checkout</button>
+                    <button
+                        className="rs-button"
+                        onClick={handleCheckout}
+                    >
+                        Checkout
+                    </button>
                 ) : (
                     <p className="BasketList__notEnought">Not enough funds</p>
                 )}

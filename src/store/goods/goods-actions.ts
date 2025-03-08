@@ -80,6 +80,7 @@ export const loadGoods = () => {
                                 icon: grantedItem.images?.icon ?? '',
                                 description: grantedItem.description ?? '',
                                 partOfSet: grantedItem.set?.partOf ?? '',
+                                qty: 1,
                             })),
                         })
                     )

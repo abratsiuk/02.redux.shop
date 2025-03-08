@@ -44,8 +44,18 @@ export const OrdersItemLong: React.FC<IOrdersItemLongProps> = ({
             />
             {item.state === OrderStateEnum.WAITING ? (
                 <div className="OrdersItemLong__command">
-                    <button onClick={handleAcceptOrder}>Accept</button>
-                    <button onClick={handleCancelOrder}>Cancel</button>
+                    <button
+                        className="rs-button"
+                        onClick={handleAcceptOrder}
+                    >
+                        Accept
+                    </button>
+                    <button
+                        className="rs-button"
+                        onClick={handleCancelOrder}
+                    >
+                        Cancel
+                    </button>
                 </div>
             ) : null}
             <div className="OrdersItemLong__goods">

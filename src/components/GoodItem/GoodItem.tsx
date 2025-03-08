@@ -95,11 +95,6 @@ export const GoodItem: React.FC<IGoodItemProps> = ({
             </div>
             <div className="GoodItem__action">
                 <div className="GoodItem__price">{price}</div>
-                {/* <button
-                    title="Add to Cart"
-                    onClick={handleAddToCart}
-                    className="GoodItem__addToCart"
-                ></button> */}
                 <BasketAdd
                     className="GoodItem__addToCart"
                     id={id}

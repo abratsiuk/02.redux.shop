@@ -23,6 +23,7 @@ export const Pagination: React.FC<IPaginationProps> = ({
     return (
         <div className={classname}>
             <button
+                className="rs-button Pagination__prev"
                 onClick={onPrev}
                 disabled={pageNumber === 1}
             >
@@ -32,14 +33,36 @@ export const Pagination: React.FC<IPaginationProps> = ({
                 Page {pageNumber} of {pageCount}
             </p>
             <button
+                className="rs-button  Pagination__next"
                 onClick={onNext}
                 disabled={pageNumber === pageCount}
             >
                 Next
             </button>
-            <button onClick={() => onPageSize(6)}>6</button>
-            <button onClick={() => onPageSize(12)}>12</button>
-            <button onClick={() => onPageSize(24)}>24</button>
+            <button
+                className="rs-button Pagination__size"
+                onClick={() => onPageSize(6)}
+            >
+                6
+            </button>
+            <button
+                className="rs-button Pagination__size"
+                onClick={() => onPageSize(12)}
+            >
+                12
+            </button>
+            <button
+                className="rs-button Pagination__size"
+                onClick={() => onPageSize(24)}
+            >
+                24
+            </button>
+            <button
+                className="rs-button Pagination__size"
+                onClick={() => onPageSize(48)}
+            >
+                48
+            </button>
         </div>
     );
 };

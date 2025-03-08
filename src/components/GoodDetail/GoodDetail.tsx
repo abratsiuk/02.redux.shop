@@ -56,13 +56,15 @@ export const GoodDetail: React.FC<IGoodDetailProps> = ({
             <div className="GoodDetail__granted">
                 {granted && granted.length > 3 ? (
                     <>
-                        {granted.slice(0, 3).map((g) => (
-                            <GoodGranted
-                                key={g.id}
-                                {...g}
-                                className="GoodDetail__GoodGranted"
-                            />
-                        ))}
+                        {granted
+                            .slice(0, Math.floor(granted.length / 2))
+                            .map((g) => (
+                                <GoodGranted
+                                    key={g.id}
+                                    {...g}
+                                    className="GoodDetail__GoodGranted"
+                                />
+                            ))}
                     </>
                 ) : null}
             </div>
@@ -126,23 +128,21 @@ export const GoodDetail: React.FC<IGoodDetailProps> = ({
                 ) : null}
                 {granted && granted.length > 3 ? (
                     <>
-                        {granted.slice(3).map((g) => (
-                            <GoodGranted
-                                key={g.id}
-                                {...g}
-                                className="GoodDetail__GoodGranted"
-                            />
-                        ))}
+                        {granted
+                            .slice(Math.floor(granted.length / 2))
+                            .map((g) => (
+                                <GoodGranted
+                                    key={g.id}
+                                    {...g}
+                                    className="GoodDetail__GoodGranted"
+                                />
+                            ))}
                     </>
                 ) : null}
             </div>
             <div className="GoodDetail__action">
                 <div className="GoodDetail__price">{price}</div>
-                {/* <button
-                    title="Add to Cart"
-                    onClick={handleAddToCart}
-                    className="GoodDetail__addToCart"
-                ></button> */}
+
                 <BasketAdd
                     className="GoodDetail__addToCart"
                     id={id}

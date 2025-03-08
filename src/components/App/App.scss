@@ -7,14 +7,15 @@
 
 .rs-button {
     padding: 5px 10px;
-    background: #007bff;
+    background: #3dacfd;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     text-decoration: none;
-    transition: font-weight 0.3s ease;
+    transition: font-weight 0.3s ease, background 0.3s ease;
     &:hover {
-        font-weight: 700;
+        font-weight: 500;
+        background: #3dadfdb6;
     }
 }

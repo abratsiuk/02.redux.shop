@@ -5,4 +5,5 @@ export interface IGrantedItem {
     icon?: string;
     description?: string;
     partOfSet?: string;
+    qty?: number;
 }

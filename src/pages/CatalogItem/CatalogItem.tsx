@@ -12,7 +12,12 @@ export const CatalogItem: React.FC = () => {
 
     return (
         <div className="CatalogItem">
-            <button onClick={() => navigate(-1)}>Back</button>
+            <button
+                className="rs-button"
+                onClick={() => navigate(-1)}
+            >
+                Back
+            </button>
             {good ? (
                 <GoodDetail
                     key={good.id}
