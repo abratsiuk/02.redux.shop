@@ -1,0 +1,152 @@
+{
+    "result": true,
+    "item": {
+        "id": "EID_KeplerFemale_C98JD",
+        "type": {
+            "id": "emote",
+            "name": "Эмоция"
+        },
+        "name": "Грудолам",
+        "description": "Лучше отойдите подальше.",
+        "rarity": {
+            "id": "Uncommon",
+            "name": "НЕОБЫЧНЫЙ"
+        },
+        "series": null,
+        "price": 300,
+        "added": {
+            "date": "2021-02-26",
+            "version": "15.40"
+        },
+        "builtInEmote": null,
+        "copyrightedAudio": false,
+        "upcoming": false,
+        "reactive": false,
+        "releaseDate": "2021-02-26",
+        "lastAppearance": "2025-03-08",
+        "interest": 0.04,
+        "images": {
+            "icon": "https://media.fortniteapi.io/images/884d014f76e5b53b99c53b4fa0ab35d1/transparent.png",
+            "featured": "https://media.fortniteapi.io/images/884d014f76e5b53b99c53b4fa0ab35d1/full_featured.png",
+            "background": "https://media.fortniteapi.io/images/cosmetics/884d014f76e5b53b99c53b4fa0ab35d1/v2/background.png",
+            "icon_background": "https://media.fortniteapi.io/images/cosmetics/884d014f76e5b53b99c53b4fa0ab35d1/v2/icon_background.png",
+            "full_background": "https://media.fortniteapi.io/images/cosmetics/884d014f76e5b53b99c53b4fa0ab35d1/v2/info.ru.png"
+        },
+        "juno": {
+            "icon": null
+        },
+        "beans": {
+            "icon": null
+        },
+        "video": null,
+        "audio": null,
+        "path": "/BRCosmetics/Athena/Items/Cosmetics/Dances/EID_KeplerFemale_C98JD",
+        "gameplayTags": [
+            "Cosmetics.EmoteType.Dance",
+            "Cosmetics.Source.ItemShop",
+            "Cosmetics.Filter.Season.15",
+            "Cosmetics.Set.ToneTrip",
+            "Emote.Mech.Disabled.Art"
+        ],
+        "apiTags": [
+            "emoteDuration:12.77"
+        ],
+        "searchTags": [],
+        "battlepass": null,
+        "set": {
+            "id": "ToneTrip",
+            "name": "Крик в космосе",
+            "partOf": "Входит в набор «Крик в космосе»."
+        },
+        "introduction": {
+            "chapter": "Глава 2",
+            "season": "Сезон 5",
+            "text": "Первое появление: Глава 2 — Сезон 5."
+        },
+        "displayAssets": [
+            {
+                "displayAsset": "DAv2_EID_KeplerFemale_C98JD",
+                "materialInstance": "MI_0",
+                "primaryMode": "MAX",
+                "productTag": "Product.BR",
+                "url": "https://media.fortniteapi.io/images/displayAssets/v2/MAX/DAv2_EID_KeplerFemale_C98JD/MI_0.png",
+                "flipbook": null,
+                "background_texture": null,
+                "background": "https://media.fortniteapi.io/images/cosmetics/884d014f76e5b53b99c53b4fa0ab35d1/v2/MI_0/background.png",
+                "full_background": "https://media.fortniteapi.io/images/cosmetics/884d014f76e5b53b99c53b4fa0ab35d1/v2/MI_0/info.ru.png"
+            }
+        ],
+        "shopHistory": [
+            "2021-02-26",
+            "2021-02-27",
+            "2021-02-28",
+            "2021-03-01",
+            "2021-03-02",
+            "2021-03-03",
+            "2021-03-04",
+            "2021-03-14",
+            "2021-03-15",
+            "2021-03-16",
+            "2021-04-26",
+            "2021-11-14",
+            "2021-11-15",
+            "2021-11-16",
+            "2022-09-28",
+            "2022-09-29",
+            "2022-09-30",
+            "2022-10-01",
+            "2022-10-02",
+            "2023-01-14",
+            "2023-01-15",
+            "2023-01-16",
+            "2023-01-17",
+            "2023-01-18",
+            "2023-01-19",
+            "2023-03-25",
+            "2023-03-26",
+            "2023-04-22",
+            "2023-04-23",
+            "2023-10-15",
+            "2023-10-16",
+            "2023-10-17",
+            "2023-10-18",
+            "2024-04-26",
+            "2024-04-27",
+            "2024-04-28",
+            "2024-04-29",
+            "2024-08-15",
+            "2024-08-16",
+            "2024-08-17",
+            "2024-08-18",
+            "2024-10-14",
+            "2024-10-15",
+            "2024-10-16",
+            "2024-10-17",
+            "2024-10-18",
+            "2024-10-19",
+            "2024-10-20",
+            "2024-10-21",
+            "2024-10-22",
+            "2024-10-23",
+            "2024-10-24",
+            "2024-10-25",
+            "2024-10-26",
+            "2024-10-27",
+            "2024-10-28",
+            "2024-10-29",
+            "2024-10-30",
+            "2024-10-31",
+            "2024-11-01",
+            "2024-11-02",
+            "2025-03-05",
+            "2025-03-06",
+            "2025-03-07",
+            "2025-03-08"
+        ],
+        "styles": [],
+        "previewVideos": [],
+        "epicVideos": [],
+        "grants": [],
+        "grantedBy": []
+    }
+}

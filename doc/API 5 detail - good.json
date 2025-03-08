@@ -1,0 +1,186 @@
+{
+    "mainId": "SpaceGearBundle",
+    "displayName": "Комплект «Космическое снаряжение»",
+    "displayDescription": "",
+    "displayType": "Комплект предметов",
+    "mainType": "bundle",
+    "offerId": "v2:/97dc2f82568324103d1a49e608b33c1a6b14543b7cf223517323f422871c729b",
+    "devName": "[VIRTUAL]1 x Burst Case Scenario, 1 x P-5000 Power Loader Arm, 1 x Cheyenne Dropship for -1 MtxCurrency",
+    "webURL": "/item-shop/bundles/space-gear-bundle-ae74fe44",
+    "offerDates": {
+        "in": "2025-03-05T00:00:00.000Z",
+        "out": "2025-03-08T23:59:59.999Z"
+    },
+    "colors": {
+        "color1": "#710094",
+        "color2": "#4e006e",
+        "color3": "#2d004a",
+        "textBackgroundColor": "#2d004a"
+    },
+    "displayAssets": [
+        {
+            "displayAsset": "DAv2_Featured_SpaceGearBundle",
+            "materialInstance": "MI_0",
+            "primaryMode": "MAX",
+            "productTag": "Product.BR",
+            "url": "https://media.fortniteapi.io/images/displayAssets/v2/MAX/DAv2_Featured_SpaceGearBundle/MI_0.png",
+            "flipbook": null,
+            "background_texture": null,
+            "background": "https://media.fortniteapi.io/images/shop/97dc2f82568324103d1a49e608b33c1a6b14543b7cf223517323f422871c729b/v2/MI_0/background.png",
+            "full_background": "https://media.fortniteapi.io/images/shop/97dc2f82568324103d1a49e608b33c1a6b14543b7cf223517323f422871c729b/v2/MI_0/info.ru.png"
+        }
+    ],
+    "firstReleaseDate": "2021-02-26",
+    "previousReleaseDate": "2025-03-07",
+    "giftAllowed": true,
+    "buyAllowed": true,
+    "price": {
+        "regularPrice": 2300,
+        "finalPrice": 1500,
+        "floorPrice": 400
+    },
+    "rarity": {
+        "id": "Uncommon",
+        "name": "НЕОБЫЧНЫЙ"
+    },
+    "series": null,
+    "banner": {
+        "id": "vbucksoff",
+        "name": "Скидка: 800 В-баксов",
+        "intensity": "Low"
+    },
+    "offerTag": null,
+    "granted": [
+        {
+            "id": "EID_KeplerFemale_C98JD",
+            "type": {
+                "id": "emote",
+                "name": "Эмоция"
+            },
+            "name": "Грудолам",
+            "description": "Лучше отойдите подальше.",
+            "rarity": {
+                "id": "Uncommon",
+                "name": "НЕОБЫЧНЫЙ"
+            },
+            "series": null,
+            "images": {
+                "icon": "https://media.fortniteapi.io/images/884d014f76e5b53b99c53b4fa0ab35d1/transparent.png",
+                "featured": "https://media.fortniteapi.io/images/884d014f76e5b53b99c53b4fa0ab35d1/full_featured.png",
+                "background": "https://media.fortniteapi.io/images/cosmetics/884d014f76e5b53b99c53b4fa0ab35d1/v2/background.png",
+                "icon_background": "https://media.fortniteapi.io/images/cosmetics/884d014f76e5b53b99c53b4fa0ab35d1/v2/icon_background.png",
+                "full_background": "https://media.fortniteapi.io/images/cosmetics/884d014f76e5b53b99c53b4fa0ab35d1/v2/info.ru.png"
+            },
+            "juno": {
+                "icon": null
+            },
+            "beans": {
+                "icon": null
+            },
+            "video": null,
+            "audio": null,
+            "gameplayTags": [
+                "Cosmetics.EmoteType.Dance",
+                "Cosmetics.Source.ItemShop",
+                "Cosmetics.Filter.Season.15",
+                "Cosmetics.Set.ToneTrip",
+                "Emote.Mech.Disabled.Art"
+            ],
+            "set": {
+                "id": "ToneTrip",
+                "name": "Крик в космосе",
+                "partOf": "Входит в набор «Крик в космосе»."
+            }
+        },
+        {
+            "id": "Pickaxe_ID_551_KeplerFemale_AOYI5",
+            "type": {
+                "id": "pickaxe",
+                "name": "Кирки"
+            },
+            "name": "Манипулятор погрузчика P-5000",
+            "description": "Требуется допуск второго уровня.",
+            "rarity": {
+                "id": "Rare",
+                "name": "РЕДКИЙ"
+            },
+            "series": null,
+            "images": {
+                "icon": "https://media.fortniteapi.io/images/99f842008f12aaa0c1c3c085ce474abf/transparent.png",
+                "featured": "https://media.fortniteapi.io/images/99f842008f12aaa0c1c3c085ce474abf/full_featured.png",
+                "background": "https://media.fortniteapi.io/images/cosmetics/99f842008f12aaa0c1c3c085ce474abf/v2/background.png",
+                "icon_background": "https://media.fortniteapi.io/images/cosmetics/99f842008f12aaa0c1c3c085ce474abf/v2/icon_background.png",
+                "full_background": "https://media.fortniteapi.io/images/cosmetics/99f842008f12aaa0c1c3c085ce474abf/v2/info.ru.png"
+            },
+            "juno": {
+                "icon": null
+            },
+            "beans": {
+                "icon": null
+            },
+            "video": null,
+            "audio": null,
+            "gameplayTags": [
+                "Cosmetics.Filter.Season.15",
+                "Cosmetics.Source.ItemShop",
+                "Cosmetics.Set.ToneTrip"
+            ],
+            "set": {
+                "id": "ToneTrip",
+                "name": "Крик в космосе",
+                "partOf": "Входит в набор «Крик в космосе»."
+            }
+        },
+        {
+            "id": "Glider_ID_276_Kepler_BEUUP",
+            "type": {
+                "id": "glider",
+                "name": "Дельтаплан"
+            },
+            "name": "Десантный челнок",
+            "description": "Можно не пристёгиваться.",
+            "rarity": {
+                "id": "Epic",
+                "name": "Эпический"
+            },
+            "series": null,
+            "images": {
+                "icon": "https://media.fortniteapi.io/images/473f6405cfaa120b38c99b7275a58dfb/transparent.png",
+                "featured": "https://media.fortniteapi.io/images/473f6405cfaa120b38c99b7275a58dfb/full_featured.png",
+                "background": "https://media.fortniteapi.io/images/cosmetics/473f6405cfaa120b38c99b7275a58dfb/v2/background.png",
+                "icon_background": "https://media.fortniteapi.io/images/cosmetics/473f6405cfaa120b38c99b7275a58dfb/v2/icon_background.png",
+                "full_background": "https://media.fortniteapi.io/images/cosmetics/473f6405cfaa120b38c99b7275a58dfb/v2/info.ru.png"
+            },
+            "juno": {
+                "icon": null
+            },
+            "beans": {
+                "icon": null
+            },
+            "video": null,
+            "audio": null,
+            "gameplayTags": [
+                "Cosmetics.Filter.Season.15",
+                "Cosmetics.Source.ItemShop",
+                "Cosmetics.Set.ToneTrip"
+            ],
+            "set": {
+                "id": "ToneTrip",
+                "name": "Крик в космосе",
+                "partOf": "Входит в набор «Крик в космосе»."
+            }
+        }
+    ],
+    "priority": -1,
+    "section": {
+        "id": "Aliens.98",
+        "name": "Чужие",
+        "category": null,
+        "landingPriority": 0,
+        "metadata": null
+    },
+    "groupIndex": 0,
+    "storeName": "BRWeeklyStorefront",
+    "tileSize": "Size_1_x_1",
+    "categories": []
+},
