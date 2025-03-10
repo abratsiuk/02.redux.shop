@@ -47,3 +47,5 @@ export const BasketAdd: React.FC<IBasketAddProps> = React.memo(
         );
     }
 );
+
+BasketAdd.displayName = 'BasketAdd';

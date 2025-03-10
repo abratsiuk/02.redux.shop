@@ -12,7 +12,7 @@ import { CatalogFilter } from '../../components/CatalogFilter';
 import { Pagination } from '../../components/Pagination';
 import { selectFilter } from '../../store/filter/filter-selectors';
 
-export const Catalog: React.FC = () => {
+const NotMemorizedCatalog: React.FC = () => {
     const filter = useTypedSelector(selectFilter);
     const filteredGoods = useTypedSelector((state) =>
         selectFilteredGoods(state, filter)
@@ -56,3 +56,7 @@ export const Catalog: React.FC = () => {
         </div>
     );
 };
+
+export const Catalog = React.memo(NotMemorizedCatalog);
+
+Catalog.displayName = 'Catalog';
