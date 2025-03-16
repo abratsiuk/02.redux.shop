@@ -36,14 +36,15 @@ export const CatalogFilterGroupItem: React.FC<ICatalogFilterGroupItemProps> = ({
 
     return (
         <div className={classname}>
-            <label>
+            <label className="CatalogFilterGroupItem__label">
                 <input
                     className="CatalogFilterGroupItem__checkbox"
                     type="checkbox"
                     checked={check}
                     onChange={handleChecked}
                 />
-                <span>{name}</span>
+                <span className="CatalogFilterGroupItem__symbol"></span>
+                <span className="CatalogFilterGroupItem__name">{name}</span>
                 <span className="CatalogFilterGroupItem__count">
                     {'(' + count + ')'}
                 </span>
