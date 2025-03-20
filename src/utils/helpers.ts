@@ -89,10 +89,11 @@ export const getFieldsInfo = (
 
 const isRelevantSearch = (search: string, name: string): boolean => {
     if (search && name) {
-        const worlds = search.split(' ');
+        const worlds = search.toLowerCase().split(' ');
+        const nameLower = name.toLowerCase();
         for (const w of worlds) {
             if (w.trim()) {
-                if (!name.includes(w)) {
+                if (!nameLower.includes(w)) {
                     return false;
                 }
             }
