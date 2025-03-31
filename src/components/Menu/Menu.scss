@@ -1,0 +1,15 @@
+@use 'src/styles/variables' as *;
+
+.Menu {
+    &__list {
+        display: flex;
+        // justify-content: flex-end;
+        justify-content: space-between;
+    }
+    &__item {
+        margin-right: 3rem;
+        &:last-of-type {
+            margin-right: 0rem;
+        }
+    }
+}

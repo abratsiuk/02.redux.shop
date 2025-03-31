@@ -12,6 +12,7 @@ import './Header.scss';
 import { ReactComponent as Logo } from '../../assets/images/shop.svg';
 import { FundsSymbol } from '../../components/FundsSymbol';
 import { OrdersSymbol } from '../../components/OrdersSymbol';
+import { Menu } from '../../components/Menu';
 
 export const Header = () => {
     const dispatch = useDispatch();
@@ -41,25 +42,7 @@ export const Header = () => {
                     <OrdersSymbol />
                 </div>
             </div>
-            <ul className="Header__menu">
-                {menu?.map((m: IMenuItem) => {
-                    return (
-                        <li
-                            className="Header__menuItem"
-                            key={m.to}
-                        >
-                            <NavLink
-                                to={m.to}
-                                className={({ isActive }) =>
-                                    isActive ? 'link link_active' : 'link'
-                                }
-                            >
-                                {m.text}
-                            </NavLink>
-                        </li>
-                    );
-                })}
-            </ul>
+            <Menu className="Header__menu" />
         </header>
     );
 };
