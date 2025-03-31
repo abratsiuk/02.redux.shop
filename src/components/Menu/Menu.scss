@@ -1,15 +1,19 @@
 @use 'src/styles/variables' as *;
 
 .Menu {
+    border: 1px solid green;
     &__list {
         display: flex;
-        // justify-content: flex-end;
         justify-content: space-between;
+        gap: 3rem;
     }
     &__item {
-        margin-right: 3rem;
-        &:last-of-type {
-            margin-right: 0rem;
-        }
+    }
+}
+
+@media (max-width: 768px) {
+    .Menu {
+        border: 1px solid red;
+        // display: none;
     }
 }
