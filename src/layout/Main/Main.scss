@@ -1,13 +1,13 @@
 @use 'src/styles/variables' as *;
 
 .Main {
-    height: calc(100vh - $header-height - $footer-height);
+    height: calc(100vh - var(--header-height) - var(--footer-height));
     background-color: $main-color;
     position: relative;
 }
 
 .Main_scrollable {
-    min-height: calc(100vh - $header-height - $footer-height);
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
     background-color: $main-color;
     position: relative;
 }

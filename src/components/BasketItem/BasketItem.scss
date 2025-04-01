@@ -2,8 +2,8 @@
 
 .BasketItem {
     display: grid;
-    grid-template-columns: 2rem $basket__image-size 1fr 8rem 4rem;
-    grid-template-rows: $basket__image-size 5rem;
+    grid-template-columns: 2rem var(--basket__image-size) 1fr 8rem 4rem;
+    grid-template-rows: var(--basket__image-size) 5rem;
     align-items: center;
     gap: 1rem;
     // border: 1px solid black;
@@ -14,8 +14,8 @@
         grid-row: span 2;
     }
     &__image {
-        max-width: $basket__image-size;
-        max-height: $basket__image-size;
+        max-width: var(--basket__image-size);
+        max-height: var(--basket__image-size);
         grid-column: 2/3;
         grid-row: 1/2;
     }

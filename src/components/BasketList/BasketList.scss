@@ -8,7 +8,7 @@
     padding-top: 3rem;
     &__totalRow {
         display: grid;
-        grid-template-columns: 2rem $basket__image-size 1fr 8rem 4rem;
+        grid-template-columns: 2rem var(--basket__image-size) 1fr 8rem 4rem;
         grid-template-rows: 5rem;
         align-items: center;
     }
