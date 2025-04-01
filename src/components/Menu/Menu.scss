@@ -1,7 +1,6 @@
 @use 'src/styles/variables' as *;
 
 .Menu {
-    border: 1px solid green;
     &__list {
         display: flex;
         justify-content: space-between;
@@ -13,7 +12,6 @@
 
 @media (max-width: 768px) {
     .Menu {
-        border: 1px solid red;
-        // display: none;
+        display: none;
     }
 }
