@@ -17,6 +17,30 @@ html {
     --footer-height: 5rem;
     --basket__image-size: 12rem;
 }
+@media (max-width: 1199.98px) {
+    :root {
+        --header-height: 7rem;
+        --header__logo-font-size: 4rem;
+        --footer-height: 4rem;
+        --basket__image-size: 11rem;
+    }
+}
+@media (max-width: 991.98px) {
+    :root {
+        --header-height: 6rem;
+        --header__logo-font-size: 3rem;
+        --footer-height: 3rem;
+        --basket__image-size: 10rem;
+    }
+}
+@media (max-width: 767.98px) {
+    :root {
+        --header-height: 5rem;
+        --header__logo-font-size: 3rem;
+        --footer-height: 3rem;
+        --basket__image-size: 9rem;
+    }
+}
 
 body {
     --test: red;
