@@ -1,5 +1,5 @@
 import React from 'react';
-import './BasketAmount.scss';
+import './BasketAmount.css';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectBasketAmount } from '../../store/basket/basket-selectors';
 import { selectFunds } from '../../store/funds/funds-selectors';

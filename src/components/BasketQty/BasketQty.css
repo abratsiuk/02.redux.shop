@@ -1,0 +1,14 @@
+.BasketQty {
+  position: absolute;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0.3rem;
+  right: -0.7rem;
+  top: -0.7rem;
+  background-color: #00a046;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

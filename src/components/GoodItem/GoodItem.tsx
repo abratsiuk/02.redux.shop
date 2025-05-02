@@ -1,5 +1,5 @@
 import React from 'react';
-import './GoodItem.scss';
+import './GoodItem.css';
 import { IGoodItem } from '../../interfaces/IGoodItem';
 import { useDispatch } from 'react-redux';
 import {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './OrdersItemLongItem.scss';
+import './OrdersItemLongItem.css';
 import { IBasketItem } from '../../interfaces/IBasketItem';
 import { Link } from 'react-router-dom';
 

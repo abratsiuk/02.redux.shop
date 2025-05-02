@@ -4,7 +4,7 @@ import { Header } from '../../layout/Header';
 import { Footer } from '../../layout/Footer';
 import { Main } from '../../layout/Main';
 
-import './App.scss';
+import './App.css';
 import { AppRouterRoutes } from '../AppRouterRoutes';
 import { Provider } from 'react-redux';
 import { store, persistor } from '../../store';

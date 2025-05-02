@@ -1,5 +1,5 @@
 import React from 'react';
-import './GoodGranted.scss';
+import './GoodGranted.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 import { IGrantedItem } from '../../interfaces/IGrantedItem';
 

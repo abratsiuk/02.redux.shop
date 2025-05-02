@@ -8,7 +8,7 @@ import { loadGoods } from '../../store/goods/goods-actions';
 import { Link, NavLink } from 'react-router-dom';
 import { menu } from '../../configs';
 import { IMenuItem } from '../../configs/IMenuItem';
-import './Header.scss';
+import './Header.css';
 import { ReactComponent as Logo } from '../../assets/images/shop.svg';
 import { FundsSymbol } from '../../components/FundsSymbol';
 import { OrdersSymbol } from '../../components/OrdersSymbol';

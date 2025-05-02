@@ -1,0 +1,34 @@
+.Header {
+  height: var(--header-height);
+  background-color: var(--header-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Header__block {
+  display: flex;
+  align-items: center;
+}
+.Header__symbols {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.Header__logo {
+  font-family: "Great Vibes", cursive;
+  font-size: var(--header__logo-font-size);
+  text-decoration: none;
+  color: var(--header__logo-color);
+  line-height: 5rem;
+  margin-top: 1.8rem;
+  margin-left: 1.5rem;
+  margin-right: 10rem;
+}
+.Header__img {
+  width: 5rem;
+  height: 5rem;
+  margin-left: 2rem;
+}
+.Header__menu {
+  padding: 0 7rem;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './GoodsList.scss';
+import './GoodsList.css';
 import { IGoodItem } from '../../interfaces/IGoodItem';
 import { GoodItem } from '../GoodItem';
 import { useNavigate } from 'react-router-dom';

@@ -1,0 +1,22 @@
+.FundsSymbol__link {
+  text-decoration: none;
+}
+.FundsSymbol__container {
+  display: flex;
+  align-items: flex-end;
+}
+.FundsSymbol__img {
+  width: 4rem;
+  height: 4rem;
+}
+.FundsSymbol__img * {
+  stroke: gold;
+}
+.FundsSymbol__img rect {
+  stroke: transparent;
+}
+.FundsSymbol__amount {
+  color: var(--header__logo-color-dark);
+  height: 3rem;
+  text-shadow: 3px 3px 5px gold;
+}

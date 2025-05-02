@@ -1,5 +1,5 @@
 import React from 'react';
-import './Pagination.scss';
+import './Pagination.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 
 interface IPaginationProps extends IPropsClassName {

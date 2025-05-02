@@ -1,5 +1,5 @@
 import React from 'react';
-import './BasketSymbol.scss';
+import './BasketSymbol.css';
 import { ReactComponent as BaskedSymbolImg } from '../../assets/images/basket.svg';
 import { BasketQty } from '../BasketQty';
 import { BasketAmount } from '../BasketAmount';

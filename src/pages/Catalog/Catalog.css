@@ -1,0 +1,20 @@
+.Catalog {
+  display: grid;
+  grid-template-columns: minmax(30rem, 0.5fr) 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 5rem;
+  grid-template-areas: "search goods goods goods  " "filters goods goods goods  " "filters pagination pagination pagination  ";
+  gap: 2rem;
+  padding: 1rem;
+}
+.Catalog__CatalogSearch {
+  grid-area: search;
+}
+.Catalog__CatalogFilter {
+  grid-area: filters;
+}
+.Catalog__GoodsList {
+  grid-area: goods;
+}
+.Catalog__Pagination {
+  grid-area: pagination;
+}

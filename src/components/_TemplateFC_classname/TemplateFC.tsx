@@ -1,5 +1,5 @@
 import React from 'react';
-import './TemplateFC.scss';
+import './TemplateFC.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 
 interface ITemplateFCProps extends IPropsClassName {}

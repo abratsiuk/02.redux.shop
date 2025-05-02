@@ -1,5 +1,5 @@
 import React from 'react';
-import './OrderChevron.scss';
+import './OrderChevron.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 import { ReactComponent as ChevronClosed } from '../../assets/images/chevron_closed.svg';
 import { ReactComponent as ChevronOpened } from '../../assets/images/chevron_opened.svg';

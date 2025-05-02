@@ -1,0 +1,10 @@
+.Menu__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+@media (max-width: 768px) {
+  .Menu {
+    display: none;
+  }
+}

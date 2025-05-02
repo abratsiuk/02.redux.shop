@@ -1,0 +1,19 @@
+.CatalogSearch {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2rem 1fr 2rem;
+  justify-items: flex-start;
+  align-items: center;
+  padding-top: 2rem;
+}
+.CatalogSearch__img {
+  width: 2rem;
+  height: 2rem;
+}
+.CatalogSearch__clear {
+  width: 2rem;
+  height: 2rem;
+}
+.CatalogSearch__field {
+  width: 100%;
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './OrdersItem.scss';
+import './OrdersItem.css';
 import { IOrder } from '../../interfaces/IOrder';
 import { OrdersItemShort } from '../OrdersItemShort';
 import { OrdersItemLong } from '../OrdersItemLong';

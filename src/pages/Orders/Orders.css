@@ -1,0 +1,8 @@
+.Orders {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+.Orders__empty {
+  padding-top: 5rem;
+}

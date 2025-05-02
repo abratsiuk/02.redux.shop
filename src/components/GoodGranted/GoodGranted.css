@@ -1,0 +1,38 @@
+.GoodGranted {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  font-size: 1.4rem;
+  gap: 1rem;
+}
+.GoodGranted__image {
+  width: 15rem;
+  height: 15rem;
+}
+.GoodGranted__image:hover {
+  transform: scale(2);
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+.GoodGranted__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.GoodGranted__name {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.GoodGranted__type {
+  display: inline;
+  padding-left: 1rem;
+}
+.GoodGranted__partOfSet {
+  display: inline;
+  font-style: italic;
+  padding-left: 2rem;
+}
+.GoodGranted__description {
+  word-wrap: break-word;
+  flex-grow: 1;
+}

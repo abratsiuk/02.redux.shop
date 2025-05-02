@@ -1,0 +1,22 @@
+.Pagination {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Pagination__prev {
+  margin-right: 2rem;
+  width: 9rem;
+}
+.Pagination__next {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  width: 9rem;
+}
+.Pagination__size {
+  border-radius: 0%;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  background-color: #c7c7c7;
+}

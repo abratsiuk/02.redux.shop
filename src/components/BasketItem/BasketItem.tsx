@@ -1,5 +1,5 @@
 import React from 'react';
-import './BasketItem.scss';
+import './BasketItem.css';
 import { IBasketItem } from '../../interfaces/IBasketItem';
 import { useDispatch } from 'react-redux';
 import {

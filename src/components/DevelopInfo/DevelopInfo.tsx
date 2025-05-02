@@ -1,5 +1,5 @@
 import React from 'react';
-import './DevelopInfo.scss';
+import './DevelopInfo.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 
 interface IDevelopInfoProps extends IPropsClassName {}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './OrdersList.scss';
+import './OrdersList.css';
 import { IOrder } from '../../interfaces/IOrder';
 import { OrdersItem } from '../OrdersItem';
 

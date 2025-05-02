@@ -1,0 +1,6 @@
+.OrdersList {
+  display: grid;
+  gap: 2rem;
+  margin: auto;
+  padding-top: 3rem;
+}

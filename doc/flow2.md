@@ -204,3 +204,11 @@ nvm install 16.20.2
 nvm use 16.20.2
 
 nvm list
+
+--==================
+unuse sass:
+
+use Live Sass Compiler for compile sass to css
+"liveSassCompile.settings.generateMap": false,
+
+npm uninstall sass postcss postcss-safe-parser

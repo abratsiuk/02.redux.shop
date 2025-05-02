@@ -1,0 +1,15 @@
+.OrderChevron {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--color_transition);
+}
+.OrderChevron-closed *, .OrderChevron-opened * {
+  fill: gray !important;
+}
+.OrderChevron-closed rect, .OrderChevron-opened rect {
+  stroke: transparent;
+}
+.OrderChevron-closed :hover *, .OrderChevron-opened :hover * {
+  fill: blue !important;
+}

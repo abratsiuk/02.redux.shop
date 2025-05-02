@@ -1,5 +1,5 @@
 import React from 'react';
-import './Orders.scss';
+import './Orders.css';
 import { OrdersList } from '../../components/OrdersList';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './CatalogFilterGroup.scss';
+import './CatalogFilterGroup.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 import { CatalogFilterGroupItem } from '../CatalogFilterGroupItem';
 import { IFieldInfo } from '../../interfaces/IFieldInfo';

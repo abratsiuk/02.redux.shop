@@ -1,0 +1,16 @@
+.CatalogFilter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.CatalogFilter__section {
+  margin-bottom: 2rem;
+}
+.CatalogFilter__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

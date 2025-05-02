@@ -1,5 +1,5 @@
 import React from 'react';
-import './BasketList.scss';
+import './BasketList.css';
 import { IBasketState } from '../../store/basket/basket-reducer';
 import { BasketItem } from '../BasketItem';
 import { useTypedSelector } from '../../hooks/useTypedSelector';

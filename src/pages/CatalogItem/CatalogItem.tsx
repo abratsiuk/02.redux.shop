@@ -1,5 +1,5 @@
 import React from 'react';
-import './CatalogItem.scss';
+import './CatalogItem.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { selectGoodById } from '../../store/goods/goods-selectors';

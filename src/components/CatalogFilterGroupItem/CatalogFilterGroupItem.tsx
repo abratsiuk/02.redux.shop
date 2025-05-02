@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './CatalogFilterGroupItem.scss';
+import './CatalogFilterGroupItem.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 import { IFieldInfoItem } from '../../interfaces/IFieldInfoItem';
 import { changeChecked } from '../../store/filter/filter-actions';

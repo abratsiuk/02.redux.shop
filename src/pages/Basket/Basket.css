@@ -1,0 +1,7 @@
+.Basket {
+  display: flex;
+  justify-content: center;
+}
+.Basket__empty {
+  padding-top: 5rem;
+}

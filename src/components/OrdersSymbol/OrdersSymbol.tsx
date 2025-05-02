@@ -1,5 +1,5 @@
 import React from 'react';
-import './OrdersSymbol.scss';
+import './OrdersSymbol.css';
 import { ReactComponent as OrdersSymbolImg } from '../../assets/images/orders.svg';
 import { Link } from 'react-router-dom';
 import { useTypedSelector } from '../../hooks/useTypedSelector';

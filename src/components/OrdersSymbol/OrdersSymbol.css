@@ -1,0 +1,16 @@
+.OrdersSymbol__link {
+  text-decoration: none;
+}
+.OrdersSymbol__container {
+  display: flex;
+  align-items: flex-end;
+}
+.OrdersSymbol__img {
+  width: 4rem;
+  height: 4rem;
+}
+.OrdersSymbol__amount {
+  color: white;
+  height: 3rem;
+  text-shadow: 3px 3px 5px lightseagreen;
+}

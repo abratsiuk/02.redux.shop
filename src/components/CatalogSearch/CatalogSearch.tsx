@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './CatalogSearch.scss';
+import './CatalogSearch.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 import { ReactComponent as SearchImg } from '../../assets/images/search.svg';
 import { ReactComponent as ClearImg } from '../../assets/images/clear.svg';

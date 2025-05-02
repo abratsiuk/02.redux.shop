@@ -1,5 +1,5 @@
 import React from 'react';
-import './OrderState.scss';
+import './OrderState.css';
 import {
     OrderStateEnum,
     OrderStateLabels,

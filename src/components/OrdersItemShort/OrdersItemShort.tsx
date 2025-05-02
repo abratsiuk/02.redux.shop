@@ -1,5 +1,5 @@
 import React from 'react';
-import './OrdersItemShort.scss';
+import './OrdersItemShort.css';
 import { IOrder } from '../../interfaces/IOrder';
 import { dateToShortString, getOrderIcons } from '../../utils/helpers';
 import { OrderState } from '../OrderState';

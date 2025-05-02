@@ -1,5 +1,5 @@
 import React from 'react';
-import './OrdersItemLong.scss';
+import './OrdersItemLong.css';
 import { useDispatch } from 'react-redux';
 import { acceptOrder, cancelOrder } from '../../store/orders/orders-actions';
 import { increaseFunds } from '../../store/funds/funds-actions';

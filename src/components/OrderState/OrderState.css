@@ -1,0 +1,12 @@
+.OrderState {
+  font-size: 1.8rem;
+}
+.OrderState-done {
+  color: #2fa546;
+}
+.OrderState-waiting {
+  color: #f39c12;
+}
+.OrderState-canceled {
+  color: #cb4335;
+}

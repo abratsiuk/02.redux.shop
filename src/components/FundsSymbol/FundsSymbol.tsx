@@ -1,5 +1,5 @@
 import React from 'react';
-import './FundsSymbol.scss';
+import './FundsSymbol.css';
 import { ReactComponent as FundsSymbolImg } from '../../assets/images/funds.svg';
 import { Link } from 'react-router-dom';
 import { useTypedSelector } from '../../hooks/useTypedSelector';

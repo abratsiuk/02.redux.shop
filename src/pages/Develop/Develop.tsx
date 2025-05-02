@@ -1,5 +1,5 @@
 import React from 'react';
-import './Develop.scss';
+import './Develop.css';
 import { DevelopInfo } from '../../components/DevelopInfo';
 
 export const Develop: React.FC = () => {

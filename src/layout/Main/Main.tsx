@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import './Main.scss';
+import './Main.css';
 import { BasketSymbol } from '../../components/BasketSymbol';
 
 interface IMainProps {

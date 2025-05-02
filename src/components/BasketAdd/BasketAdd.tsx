@@ -1,5 +1,5 @@
 import React from 'react';
-import './BasketAdd.scss';
+import './BasketAdd.css';
 import BaskedMini from '../../assets/images/basket_mini_red.svg';
 import BaskedMiniIn from '../../assets/images/basket_mini_in.svg';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';

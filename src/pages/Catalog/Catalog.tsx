@@ -4,7 +4,7 @@ import {
     selectGoodsInfo,
     selectFilteredGoods,
 } from '../../store/goods/goods-selectors';
-import './Catalog.scss';
+import './Catalog.css';
 import { GoodsList } from '../../components/GoodsList';
 import { GoodsStatus } from '../../store/goods/goods-reducer';
 import { CatalogSearch } from '../../components/CatalogSearch';

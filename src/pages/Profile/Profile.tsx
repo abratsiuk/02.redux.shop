@@ -1,5 +1,5 @@
 import React from 'react';
-import './Profile.scss';
+import './Profile.css';
 import { FundsSymbol } from '../../components/FundsSymbol';
 import { OrdersSymbol } from '../../components/OrdersSymbol';
 import { BasketSymbol } from '../../components/BasketSymbol';

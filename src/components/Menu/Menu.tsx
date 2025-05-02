@@ -1,5 +1,5 @@
 import React from 'react';
-import './Menu.scss';
+import './Menu.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 import { menu } from '../../configs';
 import { NavLink } from 'react-router-dom';

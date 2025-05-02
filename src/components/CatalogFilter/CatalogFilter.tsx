@@ -1,5 +1,5 @@
 import React from 'react';
-import './CatalogFilter.scss';
+import './CatalogFilter.css';
 import { IPropsClassName } from '../../interfaces/IPropsClassName';
 import { ReactComponent as ClearImg } from '../../assets/images/clear.svg';
 import { CatalogFilterGroup } from '../CatalogFilterGroup';
