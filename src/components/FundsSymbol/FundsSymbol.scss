@@ -19,7 +19,7 @@
         }
     }
     &__amount {
-        color: $header__logo-color-dark;
+        color: var(--header__logo-color-dark);
         height: 3rem;
         text-shadow: 3px 3px 5px gold;
     }

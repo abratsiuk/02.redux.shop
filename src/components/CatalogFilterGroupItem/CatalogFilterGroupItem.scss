@@ -17,7 +17,7 @@
         border-radius: 3px;
         position: relative;
         cursor: pointer;
-        background-color: $main-color;
+        background-color: var(--main-color);
     }
     &__checkbox:checked + &__symbol::after {
         content: '✔';

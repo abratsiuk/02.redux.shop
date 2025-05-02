@@ -2,7 +2,7 @@
 
 .Header {
     height: var(--header-height);
-    background-color: $header-color;
+    background-color: var(--header-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,7 +21,7 @@
         font-family: 'Great Vibes', cursive;
         font-size: var(--header__logo-font-size);
         text-decoration: none;
-        color: $header__logo-color;
+        color: var(--header__logo-color);
         line-height: 5rem;
         margin-top: 1.8rem;
         margin-left: 1.5rem;

@@ -6,7 +6,7 @@
     grid-template-rows: 3rem 1fr 3rem;
     justify-items: start;
     align-items: start;
-    border: 2px solid $header-color;
+    border: 2px solid var(--header-color);
     border-radius: 1rem;
     padding: 1.5rem;
     &__name {

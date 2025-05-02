@@ -3,7 +3,7 @@
 .footer {
     height: var(--footer-height);
 
-    background-color: $header-color;
+    background-color: var(--header-color);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
