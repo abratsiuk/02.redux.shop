@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: $color_transition;
+    transition: var(--color_transition);
     &-closed,
     &-opened {
         * {
