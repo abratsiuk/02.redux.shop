@@ -1,5 +1,3 @@
-@use 'src/styles/variables' as *;
-
 .Catalog {
     display: grid;
     grid-template-columns: minmax(30rem, 0.5fr) 1fr 1fr 1fr;

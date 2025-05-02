@@ -1,5 +1,3 @@
-@use 'src/styles/variables' as *;
-
 .Main {
     height: calc(100vh - var(--header-height) - var(--footer-height));
     background-color: var(--main-color);

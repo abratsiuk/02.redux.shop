@@ -1,5 +1,3 @@
-@use 'src/styles/variables' as *;
-
 .BasketItem {
     display: grid;
     grid-template-columns: 2rem var(--basket__image-size) 1fr 8rem 4rem;
