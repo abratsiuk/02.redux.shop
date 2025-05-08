@@ -2,7 +2,7 @@ import './Footer.css';
 
 export const Footer = () => {
     return (
-        <footer className="footer">
+        <footer className="Footer">
             <div className="footer__my">© 2025 abratsiuk</div>
 
             <div>

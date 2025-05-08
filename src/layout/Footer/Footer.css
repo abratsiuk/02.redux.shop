@@ -1,4 +1,4 @@
-.footer {
+.Footer {
   height: var(--footer-height);
   background-color: var(--header-color);
   display: flex;
