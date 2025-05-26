@@ -212,3 +212,9 @@ use Live Sass Compiler for compile sass to css
 "liveSassCompile.settings.generateMap": false,
 
 npm uninstall sass postcss postcss-safe-parser
+
+===============================
+
+https://icon-icons.com/icon/online-shop-store/112278
+https://icon-icons.com/icon/shop-filter-market/228264
+https://icon-icons.com/icon/filter/217602
