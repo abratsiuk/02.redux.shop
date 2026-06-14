@@ -51,68 +51,103 @@ export const loadGoods = () => {
                 },
             });
 
-            if (response?.data?.shop?.length > 0) {
-                const goods: IGoodItem[] = response.data.shop
-                    .map(
-                        (item: any, index: number): IGoodItem => ({
+            const entries = response?.data?.data?.entries ?? [];
+
+            if (entries.length > 0) {
+                const goods: IGoodItem[] = entries
+                    .map((item: any, index: number): IGoodItem => {
+                        const mainItem =
+                            item.brItems?.[0] ?? item.instruments?.[0] ?? {};
+                        const grantedItems = [
+                            ...(item.brItems ?? []),
+                            ...(item.instruments ?? []),
+                        ];
+
+                        return {
                             id:
                                 item.offerId?.replace('v2:/', 'v2_') ||
                                 index.toString(),
                             offerId: item.offerId ?? '',
-                            name: item.displayName ?? '',
-                            description: item.displayDescription ?? '',
-                            displayType: item.displayType ?? '',
-                            mainType: item.mainType ?? '',
-                            icon: item.displayAssets?.[0]?.url ?? '',
+                            name: mainItem.name ?? item.devName ?? '',
+                            description: mainItem.description ?? '',
+                            displayType:
+                                mainItem.type?.displayValue ??
+                                item.layout?.name ??
+                                '',
+                            mainType: mainItem.type?.value ?? '',
+                            icon:
+                                item.newDisplayAsset?.renderImages?.[0]
+                                    ?.image ??
+                                mainItem.images?.icon ??
+                                mainItem.images?.large ??
+                                mainItem.images?.small ??
+                                '',
                             background:
-                                item.displayAssets?.[0]?.background ?? '',
+                                item.newDisplayAsset?.renderImages?.[0]
+                                    ?.image ??
+                                mainItem.images?.icon ??
+                                mainItem.images?.large ??
+                                mainItem.images?.small ??
+                                '',
                             colors: item.colors,
-                            rarity: item.rarity,
-                            series: item.series,
-                            offerTag: item.offerTag,
-                            banner: item.banner,
-                            priority: item.priority,
-                            price: item.price ? item.price.regularPrice : 0,
-                            granted: item.granted
+                            rarity: mainItem.rarity,
+                            series: mainItem.set,
+                            offerTag: null,
+                            banner: null,
+                            priority: item.sortPriority ?? 0,
+                            price: item.regularPrice ?? item.finalPrice ?? 0,
+                            granted: grantedItems
                                 .map((grantedItem: any) => ({
                                     id: grantedItem.id,
-                                    type: grantedItem.type?.name ?? '',
+                                    type:
+                                        grantedItem.type?.displayValue ??
+                                        grantedItem.type?.name ??
+                                        '',
                                     name: grantedItem.name ?? '',
-                                    icon: grantedItem.images?.icon ?? '',
+                                    icon:
+                                        grantedItem.images?.icon ??
+                                        grantedItem.images?.large ??
+                                        grantedItem.images?.small ??
+                                        grantedItem.images?.smallIcon ??
+                                        '',
                                     description: grantedItem.description ?? '',
-                                    partOfSet: grantedItem.set?.partOf ?? '',
+                                    partOfSet:
+                                        grantedItem.set?.text ??
+                                        grantedItem.set?.value ??
+                                        '',
                                     qty: 1,
                                 }))
                                 .reduce(
                                     (
                                         acc: IGrantedItem[],
-                                        item: IGrantedItem
+                                        item: IGrantedItem,
                                     ) => {
                                         const existsItem = acc.find(
-                                            (i) => i.name === item.name
+                                            (i) => i.name === item.name,
                                         );
+
                                         if (existsItem) {
                                             existsItem.qty =
                                                 (existsItem.qty ?? 0) + 1;
                                         } else {
                                             acc.push(item);
                                         }
+
                                         return acc;
                                     },
-                                    [] as IGrantedItem[]
+                                    [] as IGrantedItem[],
                                 ),
-                        })
-                    )
+                        };
+                    })
                     .filter(
                         (item: IGoodItem) =>
                             item.background &&
                             item.id &&
                             (!item.mainType ||
                                 !['sparks_song', 'w'].includes(
-                                    item.mainType
+                                    item.mainType,
                                 )) &&
                             item.name &&
-                            /* filter out ugly and unpleasant things */
                             !item.name.toLowerCase().includes('demon') &&
                             !item.name.toLowerCase().includes('darkest') &&
                             !item.name.toLowerCase().includes('diabol') &&
@@ -123,8 +158,7 @@ export const loadGoods = () => {
                             !item.name.toLowerCase().includes('dominion') &&
                             !item.name.toLowerCase().includes('furia') &&
                             !item.name.toLowerCase().includes('ghoul') &&
-                            !item.name.toLowerCase().includes('devil') &&
-                            !item.name.toLowerCase().includes('torment')
+                            !item.name.toLowerCase().includes('devil'),
                     );
 
                 dispatch(setGoods(goods));
